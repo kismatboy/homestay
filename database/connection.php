@@ -4,7 +4,7 @@
 
 // DB CONNECT INFO
 $db_host = "localhost";
-$db_name = "blog_admin_db";
+$db_name = "homestay_nepal";
 $db_user = "root";
 $db_pw = "";
 
