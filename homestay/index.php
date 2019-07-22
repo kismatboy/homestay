@@ -134,8 +134,8 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 </div>
 <!--//sevices-->
 <!-- family -->
-<!-- <div class="team" id="team">
-	<div class="container">
+
+<!-- 	<div class="container">
 			<h3 class="title-w3-agileits title-black-wthree">our homestay members</h3>
 			<div id="verticalTab">
 				
@@ -143,7 +143,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 					
 						<h4>Lucas Jimenez</h4>
 							 <?php 
- 										//getfamilyname($_REQUEST['id'],'family');
+ 										// getfamilyname($_REQUEST['id'],'family');
  										?>
 							
 					
@@ -152,7 +152,6 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 </div> -->
 <!-- //team -->
 <!-- Gallery -->
-
 <div class="team" id="team">
 	<div class="container">
 			<h3 class="title-w3-agileits title-black-wthree">Testimonial</h3>
@@ -163,7 +162,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 						<!-- video url iframe-->
 					</div>
 				</div>
-			</div>
+			</div></div>
 
 			<div class="team" id="team">
 	<div class="container">
@@ -175,7 +174,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 						<!-- video url iframe-->
 					</div>
 				</div>
-			</div>
+			</div></div>
 				<div class="team" id="team">
 	<div class="container">
 			<h3 class="title-w3-agileits title-black-wthree">location</h3>
@@ -186,7 +185,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 						<!-- video url iframe-->
 					</div>
 				</div>
-			</div>
+			</div></div>
 
 
 
@@ -211,7 +210,8 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 		foreach ($result as $info) {
       	# code...
 			echo '
-				<div class="col-md-3 gallery-grid gallery1"><a href="homestay/images/'.$info["pic_name"].' " class="swipebox"><img src="homestay/images/'.$info["pic_name"].'" class="img-responsive" alt="test">
+				<div class="col-md-3 gallery-grid gallery1"><a href="homestay/images/'.$info["pic_name"].' " class="swipebox">
+				<img src="homestay/images/'.$info["pic_name"].'" class="img-responsive" alt="test">
 						<div class="textbox">
 						<h4>'.$row['title'].'</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
@@ -231,6 +231,7 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 				 <div class="container">
 				 <h3 class="title-w3-agileits title-black-wthree">Rooms And Rates</h3>
 						<div class="priceing-table-main">
+							<div style=" margin-right: 100px;"></div>
 				 <div class="col-md-3 price-grid">
 					<div class="price-block agile">
 						<div class="price-gd-top">
@@ -297,7 +298,7 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 					<ul class="slides">
 						<li>
 							<div class="w3layouts_work_grid_left">
-								<img src="homestay/image/s5.jpg" alt=" " class="img-responsive" />
+								<img src="homestay/images/5.jpg" alt=" " class="img-responsive" />
 								<div class="w3layouts_work_grid_left_pos">
 									<img src="homestay/images/c1.jpg" alt=" " class="img-responsive" />
 								</div>
@@ -321,9 +322,9 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 						</li>
 						<li>
 							<div class="w3layouts_work_grid_left">
-								<img src="homestay/images5.jpg" alt=" " class="img-responsive" />
+								<img src="homestay/images/5.jpg" alt=" " class="img-responsive" />
 								<div class="w3layouts_work_grid_left_pos">
-									<img src="homestay/imagesc2.jpg" alt=" " class="img-responsive" />
+									<img src="homestay/images/c2.jpg" alt=" " class="img-responsive" />
 								</div>
 							</div>
 							<div class="w3layouts_work_grid_right">
@@ -345,9 +346,9 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 						</li>
 						<li>
 							<div class="w3layouts_work_grid_left">
-								<img src="homestay/images5.jpg" alt=" " class="img-responsive" />
+								<img src="homestay/images/5.jpg" alt=" " class="img-responsive" />
 								<div class="w3layouts_work_grid_left_pos">
-									<img src="homestay/imagesc3.jpg" alt=" " class="img-responsive" />
+									<img src="homestay/images/c3.jpg" alt=" " class="img-responsive" />
 								</div>
 							</div>
 							<div class="w3layouts_work_grid_right">
@@ -369,9 +370,9 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 						</li>
 						<li>
 							<div class="w3layouts_work_grid_left">
-								<img src="homestay/images5.jpg" alt=" " class="img-responsive" />
+								<img src="homestay/images/5.jpg" alt=" " class="img-responsive" />
 								<div class="w3layouts_work_grid_left_pos">
-									<img src="homestay/imagesc4.jpg" alt=" " class="img-responsive" />
+									<img src="homestay/images/c4.jpg" alt=" " class="img-responsive" />
 								</div>
 							</div>
 							<div class="w3layouts_work_grid_right">

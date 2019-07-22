@@ -10,7 +10,6 @@ if(!isset($_SESSION["user"]))
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SUNRISE HOTEL</title>
 	<!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -102,9 +101,8 @@ if(!isset($_SESSION["user"]))
                                             <label>Type Of Room *</label>
                                             <select name="troom"  class="form-control" required>
 												<option value selected ></option>
-                                                <option value="Superior Room">SUPERIOR ROOM</option>
+                                               
                                                 <option value="Deluxe Room">DELUXE ROOM</option>
-												<option value="Guest House">GUEST HOUSE</option>
 												<option value="Single Room">SINGLE ROOM</option>
                                             </select>
                               </div>

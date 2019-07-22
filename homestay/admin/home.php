@@ -22,6 +22,8 @@ if(!isset($_SESSION["user"]))
     <link href="assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    
 </head>
 
 <body>
@@ -43,10 +45,11 @@ if(!isset($_SESSION["user"]))
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="usersetting.php"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
-                        <li><a href="settings.php"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
+
                         <li class="divider"></li>
                         <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
@@ -57,37 +60,7 @@ if(!isset($_SESSION["user"]))
             </ul>
         </nav>
         <!--/. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
-
-                    <li>
-                        <a class="active-menu" href="home.php"><i class="fa fa-dashboard"></i> Status</a>
-                    </li>
-                    <li>
-                        <a href="messages.php"><i class="fa fa-desktop"></i> News Letters</a>
-                    </li>
-					<li>
-                        <a href="roombook.php"><i class="fa fa-bar-chart-o"></i> Room Booking</a>
-                    </li>
-                    <li>
-                        <a href="payment.php"><i class="fa fa-qrcode"></i> Payment</a>
-                    </li>
-                    <li>
-                        <a  href="profit.php"><i class="fa fa-qrcode"></i> Profit</a>
-                    </li>
-                    <li>
-                        <a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                    </li>
-                   
-
-
-                    
-					</ul>
-
-            </div>
-
-        </nav>
+        <?php require'nav.php'; ?>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
@@ -100,6 +73,61 @@ if(!isset($_SESSION["user"]))
                         </h1>
                     </div>
                 </div>
+
+
+                <!-- update button-->
+                <div class='panel-body' >
+                    <div  style="text-align:right; ">
+                            <button class='btn btn-primary btn' data-toggle='modal' data-target='#myModal'>
+                              Update 
+                            </button>
+                            </div>
+                            <div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+                                <div class='modal-dialog'>
+                                    <div class='modal-content'>
+                                        <div class='modal-header'>
+                                            <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+                                            <h4 class='modal-title' id='myModalLabel'>Change the User name and Password</h4>
+                                        </div>
+                                        <form method='post'>
+                                        <div class='modal-body'>
+                                            <div class='form-group'>
+                                            <label>Change User name</label>
+                                            <input name='usname'  class='form-control' placeholder='Enter User name'>
+                                            </div>
+                                        </div>
+                                        <div class='modal-body'>
+                                            <div class='form-group'>
+                                            <label>old Password</label>
+                                            <input name='pasd' class='form-control' placeholder='Enter Password'>
+                                            </div>
+                                        </div>
+                                        <div class='modal-body'>
+                                            <div class='form-group'>
+                                            <label>new Password</label>
+                                            <input name='pasd' class='form-control' placeholder='Enter Password'>
+                                            </div>
+                                        </div>
+                                        <div class='modal-body'>
+                                            <div class='form-group'>
+                                            <label>confirm Password</label>
+                                            <input name='pasd' class='form-control' placeholder='Enter Password'>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class='modal-footer'>
+                                            <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                                            
+                                           <input type='submit' name='up' value='Update' class='btn btn-primary'>
+                                          </form>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                <!--DEMO END-->
                 <!-- /. ROW  -->
 				<?php
 						include ('db.php');
@@ -258,7 +286,8 @@ if(!isset($_SESSION["user"]))
 															<h3>".$mrow['FName']."</h3>
 														</div>
 														<div class='panel-footer back-footer-blue'>
-														<a href=show.php?sid=".$fid ."><button  class='btn btn-primary btn' data-toggle='modal' data-target='#myModal'>
+														<!--<a href=show.php?sid=".$fid .">-->
+                                                        <a href=''><button  class='btn btn-primary btn' data-toggle='modal' data-target='#myModal'>
 													Show
 													</button></a>
 															".$mrow['TRoom']."
@@ -355,45 +384,7 @@ if(!isset($_SESSION["user"]))
             </div>
             
 			
-				<!-- DEOMO-->
-				<div class='panel-body'>
-                            <button class='btn btn-primary btn' data-toggle='modal' data-target='#myModal'>
-                              Update 
-                            </button>
-                            <div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
-                                <div class='modal-dialog'>
-                                    <div class='modal-content'>
-                                        <div class='modal-header'>
-                                            <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
-                                            <h4 class='modal-title' id='myModalLabel'>Change the User name and Password</h4>
-                                        </div>
-										<form method='post>
-                                        <div class='modal-body'>
-                                            <div class='form-group'>
-                                            <label>Change User name</label>
-                                            <input name='usname' value='<?php echo $fname; ?>' class='form-control' placeholder='Enter User name'>
-											</div>
-										</div>
-										<div class='modal-body'>
-                                            <div class='form-group'>
-                                            <label>Change Password</label>
-                                            <input name='pasd' value='<?php echo $ps; ?>' class='form-control' placeholder='Enter Password'>
-											</div>
-                                        </div>
-										
-                                        <div class='modal-footer'>
-                                            <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
-											
-                                           <input type='submit' name='up' value='Update' class='btn btn-primary'>
-										  </form>
-										   
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 				
-				<!--DEMO END-->
 				
 										
                     

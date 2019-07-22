@@ -135,8 +135,10 @@ $roo=mysqli_fetch_assoc($feedback);
 ?>
 </div>
 
-</div>
+
 <?php getcommentsscript("links"); ?>
+</div>
+
 
 <!--right-->
 								<aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">

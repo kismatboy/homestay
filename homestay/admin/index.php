@@ -10,6 +10,7 @@
 <html >
 <head>  
       <link rel="stylesheet" href="css/style.css">
+    
 
   
 </head>
@@ -40,6 +41,7 @@
           </fieldset>
 
         </form>
+       
 
        
 
@@ -77,7 +79,7 @@
          
          header("location: home.php");
       }else {
-        $_SESSION['user'] = $myusername;
+        $_SESSION['user'] = 'sunil';
          
          header("location: home.php");
          echo '<script>alert("Your Login Name or Password is invalid") </script>' ;

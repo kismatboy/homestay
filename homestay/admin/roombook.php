@@ -104,38 +104,8 @@ if(!isset($_SESSION["user"]))
             </ul>
         </nav>
         <!--/. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
+              <?php require'nav.php'; ?>
 
-                    <li>
-                        <a  href="home.php"><i class="fa fa-dashboard"></i> Status</a>
-                    </li>
-                    <li>
-                        <a href="messages.php"><i class="fa fa-desktop"></i> News Letters</a>
-                    </li>
-					<li>
-                        <a class="active-menu" href="roombook.php"><i class="fa fa-bar-chart-o"></i> Room Booking</a>
-                    </li>
-                    <li>
-                        <a href="payment.php"><i class="fa fa-qrcode"></i> Payment</a>
-                    </li>
-					<li>
-                        <a  href="profit.php"><i class="fa fa-qrcode"></i> Profit</a>
-                    </li>
-                    
-                    <li>
-                        <a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                    </li>
-                    
-
-
-                    
-					</ul>
-
-            </div>
-
-        </nav>
         <!-- /. NAV SIDE  -->
 		
 		
@@ -248,9 +218,9 @@ if(!isset($_SESSION["user"]))
 										<div class="form-group">
 														<label>Select the Conformation</label>
 														<select name="conf"class="form-control">
-															<option value selected>	</option>
+															<option value="not conform" selected>	</option>
 															<option value="Conform">Conform</option>
-															
+																
 															
 														</select>
 										 </div>
@@ -265,8 +235,6 @@ if(!isset($_SESSION["user"]))
 						$rsql ="select * from room";
 						$rre= mysqli_query($con,$rsql);
 						$r =0 ;
-						$sc =0;
-						$gh = 0;
 						$sr = 0;
 						$dr = 0;
 						while($rrow=mysqli_fetch_array($rre))
@@ -274,15 +242,9 @@ if(!isset($_SESSION["user"]))
 							$r = $r + 1;
 							$s = $rrow['type'];
 							$p = $rrow['place'];
-							if($s=="Superior Room" )
-							{
-								$sc = $sc+ 1;
-							}
+						
 							
-							if($s=="Guest House")
-							{
-								$gh = $gh + 1;
-							}
+						
 							if($s=="Single Room" )
 							{
 								$sr = $sr + 1;
@@ -300,24 +262,16 @@ if(!isset($_SESSION["user"]))
 						$csql ="select * from payment";
 						$cre= mysqli_query($con,$csql);
 						$cr =0 ;
-						$csc =0;
-						$cgh = 0;
+					
 						$csr = 0;
 						$cdr = 0;
 						while($crow=mysqli_fetch_array($cre))
 						{
 							$cr = $cr + 1;
 							$cs = $crow['troom'];
+					
 							
-							if($cs=="Superior Room"  )
-							{
-								$csc = $csc + 1;
-							}
-							
-							if($cs=="Guest House" )
-							{
-								$cgh = $cgh + 1;
-							}
+						
 							if($cs=="Single Room" )
 							{
 								$csr = $csr + 1;
@@ -338,36 +292,6 @@ if(!isset($_SESSION["user"]))
                         </div>
                         <div class="panel-body">
 						<table width="200px">
-							
-							<tr>
-								<td><b>Superior Room	 </b></td>
-								<td><button type="button" class="btn btn-primary btn-circle"><?php  
-									$f1 =$sc - $csc;
-									if($f1 <=0 )
-									{	$f1 = "NO";
-										echo $f1;
-									}
-									else{
-											echo $f1;
-									}
-								
-								
-								?> </button></td> 
-							</tr>
-							<tr>
-								<td><b>Guest House</b>	 </td>
-								<td><button type="button" class="btn btn-primary btn-circle"><?php 
-								$f2 =  $gh -$cgh;
-								if($f2 <=0 )
-									{	$f2 = "NO";
-										echo $f2;
-									}
-									else{
-											echo $f2;
-									}
-
-								?> </button></td> 
-							</tr>
 							<tr>
 								<td><b>Single Room	 </b></td>
 								<td><button type="button" class="btn btn-primary btn-circle"><?php
@@ -400,7 +324,7 @@ if(!isset($_SESSION["user"]))
 								<td><b>Total Rooms	</b> </td>
 								<td> <button type="button" class="btn btn-danger btn-circle"><?php 
 								
-								$f5 =$r-$cr; 
+								$f5 =$f3+$f4; 
 								if($f5 <=0 )
 									{	$f5 = "NO";
 										echo $f5;

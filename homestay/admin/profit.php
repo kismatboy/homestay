@@ -11,7 +11,6 @@ if(!isset($_SESSION["user"]))
 <head>
       <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SUNRISE HOTEL</title>
 	<!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -64,35 +63,8 @@ if(!isset($_SESSION["user"]))
             </ul>
         </nav>
         <!--/. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav" id="main-menu">
+              <?php require'nav.php'; ?>
 
-                    <li>
-                        <a href="home.php"><i class="fa fa-dashboard"></i> Status</a>
-                    </li>
-                    <li>
-                        <a  href="messages.php"><i class="fa fa-desktop"></i> News Letters</a>
-                    </li>
-					<li>
-                        <a href="roombook.php"><i class="fa fa-bar-chart-o"></i>Room Booking</a>
-                    </li>
-                    <li>
-                        <a  href="payment.php"><i class="fa fa-qrcode"></i> Payment</a>
-                    </li>
-					 <li>
-                        <a class="active-menu" href="profit.php"><i class="fa fa-qrcode"></i> Profit</a>
-                    </li>
-                    
-                    <li>
-                        <a href="logout.php" ><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                    </li>
-                    
-
-                    
-            </div>
-
-        </nav>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
             <div id="page-inner">
@@ -147,7 +119,7 @@ if(!isset($_SESSION["user"]))
 											<th>Bed Rent</th>
 											<th>Meals </th>
 											<th>Gr.Total</th>
-											<th>Profit</th>
+											
 											
                                             
                                         </tr>
@@ -176,7 +148,6 @@ if(!isset($_SESSION["user"]))
 													<td>$".$row['mepr']."</td>
 													<td>$".$row['btot']."</td>
 													<td>$".$row['fintot']."</td>
-													<td>$".$row['fintot']*10/100 ."</td>
 													</tr>";
 											}
 											else
@@ -193,7 +164,6 @@ if(!isset($_SESSION["user"]))
 													<td>$".$row['mepr']."</td>
 													<td>$".$row['btot']."</td>
 													<td>$".$row['fintot']."</td>
-													<td>$".$row['fintot']*10/100 ."</td>
 													</tr>";
 											
 											}

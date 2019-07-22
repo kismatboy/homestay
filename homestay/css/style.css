@@ -1253,7 +1253,7 @@ ul.resp-tabs-list {
     padding: 0.2em 0em 0em 0em;
     font-size: 1.7em;
     float: left;
-    margin-left: 20px;
+    margin-left: 0px;
 }
 .price-selet h3 span {
     color: #ef0404;
@@ -1850,6 +1850,7 @@ color: #fff !important;
 	}
 	.price-grid {
 		padding: 10px 10px;
+
 	}
 	.price-gd-top h4 {
 		font-size: 1.3em;
@@ -1885,7 +1886,7 @@ color: #fff !important;
 		padding-bottom: 6px;
 	}
 	section.contact-w3ls p.contact-agile1 {
-		line-height: 24.7px;
+		line-height: 2px;
 	}
 	section.contact-w3ls button.btn.btn-primary {
 		padding: 8px 20px;
@@ -2128,7 +2129,7 @@ color: #fff !important;
 		top: 43px;
 	}
 	.w3layouts_work_grid_right p {
-		margin: 1em 0 0;
+		margin: 0 0 0;
 	}
 	.form-group {
 		margin-bottom: 0px;
@@ -2187,13 +2188,12 @@ color: #fff !important;
 		margin: 78px 5px 20px 5px;
 	}
 	.w3layouts_work_grid_right p {
-		font-size: 15px;
-		line-height: 1.8em;
-		letter-spacing: 0.5px;
+		font-size: 10.5px;
+		line-height: 0.5em;
 	}
 	.w3layouts_work_grid_right h4 {
-		font-size: 13px;
-		letter-spacing: 1px;
+		font-size: 15px;
+		letter-spacing: 0.5px;
 	}
 	.w3layouts_work_grid_right {
 		margin-top: 0.5em;
