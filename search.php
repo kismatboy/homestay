@@ -37,9 +37,39 @@ require_once('database/db.php');//db config file
     $search_keyword = '';
     if(!empty($_POST['search']['keyword'])) {
     	$search_keyword = $_POST['search']['keyword'];
+
+    		require("database/db_connect.php");
+	$sql="SELECT * FROM location LIMIT 10";
+	if ($result=mysqli_query($con,$sql))
+	{
+
+      	//if there are rows available display all the results
+		foreach ($result as $categoriescount => $categorydata) {
+				#count how many times each category appears in blogs
+			if($_POST['search']['keyword']==$categorydata['name']){
+				$url ="category.php?id=".$categorydata['id'];
+				 if (!headers_sent())
+    {    
+        header('Location: '.$url);
+        exit;
+        }
+    else
+        {  
+        echo '<script type="text/javascript">';
+        echo 'window.location.href="'.$url.'";';
+        echo '</script>';
+        echo '<noscript>';
+        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
+        echo '</noscript>'; exit;
     }
+			}
+		}
+	}
+
+    }
+
     $sql = 'SELECT * FROM homestay_info WHERE title LIKE :keyword OR content LIKE :keyword  OR tags LIKE :keyword OR author LIKE :keyword ORDER BY id DESC ';
-    
+   
     /* Pagination Code starts */
     $per_page_html = '';
     $page = 1;
@@ -74,6 +104,12 @@ require_once('database/db.php');//db config file
     $pdo_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
     $pdo_statement->execute();
     $result = $pdo_statement->fetchAll();
+
+
+
+     include('database/connection.php');
+    $sql1='SELECT * FROM location WHERE name LIKE :keyword ORDER BY id DESC ';
+    
     ?>
 	<!--/banner-->
 	<div class="banner-inner">

@@ -310,6 +310,8 @@ function countcategories(){
 			</li></a>';
 		}
 	}
+
+	
 	/*	
 		}
       	//if there are rows available display all the results

@@ -134,24 +134,63 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 </div>
 <!--//sevices-->
 <!-- team -->
-<div class="team" id="team">
+<!-- <div class="team" id="team">
 	<div class="container">
 			<h3 class="title-w3-agileits title-black-wthree">our homestay members</h3>
 			<div id="verticalTab">
 				
 					<div class="resp-tabs-container">
 					
-<!-- 							<h4>Lucas Jimenez</h4>
- -->							 <?php 
- 										getfamilyname($_REQUEST['id'],'family');
+						<h4>Lucas Jimenez</h4>
+							 <?php 
+ 										//getfamilyname($_REQUEST['id'],'family');
  										?>
 							
 					
 			</div>
 	</div>
-</div>
+</div> -->
 <!-- //team -->
 <!-- Gallery -->
+
+<div class="team" id="team">
+	<div class="container">
+			<h3 class="title-w3-agileits title-black-wthree">Testimonial</h3>
+			<div id="verticalTab">
+				
+					<div class="resp-tabs-container">
+
+						<!-- video url iframe-->
+					</div>
+				</div>
+			</div>
+
+			<div class="team" id="team">
+	<div class="container">
+			<h3 class="title-w3-agileits title-black-wthree">Rules:-</h3>
+			<div id="verticalTab">
+				
+					<div class="resp-tabs-container">
+
+						<!-- video url iframe-->
+					</div>
+				</div>
+			</div>
+				<div class="team" id="team">
+	<div class="container">
+			<h3 class="title-w3-agileits title-black-wthree">location</h3>
+			<div id="verticalTab">
+				
+					<div class="resp-tabs-container">
+
+						<!-- video url iframe-->
+					</div>
+				</div>
+			</div>
+
+
+
+
 <section class="portfolio-w3ls" id="gallery">
 	<h3 class="title-w3-agileits title-black-wthree">Gallery</h3>
 		<?php

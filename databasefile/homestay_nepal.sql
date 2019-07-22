@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2019 at 07:20 AM
+-- Generation Time: Jul 22, 2019 at 07:09 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -136,29 +136,30 @@ INSERT INTO `gallery` (`id`, `homestay_id`, `pic_name`) VALUES
 CREATE TABLE `homestay_info` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(190) NOT NULL,
-  `address` varchar(11) NOT NULL,
   `tags` varchar(40) NOT NULL,
   `content` longtext NOT NULL,
   `photo` varchar(50) NOT NULL,
   `location` text NOT NULL,
-  `phone` int(11) NOT NULL,
   `posted` varchar(40) NOT NULL,
   `date` date DEFAULT NULL,
   `author` varchar(40) DEFAULT NULL,
-  `category` varchar(40) NOT NULL
+  `category` varchar(40) NOT NULL,
+  `meals` text NOT NULL,
+  `includes` text NOT NULL,
+  `rules` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `homestay_info`
 --
 
-INSERT INTO `homestay_info` (`id`, `title`, `address`, `tags`, `content`, `photo`, `location`, `phone`, `posted`, `date`, `author`, `category`) VALUES
-(1, 'Newest homestay nepal', '0', 'blog,php,bootstrap', '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</div><div>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div><div>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div><div>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</div><div>cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</div><div>proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>', '63560400_1524778647.jpg', '', 0, 'draft', NULL, NULL, '7'),
-(2, 'Newest homestay nepal1', '0', 'life,life tips', '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</div><div>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div><div>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div><div>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</div><div>cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</div><div>proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>', '19292400_1524780270.jpg', '', 0, 'publish', '2018-04-27', 'admin', '2'),
-(3, 'Newest homestay nepal2', '0', 'web,development,earth', '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<span style="font-size: 0.857em;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style="font-size: 0.857em;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style="font-size: 0.857em;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style="font-size: 0.857em;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style="font-size: 0.857em;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>', '46981800_1524780339.jpg', '', 0, 'publish', '2018-04-27', 'admin', '3'),
-(4, 'Newest homestay nepal3', '0', 'books,reading,novels', '<span style="font-size: 12.855px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style="font-size: 0.857em;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style="font-size: 0.857em;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style="font-size: 0.857em;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style="font-size: 0.857em;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style="font-size: 0.857em;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><span style="font-size: 12.855px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style="font-size: 0.857em;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style="font-size: 0.857em;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style="font-size: 0.857em;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style="font-size: 0.857em;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style="font-size: 0.857em;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><br>', '98308700_1524790852.jpg', '', 0, 'publish', '2018-04-27', 'admin', '2'),
-(5, 'Newest homestay nepal4', '0', 'witting,blogging', '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<span style="font-size: 0.857em;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style="font-size: 0.857em;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style="font-size: 0.857em;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style="font-size: 0.857em;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style="font-size: 0.857em;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>', '57894000_1524856026.jpg', '', 0, 'publish', '2018-04-27', 'etemesi', '6'),
-(6, 'Newest homestay nepal5', '0', 'witting,blogging', '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<span style="font-size: 0.857em;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style="font-size: 0.857em;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style="font-size: 0.857em;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style="font-size: 0.857em;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style="font-size: 0.857em;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><span style="font-size: 11.0167px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style="font-size: 11.0167px;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style="font-size: 11.0167px;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style="font-size: 11.0167px;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style="font-size: 11.0167px;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style="font-size: 11.0167px;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>', '30278600_1524856225.jpg', '', 0, 'draft', '2018-04-27', 'etemesi', '7');
+INSERT INTO `homestay_info` (`id`, `title`, `tags`, `content`, `photo`, `location`, `posted`, `date`, `author`, `category`, `meals`, `includes`, `rules`) VALUES
+(1, 'newest homestay', 'A home far form your home', '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</div><div>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div><div>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div><div>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</div><div>cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</div><div>proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>', '63560400_1524778647.jpg', '', 'draft', NULL, NULL, '7', 'Hosts can offer a complimentary light breakfast at their discretion. All other meals will incur an additional cost. Meals and any additional payment should be arranged directly with your host.', 'bike for use \r\nlaundry\r\nparking\r\ninternet access\r\nbreakfast\r\n\r\n', 'Please stay clean, please try to leave the room in the same condition as you take. \r\nPlease smoke outside and away from the room. \r\nInform us in advance when you are not having meal, if you go out (bars, restaurant, visit someone) let us know, where you will plan to go and in case of emergency we will know where we can find you,\r\n\r\n(:- Thank you.\r\n\r\nSmoking is not allowed.'),
+(2, 'Newest homestay nepal1', 'life,life tips', '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</div><div>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</div><div>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</div><div>consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</div><div>cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</div><div>proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>', '19292400_1524780270.jpg', '', 'publish', '2018-04-27', 'admin', '2', '', '', ''),
+(3, 'Newest homestay nepal2', 'web,development,earth', '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<span style="font-size: 0.857em;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style="font-size: 0.857em;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style="font-size: 0.857em;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style="font-size: 0.857em;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style="font-size: 0.857em;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>', '46981800_1524780339.jpg', '', 'publish', '2018-04-27', 'admin', '3', '', '', ''),
+(4, 'Newest homestay nepal3', 'books,reading,novels', '<span style="font-size: 12.855px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style="font-size: 0.857em;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style="font-size: 0.857em;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style="font-size: 0.857em;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style="font-size: 0.857em;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style="font-size: 0.857em;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><span style="font-size: 12.855px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style="font-size: 0.857em;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style="font-size: 0.857em;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style="font-size: 0.857em;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style="font-size: 0.857em;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style="font-size: 0.857em;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><br>', '98308700_1524790852.jpg', '', 'publish', '2018-04-27', 'admin', '2', '', '', ''),
+(5, 'Newest homestay nepal4', 'witting,blogging', '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<span style="font-size: 0.857em;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style="font-size: 0.857em;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style="font-size: 0.857em;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style="font-size: 0.857em;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style="font-size: 0.857em;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>', '57894000_1524856026.jpg', '', 'publish', '2018-04-27', 'etemesi', '6', '', '', ''),
+(6, 'Newest homestay nepal5', 'witting,blogging', '<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod<span style="font-size: 0.857em;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style="font-size: 0.857em;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style="font-size: 0.857em;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style="font-size: 0.857em;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style="font-size: 0.857em;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span><span style="font-size: 11.0167px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span><span style="font-size: 11.0167px;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span><span style="font-size: 11.0167px;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span><span style="font-size: 11.0167px;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span><span style="font-size: 11.0167px;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span><span style="font-size: 11.0167px;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></div>', '30278600_1524856225.jpg', '', 'draft', '2018-04-27', 'etemesi', '7', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -314,7 +315,10 @@ CREATE TABLE `page_hits` (
 INSERT INTO `page_hits` (`page`, `count`) VALUES
 ('test', 2),
 ('Newest homestay nepal', 2),
-('Newest homestay nepal', 2);
+('Newest homestay nepal', 2),
+('newest homestay', 16),
+('Newest homestay nepal1', 2),
+('Newest homestay nepal3', 2);
 
 -- --------------------------------------------------------
 
@@ -405,16 +409,17 @@ CREATE TABLE `roombook` (
   `cin` date DEFAULT NULL,
   `cout` date DEFAULT NULL,
   `stat` varchar(15) DEFAULT NULL,
-  `nodays` int(11) DEFAULT NULL
+  `nodays` int(11) DEFAULT NULL,
+  `homestay_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `roombook`
 --
 
-INSERT INTO `roombook` (`id`, `Title`, `FName`, `LName`, `Email`, `National`, `Country`, `Phone`, `TRoom`, `Bed`, `NRoom`, `Meal`, `cin`, `cout`, `stat`, `nodays`) VALUES
-(2, 'Dr.', 'sunil', 'sapkota', 'sajilochat@gmail.com', 'Nepali', 'Nepal', '9807577575', 'Superior Room', 'Single', '2', 'Room only', '2019-07-25', '2019-07-24', 'Conform', -1),
-(3, 'Dr.', 'sunil444', 'sapkota444', 'sajilocha4t@gmail.com', 'Nepali', 'Nepal', '9807577575', 'Superior Room', 'Single', '2', 'Breakfast', '2019-07-17', '2019-07-26', 'Conform', 9);
+INSERT INTO `roombook` (`id`, `Title`, `FName`, `LName`, `Email`, `National`, `Country`, `Phone`, `TRoom`, `Bed`, `NRoom`, `Meal`, `cin`, `cout`, `stat`, `nodays`, `homestay_id`) VALUES
+(4, 'Dr.', 'sunil', 'sapkota', 'sajilochat@gmail.com', 'Nepali', 'Nepal', '9807577575', 'Guest House', 'Double', '3', 'Half Board', '2019-07-24', '2019-07-04', 'Not Conform', -20, 0),
+(5, 'Mrs.', 'sunil', 'sapkota', 'sajilochat22@gmail.com', 'Nepali', 'Nepal', '9807577575', 'Deluxe Room', 'Triple', '4', 'Breakfast', '2019-07-16', '2019-07-26', 'Not Conform', 10, 2);
 
 -- --------------------------------------------------------
 
@@ -463,6 +468,36 @@ CREATE TABLE `user` (
   `c_date` date NOT NULL,
   `pic` varchar(65) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visitor_info`
+--
+
+CREATE TABLE `visitor_info` (
+  `id` int(11) NOT NULL,
+  `ip_address` varchar(65) NOT NULL,
+  `user_agent` varchar(65) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `visitor_info`
+--
+
+INSERT INTO `visitor_info` (`id`, `ip_address`, `user_agent`) VALUES
+(1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(3, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(4, '192.168.195.40', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4) AppleWebKit/537.36'),
+(5, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(6, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(7, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(8, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(9, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(10, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(11, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(12, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT');
 
 --
 -- Indexes for dumped tables
@@ -567,6 +602,12 @@ ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `visitor_info`
+--
+ALTER TABLE `visitor_info`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -639,7 +680,7 @@ ALTER TABLE `room`
 -- AUTO_INCREMENT for table `roombook`
 --
 ALTER TABLE `roombook`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `titles`
 --
@@ -650,6 +691,11 @@ ALTER TABLE `titles`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `visitor_info`
+--
+ALTER TABLE `visitor_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
