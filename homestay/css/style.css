@@ -1849,7 +1849,7 @@ color: #fff !important;
 		margin: 1.3em 0 .8em;
 	}
 	.price-grid {
-		padding: 0px 10px;
+		padding: 10px 10px;
 	}
 	.price-gd-top h4 {
 		font-size: 1.3em;
@@ -2382,7 +2382,7 @@ color: #fff !important;
 		padding: .5em 0em;
 	}
 	.price-selet h3 {
-		padding: 0em 0em 0em 0em;
+		padding: 0.3em 1.7em;
 	}
 	.modal-dialog {
 		width: 80%;

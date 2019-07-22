@@ -133,7 +133,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 	</div>
 </div>
 <!--//sevices-->
-<!-- team -->
+<!-- family -->
 <!-- <div class="team" id="team">
 	<div class="container">
 			<h3 class="title-w3-agileits title-black-wthree">our homestay members</h3>
@@ -250,57 +250,14 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 							</div>
 							<div class="price-selet">	
 								<h3><span>$320</span></h3>						
-								<a href="homestay/admin/reservation.php" >Book Now</a>
+								<?php
+								 echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><span>$150</span> <br/>Book Now</a>';
+								 ?>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 price-grid ">
-					<div class="price-block agile">
-						<div class="price-gd-top">
-						<img src="homestay/images/r2.jpg" alt=" " class="img-responsive" />
-							<h4>Luxury Room</h4>
-						</div>
-						<div class="price-gd-bottom">
-							<div class="price-list">
-									<ul>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-								</ul>
-							</div>
-							<div class="price-selet">
-								<h3><span>$220</span></h3>
-								<a href="homestay/admin/reservation.php" >Book Now</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 price-grid lost">
-					<div class="price-block agile">
-						<div class="price-gd-top">
-						<img src="homestay/images/r3.jpg" alt=" " class="img-responsive" />
-							<h4>Guest House</h4>
-						</div>
-						<div class="price-gd-bottom">
-							<div class="price-list">
-								<ul>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-								</ul>
-							</div>
-							<div class="price-selet">
-								<h3><span>$180</span></h3>
-								<a href="homestay/admin/reservation.php" >Book Now</a>
-							</div>
-						</div>
-					</div>
-				</div>
+				
 				<div class="col-md-3 price-grid wthree lost">
 					<div class="price-block agile">
 						<div class="price-gd-top ">
@@ -319,8 +276,10 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 							</div>
 							<div class="price-selet">
 								<h3><span>$150</span></h3>
-								<a href="homestay/admin/reservation.php" >Book Now</a>
-							</div>
+
+								<?php
+								 echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><span>$150</span> <br/>Book Now</a>';
+								 ?>						</div>
 						</div>
 					</div>
 				</div>
@@ -328,21 +287,19 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 			</div>
 		</div>
 	</div>
-	 <!--// rooms & rates -->
   <!-- visitors -->
 	<div class="w3l-visitors-agile" >
 		<div class="container">
                  <h3 class="title-w3-agileits title-black-wthree">What other visitors experienced</h3> 
 		</div>
 		<div class="w3layouts_work_grids">
-			<section class="slider">
-				<div class="flexslider">
+ 	
 					<ul class="slides">
 						<li>
 							<div class="w3layouts_work_grid_left">
-								<img src="homestay/images5.jpg" alt=" " class="img-responsive" />
+								<img src="homestay/image/s5.jpg" alt=" " class="img-responsive" />
 								<div class="w3layouts_work_grid_left_pos">
-									<img src="homestay/imagesc1.jpg" alt=" " class="img-responsive" />
+									<img src="homestay/images/c1.jpg" alt=" " class="img-responsive" />
 								</div>
 							</div>
 							<div class="w3layouts_work_grid_right">
@@ -435,8 +392,7 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 							<div class="clearfix"> </div>
 						</li>
 					</ul>
-				</div>
-			</section>
+
 		</div>	
 	</div>
   <!-- visitors -->

@@ -60,17 +60,13 @@ $roo=mysqli_fetch_assoc($feedback);
 
 <body>
 	<!--Header-->
-	<?php include("header.php");?>
+	<?php include("single_header.php");?>
 	<!--//header-->
 	<!--update database on page views-->
 	<?php  require_once('database/connection.php');
 	require_once('counter.php');
 	$pn=updateCounter(''.$row['title'].''); // Updates page hits
 	echo $pn;
-
-
-
-
 
 	 updateInfo(); // Updates hit info 
 
@@ -141,7 +137,7 @@ $roo=mysqli_fetch_assoc($feedback);
 
 </div>
 <?php getcommentsscript("links"); ?>
-</div>
+
 <!--right-->
 								<aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
 									<div class="right-blog-info text-left">
@@ -190,7 +186,7 @@ $roo=mysqli_fetch_assoc($feedback);
 										</div>
 										</div>
 												</aside>
-												</div>
+												</div></div>
 </section>
 									<!--footer-->
 									<?php include("footer.php");?>
