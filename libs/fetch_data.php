@@ -612,13 +612,16 @@ function getfour($table){
 			echo 'No posts to fetch';
 		}
       	//if there are rows available display all the results
+      	echo '<ul id="demo1_thumbs" class="list-inline">';
 		foreach ($result as $thefour => $fourdata) {
       	# code...
-			echo '<li>
+			echo '
+			<li>
 			<a href="blogadmin/images/'.$fourdata['photo'].'">
-			<img src="blogadmin/images/'.$fourdata['photo'].'" alt="fantastic cms" data-desoslide-caption="<h3>Latest Post '.$fourdata['id'].'</h3>">
-			<div class="mid-text-info">
-			<h4 style="height:40px;overflow:hidden;text-overflow:ellipsis">'.$fourdata['title'].'</h4>
+				<h4 style="height:40px;overflow:hidden;text-overflow:ellipsis; color:lime;">'.$fourdata['title'].'</h4>		
+<img src="blogadmin/images/'.$fourdata['photo'].'" alt="homestay images" data-desoslide-caption="<h3>Latest Post '.$fourdata['id'].'</h3>">
+<div class="mid-text-info">
+			
 			<p>'.$fourdata['author'].'</p>
 			<div class="sub-meta">
 			<span>
@@ -626,8 +629,9 @@ function getfour($table){
 			</div>
 			</div>
 			</a>
-			</li>';
-		}
+			</li>
+			';
+		} echo '</ul>';
 	}
 
 	mysqli_close($con);
@@ -806,9 +810,9 @@ function getpopularposts($table){
 							</div>
 							<div class="col-md-7 blog-grid-right">
 
-								<h5>
-									<a href="single.php?id='.$specificblog['id'].'">'.$specificblog['title'].' </a>
-								</h5>
+							
+									<a href="single.php?id='.$specificblog['id'].'"><h4 style="color:white;">'.$specificblog['title'].'</h4> </a>
+							
 								<div class="sub-meta">
 									<span>
 										<i class="far fa-clock"></i> '.$specificblog['date'].'</span>

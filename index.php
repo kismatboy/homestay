@@ -1,6 +1,5 @@
 <?php require("libs/fetch_data.php");
-// blog =homestay_info
-// blog_cat=location
+
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -137,10 +136,10 @@
 						<div class="container">
 							<div class="row inner-sec">
 								<div class="col-md-4 news-left">
-									<ul id="demo1_thumbs" class="list-inline">
+									
 										<!--get latest four-->
 										<?php getfour("homestay_info");?>
-									</ul>
+									
 								</div>
 								<div id="demo1_main_image" class="col-md-8  news-right"></div>
 								<div class="clearfix"> </div>
