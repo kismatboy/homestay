@@ -136,7 +136,8 @@ $roo=mysqli_fetch_assoc($feedback);
 </div>
 
 
-<?php getcommentsscript("links"); ?>
+<?php //getcommentsscript("links"); 
+?>
 </div>
 
 

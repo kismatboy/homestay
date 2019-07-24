@@ -133,6 +133,30 @@ require("database/db_connect.php");
 	mysqli_close($con);
 }
 
+function getrules($id){
+require("database/db_connect.php");
+	$sql="SELECT * FROM homestay_info where id='$id'";
+	if ($result=mysqli_query($con,$sql))
+	{
+      	//count number of rows in query result
+		$rowcount=mysqli_num_rows($result);
+      	//if no rows returned show no script alert
+		if ($rowcount==0) {
+      		# code...
+			echo '<p>Rules Not Found</p>';
+		}
+		foreach ($result as $t_data) {
+      	# code...
+			if ($t_data['id']==$id){
+				echo '</p>'.$t_data["rules"].'</p>';
+			}
+		}
+		
+}
+
+	mysqli_close($con);
+}
+
 //  
 
 function getfamilyname($id,$table){

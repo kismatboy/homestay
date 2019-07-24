@@ -160,6 +160,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 					<div class="resp-tabs-container">
 
 						<!-- video url iframe-->
+						<iframe width="640" height="360" src="https://www.youtube.com/embed/ObUlz88BEfA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div></div>
@@ -172,6 +173,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 					<div class="resp-tabs-container">
 
 						<!-- video url iframe-->
+						<?php getrules($_REQUEST['id']); ?>
 					</div>
 				</div>
 			</div></div>
@@ -183,6 +185,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 					<div class="resp-tabs-container">
 
 						<!-- video url iframe-->
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14064.061429000583!2d83.9760808!3d28.206846!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6eeff1f9febe0a28!2sLa+grandee+international+college!5e0!3m2!1sen!2sua!4v1563893544965!5m2!1sen!2sua" width="715" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div></div>
@@ -289,6 +292,7 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 		</div>
 	</div>
   <!-- visitors -->
+  <div class ='row'>
 	<div class="w3l-visitors-agile" >
 		<div class="container">
                  <h3 class="title-w3-agileits title-black-wthree">What other visitors experienced</h3> 
@@ -297,13 +301,13 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
  	
 					<ul class="slides">
 						<li>
-							<div class="w3layouts_work_grid_left">
+							<div class="w3layouts_work_grid_left col-md-4">
 								<img src="homestay/images/5.jpg" alt=" " class="img-responsive" />
 								<div class="w3layouts_work_grid_left_pos">
 									<img src="homestay/images/c1.jpg" alt=" " class="img-responsive" />
 								</div>
 							</div>
-							<div class="w3layouts_work_grid_right">
+							<div class="w3layouts_work_grid_right col-md-6" style="padding-top:0;margin-top:0">
 								<h4>
 								<i class="fa fa-star" aria-hidden="true"></i>
 								<i class="fa fa-star" aria-hidden="true"></i>
@@ -396,6 +400,8 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 
 		</div>	
 	</div>
+
+</div>
   <!-- visitors -->
 
 <!-- js -->
