@@ -2,7 +2,7 @@
 session_start();  
 if(!isset($_SESSION["user"]))
 {
- header("location:index.php");
+ header("location:test/login.php");
 }
 ?> 
 <!DOCTYPE html>
@@ -60,17 +60,22 @@ if(!isset($_SESSION["user"]))
                                             </select>
                               </div>
 							  
-								<div class="form-group">
+							 <div class="form-group">
                                             <label>Bedding Type</label>
                                             <select name="bed" class="form-control" required>
-												<option value selected ></option>
+                                                <option value selected ></option>
                                                 <option value="Single">Single</option>
                                                 <option value="Double">Double</option>
-												<option value="Triple">Triple</option>
+                                                <option value="Triple">Triple</option>
                                                 <option value="Quad">Quad</option>
-												<option value="Triple">None</option>
+                                                <option value="Triple">None</option>
                                                                                              
                                             </select>
+                                            
+                               </div>   
+                               <div class="form-group">
+                                            <label>price: Rs.</label>
+                                            <input type="number" name="price">
                                             
                                </div>
 							 <input type="submit" name="add" value="Add New" class="btn btn-primary"> 
@@ -80,7 +85,8 @@ if(!isset($_SESSION["user"]))
 							 if(isset($_POST['add']))
 							 {
 										$room = $_POST['troom'];
-										$bed = $_POST['bed'];
+                                        $bed = $_POST['bed'];
+                                        $price = $_POST['price'];
 										$place = 'Free';
 										
 										$check="SELECT * FROM room WHERE type = '$room' AND bedding = '$bed'";
@@ -95,7 +101,7 @@ if(!isset($_SESSION["user"]))
 										{
 							 
 										
-										$sql ="INSERT INTO `room`( `type`, `bedding`,`place`) VALUES ('$room','$bed','$place')" ;
+										$sql ="INSERT INTO `room`( `type`, `bedding`,`place`,`price`) VALUES ('$room','$bed','$place','$price');" ;
 										if(mysqli_query($con,$sql))
 										{
 										 echo '<script>alert("New Room Added") </script>' ;

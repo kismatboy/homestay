@@ -23,40 +23,20 @@ if(!isset($_SESSION["user"]))
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
      <!-- TABLE STYLES-->
     <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+           <script src="text_editor/ckeditor.js"></script>
+    <script src="text_editor/samples/js/sample.js"></script>
+   <style>
+    td {
+  padding:10px 10px 10px 10px;
+}
+
+</style>
+  
 </head>
 <body>
     <div id="wrapper">
         
-        <nav class="navbar navbar-default top-navbar" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="home.php"><?php echo $_SESSION["user"]; ?> </a>
-            </div>
-
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="usersetting.php"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="settings.php"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-        </nav>
+      
         <!--/. NAV TOP  -->
        <?php require'nav.php'; ?>
         <!-- /. NAV SIDE  -->
@@ -65,7 +45,7 @@ if(!isset($_SESSION["user"]))
 			 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                           News letters<small> panel</small>
+                           homestay <small> information</small>
                         </h1>
                     </div>
                 </div> 
@@ -86,22 +66,32 @@ if(!isset($_SESSION["user"]))
 
 
 
-
 <!--to create table      -->
-<form >
+<forms>
+
     <legend style="color:black"><b>HOMESTAY INFORMATION</b></legend>
     <table>
     <tr>
         <td>Name </td>
-        <td style="padding:10px 10px 10px 10px"><input type="text" name="name" placeholder="name"> </td>
+        <td ><input type="text" name="name" placeholder="name"> </td>
 </tr>
+
 <tr>
     <td>Tag Line</td>
-    <td style="padding:10px 10px 10px 10px"><input type="text" name="tag" placeholder="tagline"></td>
+    <td >
+<textarea rows="2" cols="50" placeholder="*tagline"></textarea>
+
+    </td>
+</tr>
+<tr>
+    <td>About</td>
+<td >
+<textarea rows="5" cols="50 name="homestay_info" placeholder="*enter brief description about homestay"></textarea>
+</td>
 </tr>
 <tr>
         <td>Address</td>
-        <td style="padding:10px 10px 10px 10px"><select name="address_catagories" >
+        <td ><select name="address_catagories" >
             <option value="Pokhara">Pokhara</option>
             <option value="Kathmandu">Kathmandu</option>
             <option value="Mustang">Mustang</option>
@@ -109,43 +99,43 @@ if(!isset($_SESSION["user"]))
         </td>
 </tr> 
 <tr>
-    <td>Location </td>
-<td style="padding:10px 10px 10px 10px"> <input type="text" name="location" placeholder="location"></td>
+    <td>Location(Google map iframe) </td>
+<td > <input type="textarea" name="location" placeholder="location"></td>
     </tr>
     <tr>
-       <td> Meals</td>
-       <td style="padding:10px 10px 10px 10px"> <input type="text" name="meals" placeholder="meals"></td>
- 
-    </tr>
+        <td> Meal Plan</td>
+       <td > <textarea rows="5" cols="50" name="meal_info" placeholder="Input details about the available meal plans and their respective price"></textarea>
+      </td>
+   </tr>
+
     <tr>
         <td>Features </td>
-        <td style="padding:10px 10px 10px 10px">
-            <input type="checkbox" name="features[]" value="internet"><label>Internet</label>
-            <input type="checkbox" name="features[]" value="laundry"><label>Laundry</label>
-            <input type="checkbox" name="features[]" value="laundry"><label>Parking</label>
+        <td >
+            <input type="checkbox" name="features[]" value="internet"><label>   Internet  </label>
+            <input type="checkbox" name="features[]" value="laundry"><label>    Laundry  </label>
+            <input type="checkbox" name="features[]" value="parking"><label>Parking</label>
         </td>
     </tr>
-    <tr>
+    
+         <tr>
         <td>Rules</td>
-        <td style="padding:10px 10px 10px 10px"><input type="text" name="rules" placeholder="Enter the rules to be followed!!"></td>
-
-    </tr>
-    <tr>
+       <td > <textarea rows="5" cols="50" name="rules_info" placeholder="Input details about the rules and regulations"></textarea>
+      </td>
+   </tr>
+<tr>
         <td>Programs</td>
-        <td style="padding:10px 10px 10px 10px"><input type="text" name="programs" placeholder="Enter the programs happening"></td>
-    </tr>
-    <tr>
+       <td > <textarea rows="5" cols="50" name="program_info" placeholder="Input details about the programs conducted"></textarea>
+      </td>
+   </tr>
+<tr><td>upload photo</td>
     <td><input type="file" name="image" id="image"></td>
-<td><input type="submit" name="insert" id="insert" value="insert"></td> 
 </tr>
 
-
+<tr><td></td>
+<td  ><input type="submit" name="insert" id="insert" value="insert"></td>
+</tr>
 </table>
-</div>
 </form>
-
-
-
 
 
 
@@ -160,6 +150,7 @@ if(!isset($_SESSION["user"]))
        <tr>
         <td>Name </td>
         <td><input type="text" name="fname" placeholder="FIRST NAME"></td>
+    
         <td><input type="text" name="lname" placeholder="LAST NAME"></td>
     </tr> 
     <tr>
@@ -173,14 +164,32 @@ if(!isset($_SESSION["user"]))
     </tr>
 <tr>
         <td>About </td>
-        <td><input type="text" name="about" placeholder="enter your brief info."> </td>
+        <td colspan="2">
+
+<div class="adjoined-bottom">
+        <div class="grid-container">
+            <div class="grid-width-100">
+                <div id="editor">
+                    <h1>your homestay details</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    initSample();
+</script>
+         </td>
     </tr>
 
 <tr>
         <td> Youtube Link</td>
-        <td><input type="text" name="link" placeholder="upload a youtube video"</td>
+        <td><input type="text" name="link" placeholder="upload a youtube video" 
+        > </td>
     </tr>
-
+<tr><td></td>
+<td  ><input type="submit" name="insert" id="insert" value="insert"></td>
+</tr>
 
 </table>
 
@@ -240,113 +249,21 @@ if(!isset($_SESSION["user"]))
             <td><input type="number" name="phone_no" ></td>
         </tr>
 
-
+<tr><td></td>
+<td  ><input type="submit" name="insert" id="insert" value="insert"></td>
+</tr>
 
     </table>
 </form>
 
-                        </div>
-							<?php
-							if(isset($_POST['log']))
-							{	
-								$log ="INSERT INTO `newsletterlog`(`title`, `subject`, `news`) VALUES ('$_POST[title]','$_POST[subject]','$_POST[news]')";
-								if(mysqli_query($con,$log))
-								{
-									echo '<script>alert("New Room Added") </script>' ;
-											
-								}
-								
-							}
-							
-								
-							?>
-                          
-                        </p>
-						
-                    </div>
-                </div>
-            </div>
-               <?php
-				
-				$sql = "SELECT * FROM `newsletter`";
-				$re = mysqli_query($con,$sql);
-				
-			   ?>
-            <div class="row">
-                <div class="col-md-12">
-                    <!-- Advanced Tables -->
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Date</th>
-											<th>Status</th>
-											<th>Approval</th>
-											<th>Remove</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        
-									<?php
-										while($row = mysqli_fetch_array($re))
-										{
-										
-											$id = $row['id'];
-											
-											if($id % 2 ==1 )
-											{
-												echo"<tr class='gradeC'>
-													<td>".$row['full_name']."</td>
-													
-													<td>".$row['email']."</td>
-													<td>".$row['c_date']."</td>
-													<td>".$row['approval']."</td>
-													<td><a href=newsletter.php?id=".$id ." <button class='btn btn-primary'> <i class='fa fa-edit' ></i> Permission</button></td>
-													<td><a href=newsletterdel.php?eid=".$id ." <button class='btn btn-danger'> <i class='fa fa-edit' ></i> Delete</button></td>
-												</tr>";
-											}
-											else
-											{
-												echo"<tr class='gradeU'>
-													<td>".$row['full_name']."</td>
-													
-													<td>".$row['email']."</td>
-													<td>".$row['c_date']."</td>
-													<td>".$row['approval']."</td>
-													<td><a href=newsletter.php?id=".$id." <button class='btn btn-primary'> <i class='fa fa-edit' ></i> Permission</button></td>
-													<td><a href=newsletterdel.php?eid=".$id ." <button class='btn btn-danger'> <i class='fa fa-edit' ></i> Delete </button></td>		
-												</tr>";
-											
-											}
-										
-										}
-										
-									?>
-                                        
-                                    </tbody>
-                                </table>
-                            </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
                             
-                        </div>
-                    </div>
-                    <!--End Advanced Tables -->
-                </div>
-            </div>
-                <!-- /. ROW  -->
-            
-                </div>
-               
-            </div>
-        
-               
-    </div>
-             <!-- /. PAGE INNER  -->
-            </div>
+                     
          <!-- /. PAGE WRAPPER  -->
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
@@ -366,6 +283,7 @@ if(!isset($_SESSION["user"]))
     </script>
          <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script>
+   
     
    
 </body>

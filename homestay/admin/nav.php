@@ -6,7 +6,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="home.php">MAIN MENU </a>
+                <a class="navbar-brand" href="home.php"><?php echo $_SESSION["user"];?> </a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -47,9 +47,9 @@
                     <li  >
                         <a href="javascript:" class="nav-link "><i class="fa fa-home"></i>Room</a>
                         <ul >
-                            <li class=""><a href="add_room.php" class="">Add Room</a></li>
-                            <li class=""><a href="remove_room.php" class="">Remove Room</a></li>
-                            <li class=""><a href="update_room.php" class="">update Room</a>
+                            <li class=""><a href="room.php" class="">Add Room</a></li>
+                            <li class=""><a href="roomdel.php" class="">Remove Room</a></li>
+                            <li class=""><a href="#" class="">update Room</a>
                             </li>
                         </ul>
 
@@ -60,13 +60,13 @@
                     <li>
                         <a  href="profit.php"><i class="fa fa-qrcode"></i> Profit</a>
                     </li>
-                     <li><a href="usersetting.php"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                     <li><a href="s.php"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="settings.php"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
                     <li>
-                        <a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <a href="test/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
                    
 

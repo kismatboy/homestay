@@ -13,7 +13,7 @@
 							<i class="fas fa-lock"></i> <strong>Sign In</strong></a>
 					</span>
 					<span>
-						<a href="homestay/admin/test/login.php">
+						<a href="homestay/admin/test/Register.php">
 							<i class="far fa-user"></i> <strong>Register</strong></a>
 					</span>
 				</div>

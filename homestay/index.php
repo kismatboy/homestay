@@ -235,7 +235,7 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 				 <h3 class="title-w3-agileits title-black-wthree">Rooms And Rates</h3>
 						<div class="priceing-table-main">
 							<div style=" margin-right: 100px;"></div>
-				 <div class="col-md-3 price-grid">
+				 <div class="col-md-6 price-grid">
 					<div class="price-block agile">
 						<div class="price-gd-top">
 						<img src="homestay/images/r1.jpg" alt=" " class="img-responsive" />
@@ -253,16 +253,15 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 								     </ul>
 							</div>
 							<div class="price-selet">	
-								<h3><span>$320</span></h3>						
 								<?php
-								 echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><span>$150</span> <br/>Book Now</a>';
+								 echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><h3><span>$150</span> </h3> <br/>Book Now</a>';
 								 ?>
 							</div>
 						</div>
 					</div>
 				</div>
 				
-				<div class="col-md-3 price-grid wthree lost">
+				<div class="col-md-6 price-grid wthree lost">
 					<div class="price-block agile">
 						<div class="price-gd-top ">
 							<img src="homestay/images/r4.jpg" alt=" " class="img-responsive" />
@@ -279,10 +278,9 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 								</ul>
 							</div>
 							<div class="price-selet">
-								<h3><span>$150</span></h3>
 
 								<?php
-								 echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><span>$150</span> <br/>Book Now</a>';
+								 echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><h3><span>$150</span></h3> <br/>Book Now</a>';
 								 ?>						</div>
 						</div>
 					</div>
@@ -323,79 +321,7 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 								<p>Germany</p>
 							</div>
 							<div class="clearfix"> </div>
-						</li>
-						<li>
-							<div class="w3layouts_work_grid_left">
-								<img src="homestay/images/5.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_work_grid_left_pos">
-									<img src="homestay/images/c2.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-							<div class="w3layouts_work_grid_right">
-								<h4>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star-o" aria-hidden="true"></i>
-								Worth to come again
-								</h4>
-								<p>Sed tempus vestibulum lacus blandit faucibus. 
-									Nunc imperdiet, diam nec rhoncus ullamcorper, nisl nulla suscipit ligula, 
-									at imperdiet urna. </p>
-								<h5>Jahnatan Smith</h5>
-								<p>United States</p>
-							</div>
-							<div class="clearfix"> </div>
-						</li>
-						<li>
-							<div class="w3layouts_work_grid_left">
-								<img src="homestay/images/5.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_work_grid_left_pos">
-									<img src="homestay/images/c3.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-							<div class="w3layouts_work_grid_right">
-								<h4>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star-o" aria-hidden="true"></i>
-								Worth to come again
-								</h4>
-								<p>Sed tempus vestibulum lacus blandit faucibus. 
-									Nunc imperdiet, diam nec rhoncus ullamcorper, nisl nulla suscipit ligula, 
-									at imperdiet urna. </p>
-								<h5>Rosalind Cloer</h5>
-								<p>Italy</p>
-							</div>
-							<div class="clearfix"> </div>
-						</li>
-						<li>
-							<div class="w3layouts_work_grid_left">
-								<img src="homestay/images/5.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_work_grid_left_pos">
-									<img src="homestay/images/c4.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-							<div class="w3layouts_work_grid_right">
-								<h4>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star-o" aria-hidden="true"></i>
-								<i class="fa fa-star-o" aria-hidden="true"></i>
-								Worth to come again
-								</h4>
-								<p>Sed tempus vestibulum lacus blandit faucibus. 
-									Nunc imperdiet, diam nec rhoncus ullamcorper, nisl nulla suscipit ligula, 
-									at imperdiet urna. </p>
-								<h5>Amie Bublitz</h5>
-								<p>Switzerland</p>
-							</div>
-							<div class="clearfix"> </div>
-						</li>
+</li>
 					</ul>
 
 		</div>	
