@@ -9,11 +9,11 @@
 				<div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
 					<span>Welcome Back!</span>
 					<span class="mx-lg-4 mx-md-2  mx-1">
-						<a href="homestay/admin/index.php">
+						<a href="homestay/admin/test/login.php">
 							<i class="fas fa-lock"></i> <strong>Sign In</strong></a>
 					</span>
 					<span>
-						<a href="blogadmin/membership_signup.php">
+						<a href="homestay/admin/test/login.php">
 							<i class="far fa-user"></i> <strong>Register</strong></a>
 					</span>
 				</div>
