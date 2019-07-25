@@ -84,7 +84,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 		  <div  style=" height: 400px;  width: 100%; max-width: 900px; margin-left: auto;
   margin-right: auto;
  ">
-				   <div class="ab-w3l-spa">
+				   <div class="ab-w3l-spa" id='about_host'>
                             <h3 class="title-w3-agileits title-black-wthree">About host</h3> 
 						   <p class="about-para-w3ls"><?php gethostdetails($_REQUEST['id'],'owner_info');?>
 						 
@@ -103,16 +103,10 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 		   <div class="advantage-bottom">
 			 <div class="col-md-6 advantage-grid left-w3ls wow bounceInLeft" data-wow-delay="0.3s">
 			 	<div class="advantage-block ">
-					<i class="fa fa-credit-card" aria-hidden="true"></i>
-			 		<h4>We include the following things: </h4>
-					<p><i class="fa fa-check" aria-hidden="true"></i>bike for use</p>
-					<p><i class="fa fa-check" aria-hidden="true"></i>laundry</p>
-										<p><i class="fa fa-check" aria-hidden="true"></i>internet access</p>
-															<p><i class="fa fa-check" aria-hidden="true"></i>parking</p>
-					<p><i class="fa fa-check" aria-hidden="true"></i>breakfast</p>
-
-
-					<p><i class="fa fa-check" aria-hidden="true"></i>Stay First, Pay After!</p>
+					
+			 		<h4> <i class="fa fa-briefcase" aria-hidden="true" style="color:yellow;"></i><br/>We include the following things: </h4>
+			 		<?php getfeatures($_REQUEST['id'])?>
+					
 			 		
 			 	</div>
 			 </div>
@@ -120,11 +114,8 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 			 	<div class="advantage-block">
 					<i class="fa fa-clock-o" aria-hidden="true"></i>
 			 		<h4>welcome:</h4>
-					<p><i class="fa fa-check" aria-hidden="true"></i>male</p>
-					<p><i class="fa fa-check" aria-hidden="true"></i>female</p>
-					<p><i class="fa fa-check" aria-hidden="true"></i>couples</p>
-					<p><i class="fa fa-check" aria-hidden="true"></i>students</p>
-					<p><i class="fa fa-check" aria-hidden="true"></i>family</p>
+			 		<?php getallowed($_REQUEST['id'])?>
+					
 			 	</div>
 			 </div>
 			<div class="clearfix"> </div>
@@ -133,24 +124,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 	</div>
 </div>
 <!--//sevices-->
-<!-- family -->
 
-<!-- 	<div class="container">
-			<h3 class="title-w3-agileits title-black-wthree">our homestay members</h3>
-			<div id="verticalTab">
-				
-					<div class="resp-tabs-container">
-					
-						<h4>Lucas Jimenez</h4>
-							 <?php 
- 										// getfamilyname($_REQUEST['id'],'family');
- 										?>
-							
-					
-			</div>
-	</div>
-</div> -->
-<!-- //team -->
 <!-- Gallery -->
 <div class="team" id="team">
 	<div class="container">
@@ -160,13 +134,13 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 					<div class="resp-tabs-container">
 
 						<!-- video url iframe-->
-						<iframe width="640" height="360" src="https://www.youtube.com/embed/ObUlz88BEfA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						<?php getvideo($_REQUEST['id']);?>
 					</div>
 				</div>
 			</div></div>
 
 			<div class="team" id="team">
-	<div class="container">
+	<div class="container" id="Rules">
 			<h3 class="title-w3-agileits title-black-wthree">Rules:-</h3>
 			<div id="verticalTab">
 				
@@ -179,13 +153,13 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 			</div></div>
 				<div class="team" id="team">
 	<div class="container">
-			<h3 class="title-w3-agileits title-black-wthree">location</h3>
+			<h3 class="title-w3-agileits title-black-wthree" id="location">location</h3>
 			<div id="verticalTab">
 				
 					<div class="resp-tabs-container">
 
 						<!-- video url iframe-->
-						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14064.061429000583!2d83.9760808!3d28.206846!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6eeff1f9febe0a28!2sLa+grandee+international+college!5e0!3m2!1sen!2sua!4v1563893544965!5m2!1sen!2sua" width="715" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+						<?php getlocation($_REQUEST['id']);?>
 					</div>
 				</div>
 			</div></div>
@@ -230,12 +204,12 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 				<div class="clearfix"> </div>
 </section>
 	 <!-- rooms & rates -->
-      <div class="plans-section" id="rooms">
-				 <div class="container">
+      <div class="plans-section" id="rooms ">
+				 <div class="container" id='reservation'>
 				 <h3 class="title-w3-agileits title-black-wthree">Rooms And Rates</h3>
 						<div class="priceing-table-main">
 							<div style=" margin-right: 100px;"></div>
-				 <div class="col-md-6 price-grid">
+							<div class="col-md-6 price-grid">
 					<div class="price-block agile">
 						<div class="price-gd-top">
 						<img src="homestay/images/r1.jpg" alt=" " class="img-responsive" />
@@ -254,12 +228,15 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 							</div>
 							<div class="price-selet">	
 								<?php
-								 echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><h3><span>$150</span> </h3> <br/>Book Now</a>';
+								 echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><h3><span>$';
+								 getprice($_REQUEST['id'],'deluxe Room');
+								 echo '</span> </h3> <br/>Book Now</a>';
 								 ?>
 							</div>
 						</div>
 					</div>
 				</div>
+				
 				
 				<div class="col-md-6 price-grid wthree lost">
 					<div class="price-block agile">
@@ -280,8 +257,12 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 							<div class="price-selet">
 
 								<?php
-								 echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><h3><span>$150</span></h3> <br/>Book Now</a>';
-								 ?>						</div>
+								 echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><h3><span>$';
+								 getprice($_REQUEST['id'],'single Room');
+								 echo '</span> </h3> <br/>Book Now</a>';
+								 ?>
+								 	
+								 </div>
 						</div>
 					</div>
 				</div>
@@ -296,33 +277,11 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
                  <h3 class="title-w3-agileits title-black-wthree">What other visitors experienced</h3> 
 		</div>
 		<div class="w3layouts_work_grids">
+			<ul class="slides">
  	
-					<ul class="slides">
-						<li>
-							<div class="w3layouts_work_grid_left col-md-4">
-								<img src="homestay/images/5.jpg" alt=" " class="img-responsive" />
-								<div class="w3layouts_work_grid_left_pos">
-									<img src="homestay/images/c1.jpg" alt=" " class="img-responsive" />
-								</div>
-							</div>
-							<div class="w3layouts_work_grid_right col-md-6" style="padding-top:0;margin-top:0">
-								<h4>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								<i class="fa fa-star" aria-hidden="true"></i>
-								Worth to come again
-								</h4>
-								<p>Sed tempus vestibulum lacus blandit faucibus. 
-									Nunc imperdiet, diam nec rhoncus ullamcorper, nisl nulla suscipit ligula, 
-									at imperdiet urna. </p>
-								<h5>Julia Rose</h5>
-								<p>Germany</p>
-							</div>
-							<div class="clearfix"> </div>
-</li>
-					</ul>
+				<?php getstarreview($_REQUEST['id']);?>
+				</ul>
+
 
 		</div>	
 	</div>

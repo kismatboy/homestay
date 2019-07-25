@@ -70,11 +70,11 @@
 								<a class="nav-link" href="#about_host"> Host</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="#loaction">Location</a>
+								<a class="nav-link" href="#location">Location</a>
 							</li>
 							
 							<li class="nav-item">
-								<a class="nav-link" href="reservation.php">Reservation</a>
+								<a class="nav-link" href="#reservation">Reservation</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="#Rules">Rules</a>

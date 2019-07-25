@@ -20,6 +20,112 @@ function gettagline($table){
 
 	mysqli_close($con);
 }
+function getreservation($id){
+	require("database/db_connect.php");
+	$sql="SELECT * FROM room where h_id= $id;";
+	if ($result=mysqli_query($con,$sql))
+	{
+      	//count number of rows in query result
+		$rowcount=mysqli_num_rows($result);
+      	//if no rows returned show no news alert
+		if ($rowcount==0) {
+      		# code...
+			echo 'No rooms found!';
+		}
+      	//if there are rows available display all the results
+		foreach ($result as $titles => $tagline) {
+      	# code...
+			echo '';
+		}
+	}
+
+	mysqli_close($con);
+}
+ 
+function getlocation($id){
+	require("database/db_connect.php");
+	$sql="SELECT * FROM homestay_info where id ='$id';";
+	if ($result=mysqli_query($con,$sql))
+	{
+      	//count number of rows in query result
+		$rowcount=mysqli_num_rows($result);
+      	//if no rows returned show no news alert
+		if ($rowcount==0) {
+      		# code...
+			echo 'sorry!!! :( No location found.';
+		}
+      	//if there are rows available display all the results
+		foreach ($result as $location ) {
+      	# code...
+			echo ''.$location['location'].'';
+		}
+	}
+
+	mysqli_close($con);
+}
+
+function getvideo($id){
+	require("database/db_connect.php");
+	$sql="SELECT * FROM homestay_info where id ='$id';";
+	if ($result=mysqli_query($con,$sql))
+	{
+      	//count number of rows in query result
+		$rowcount=mysqli_num_rows($result);
+      	//if no rows returned show no news alert
+		if ($rowcount==0) {
+      		# code...
+			echo 'sorry!!! :( No video link found.';
+		}
+      	//if there are rows available display all the results
+		foreach ($result as $video ) {
+      	# code...
+			echo ''.$video['video_link'].'';
+		}
+	}
+
+	mysqli_close($con);
+}
+
+function getfeatures($id){
+	require("database/db_connect.php");
+	$sql="SELECT features FROM features where h_id ='$id';";
+	if ($result=mysqli_query($con,$sql))
+	{
+      	//count number of rows in query result
+		$rowcount=mysqli_num_rows($result);
+      	//if no rows returned show no news alert
+		if ($rowcount==0) {
+      		# code...
+			echo 'sorry!!! :( No features found.';
+		} 
+		// if data need from features table
+		foreach ($result as $features ) {
+			echo '<p><i class="fa fa-check" aria-hidden="true"></i>'.$features["features"].'</p>';
+		}	
+		}
+			mysqli_close($con);
+
+	}
+
+function getallowed($id){
+	require("database/db_connect.php");
+	$sql="SELECT include FROM allowed where h_id ='$id';";
+	if ($result=mysqli_query($con,$sql))
+	{
+      	//count number of rows in query result
+		$rowcount=mysqli_num_rows($result);
+      	//if no rows returned show no news alert
+		if ($rowcount==0) {
+      		# code...
+			echo 'sorry!!! :( No features found.';
+		} 
+	
+		foreach ($result as $features ) {
+			echo '<p><i class="fa fa-check" aria-hidden="true"></i>'.$features["include"].'</p>';
+	}
+	mysqli_close($con);
+}
+}
 function geticon($table){
 	require("database/db_connect.php");
 	$sql="SELECT * FROM $table ";
@@ -36,6 +142,104 @@ function geticon($table){
 		foreach ($result as $webicon => $icon) {
       	# code...
 			echo ''.$icon['icon'].'';
+		}
+	}
+
+	mysqli_close($con);
+}
+function getstars($id){
+	require("database/db_connect.php");
+	$sql="SELECT * FROM $table ";
+	if ($result=mysqli_query($con,$sql))
+	{
+      	//count number of rows in query result
+		$rowcount=mysqli_num_rows($result);
+      	//if no rows returned show no icon alert
+		if ($rowcount==0) {
+      		# code...
+			echo 'NoIcon';
+		}
+      	//if there are rows available display all the results
+		foreach ($result as $webicon => $icon) {
+      	# code...
+			echo ''.$icon['icon'].'';
+		}
+	}
+
+	mysqli_close($con);
+}
+function getprice($id,$type){
+	require("database/db_connect.php");
+	$sql="SELECT price FROM room where h_id='$id' and type='$type'";
+	if ($result=mysqli_query($con,$sql))
+	{
+      	//count number of rows in query result
+		$rowcount=mysqli_num_rows($result);
+      	//if no rows returned show no icon alert
+		if ($rowcount==0) {
+      		# code...
+			echo 'NA';
+		}
+      	//if there are rows available display all the results
+		foreach ($result as $price) {
+      	# code...
+			echo ''.$price['price'].'';
+
+		}
+	}
+	else {mysqli_error($con);}
+
+	mysqli_close($con);
+}
+
+//to edit
+function getstarreview($id){
+	require("database/db_connect.php");
+	$sql="SELECT user.pic, user.username,comment.star,comment.title,comment.text
+FROM user
+right JOIN comment ON user.id=comment.user_id where comment.homestay_id=$id;";
+	if ($result=mysqli_query($con,$sql))
+	{
+      	//count number of rows in query result
+		$rowcount=mysqli_num_rows($result);
+      	//if no rows returned show no icon alert
+		if ($rowcount==0) {
+      		# code...
+			echo 'NoIcon';
+		}
+      	//if there are rows available display all the results
+		foreach ($result as $rev) {
+      	# code...
+			echo '	
+						<li>
+							<div class="w3layouts_work_grid_left col-md-4">
+								<img src="homestay/images/5.jpg" alt=" " class="img-responsive" />
+								<div class="w3layouts_work_grid_left_pos">
+									<img src="homestay/images/'.$rev['pic'].'" alt=" " class="img-responsive" />
+								</div>
+							</div>
+							<div class="w3layouts_work_grid_right col-md-6" style="padding-top:0;margin-top:0">
+								<h4>'. $rev['title'].'<br/>';
+								
+								for ($i=1;$i>$rev['star'];$i++){
+									echo '<i class="fa fa-star checked" aria-hidden="true"></i>';
+								}
+							
+							if($rev['star']!=5){
+								$a= 5-$rev['star'];
+									for ($i=1;$i>$a;$i++){
+									echo '<i class="fa fa-star" aria-hidden="true"></i>';
+								}
+							}
+								
+								
+								echo '
+								</h4>
+								<p>'.$rev['text'].'</p>
+								<h5>'.$rev['username'].'</h5>
+							</div>
+							<div class="clearfix"> </div>
+</li>';
 		}
 	}
 
