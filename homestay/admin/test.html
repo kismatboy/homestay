@@ -1,0 +1,194 @@
+<!--javascript-->
+<script>
+function openCity(cityName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(cityName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+</script>
+<!--css-->
+<!--/* Style the tab buttons */-->
+<style>
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+/* Change background color of buttons on hover */
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Set default styles for tab content */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Style each tab content individually */ 
+#host {background-color:orange;}
+#homestay {background-color:green;}
+
+
+</style>
+<!--html -->
+<div id="host" class="tabcontent">
+  <!--to create table      -->
+<forms>
+
+    <legend style="color:black"><b>HOMESTAY INFORMATION</b></legend>
+    <table>
+    <tr>
+        <td>Name </td>
+        <td ><input type="text" name="name" placeholder="name"> </td>
+</tr>
+
+<tr>
+    <td>Tag Line</td>
+    <td >
+<textarea rows="2" cols="50" placeholder="*tagline"></textarea>
+
+    </td>
+</tr>
+<tr>
+    <td>About</td>
+<td >
+<textarea rows="5" cols="50 name="homestay_info" placeholder="*enter brief description about homestay"></textarea>
+</td>
+</tr>
+<tr>
+        <td>Address</td>
+        <td ><select name="address_catagories" >
+            <option value="Pokhara">Pokhara</option>
+            <option value="Kathmandu">Kathmandu</option>
+            <option value="Mustang">Mustang</option>
+            </select>
+        </td>
+</tr> 
+<tr>
+    <td>Location(Google map iframe) </td>
+<td > <input type="textarea" name="location" placeholder="location"></td>
+    </tr>
+    <tr>
+        <td> Meal Plan</td>
+       <td > <textarea rows="5" cols="50" name="meal_info" placeholder="Input details about the available meal plans and their respective price"></textarea>
+      </td>
+   </tr>
+
+    <tr>
+        <td>Features </td>
+        <td >
+            <input type="checkbox" name="features[]" value="internet"><label>   Internet  </label>
+            <input type="checkbox" name="features[]" value="laundry"><label>    Laundry  </label>
+            <input type="checkbox" name="features[]" value="parking"><label>Parking</label>
+        </td>
+    </tr>
+    
+         <tr>
+        <td>Rules</td>
+       <td > <textarea rows="5" cols="50" name="rules_info" placeholder="Input details about the rules and regulations"></textarea>
+      </td>
+   </tr>
+<tr>
+        <td>Programs</td>
+       <td > <textarea rows="5" cols="50" name="program_info" placeholder="Input details about the programs conducted"></textarea>
+      </td>
+   </tr>
+<tr><td>upload photo</td>
+    <td><input type="file" name="image" id="image"></td>
+</tr>
+
+<tr><td></td>
+<td  ><input type="submit" name="insert" id="insert" value="insert"></td>
+</tr>
+</table>
+</form>
+
+
+
+</div>
+
+<div id="homestay" class="tabcontent">
+  <table>
+       <tr>
+        <td>Name </td>
+        <td><input type="text" name="fname" placeholder="FIRST NAME"></td>
+    
+        <td><input type="text" name="lname" placeholder="LAST NAME"></td>
+    </tr> 
+    <tr>
+        <td>Photo </td>
+        <td><input type="file" name="img" id="img"></td>
+    </tr>
+
+    <tr>
+        <td>Email </td>
+        <td><input type="text" name="email" placeholder="eg:abc@gmail.com"> </td>
+    </tr>
+  <tr>
+        <td>About </td>
+        <td colspan="2">
+
+<div class="adjoined-bottom">
+        <div class="grid-container">
+            <div class="grid-width-100">
+                <div id="editor">
+                    <h1>your homestay details</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    initSample();
+</script>
+         </td>
+    </tr>
+
+<tr>
+        <td> Youtube Link</td>
+        <td><input type="text" name="link" placeholder="upload a youtube video" 
+        > </td>
+    </tr>
+<tr><td></td>
+<td  ><input type="submit" name="insert" id="insert" value="insert"></td>
+</tr>
+
+</table>
+
+</form>	
+</div>
+
+<button class="tablink" onclick="openCity('host', this, 'orange')" id="defaultOpen">host</button>
+<button class="tablink" onclick="openCity('homestay', this, 'green')">homestay</button>
+
+
+

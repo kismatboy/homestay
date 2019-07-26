@@ -81,7 +81,7 @@
 							</li>
 							
 							<li class="nav-item">
-								<a class="nav-link" href="reservation.php">reservation</a>
+								<a class="nav-link" href="admin/reservation.php">reservation</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="terms.php">terms and conditions</a>

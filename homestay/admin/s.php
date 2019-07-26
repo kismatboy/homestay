@@ -25,9 +25,65 @@ if(!isset($_SESSION["user"]))
     <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
            <script src="text_editor/ckeditor.js"></script>
     <script src="text_editor/samples/js/sample.js"></script>
+    <!--javascript-->
+<script>
+function openCity(cityName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(cityName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+</script>
    <style>
+    .tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+/* Change background color of buttons on hover */
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Set default styles for tab content */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+
+/* Style each tab content individually */ 
+#host {background-color:orange;}
+#homestay {background-color:green;}
     td {
   padding:10px 10px 10px 10px;
+
 }
 
 </style>
@@ -65,8 +121,8 @@ if(!isset($_SESSION["user"]))
                 
 
 
-
-<!--to create table      -->
+<div id="host" class="tabcontent">
+  <!--to create table      -->
 <forms>
 
     <legend style="color:black"><b>HOMESTAY INFORMATION</b></legend>
@@ -132,37 +188,33 @@ if(!isset($_SESSION["user"]))
 </tr>
 
 <tr><td></td>
-<td  ><input type="submit" name="insert" id="insert" value="insert"></td>
+<td  ><input  style="color:#fff; background-color: black" type="submit" name="insert" id="insert" value="insert"></td>
 </tr>
 </table>
 </form>
 
 
 
+</div>
 
-<!---HOSTTTTTT-->
-
-<br><br><br><br><br>
-<form>
-    <legend style="color:black"><b> HOST INFORMATION</b></legend>
- 
-<table>
+<div id="homestay" class="tabcontent">
+  <table>
        <tr>
         <td>Name </td>
         <td><input type="text" name="fname" placeholder="FIRST NAME"></td>
     
-        <td><input type="text" name="lname" placeholder="LAST NAME"></td>
+        <td  align="right"><input type="text" name="lname" placeholder="LAST NAME"></td>
     </tr> 
     <tr>
-        <td>Photo </td>
-        <td><input type="file" name="img" id="img"></td>
+        <td colspan="2" align="left">Photo </td>
+        <td align="right"><input type="file" name="img" id="img"></td>
     </tr>
 
     <tr>
         <td>Email </td>
         <td><input type="text" name="email" placeholder="eg:abc@gmail.com"> </td>
     </tr>
-<tr>
+  <tr>
         <td>About </td>
         <td colspan="2">
 
@@ -184,25 +236,23 @@ if(!isset($_SESSION["user"]))
 
 <tr>
         <td> Youtube Link</td>
-        <td><input type="text" name="link" placeholder="upload a youtube video" 
-        > </td>
+        <td>
+        <textarea rows="5" cols="50" name="program_info" placeholder="upload a youtube video"></textarea> </td>
     </tr>
 <tr><td></td>
-<td  ><input type="submit" name="insert" id="insert" value="insert"></td>
+<td  ><input style="color:#fff; background-color: black" type="submit" name="insert" id="insert" value="insert"></td>
 </tr>
 
 </table>
 
-</form>
+</form> 
+</div>
+
+<button class="tablink" onclick="openCity('host', this, 'orange')" id="defaultOpen">host</button>
+<button class="tablink" onclick="openCity('homestay', this, 'green')">homestay</button>
 
 
-
-
-
-
-
-<!--USER'S INFO-->
-
+<!-- 
 <br><br><br><br><br><br>
 <form>
     <legend style="color:black"><b> USER'S INFORMATION</b></legend>
@@ -255,7 +305,7 @@ if(!isset($_SESSION["user"]))
 
     </table>
 </form>
-
+ -->
                    </div>
                </div>
            </div>
