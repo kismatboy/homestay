@@ -129,9 +129,7 @@ include('db.php')
                                             <label>Type Of Room *</label>
                                             <select name="troom"  class="form-control" required>
 												<option value selected ></option>
-                                                <option value="Superior Room">SUPERIOR ROOM</option>
                                                 <option value="Deluxe Room">DELUXE ROOM</option>
-												<option value="Guest House">GUEST HOUSE</option>
 												<option value="Single Room">SINGLE ROOM</option>
                                             </select>
                               </div>
@@ -184,6 +182,11 @@ include('db.php')
 							   <div class="form-group">
                                             <label>Check-Out</label>
                                             <input name="cout" type ="date" class="form-control">
+                                            
+                               </div>
+                               <div class="form-group">
+                                            <label>Payment voucher(optional)</label>
+                                            <input name="voucher" type ="file" class="form-control">
                                             
                                </div>
                        </div>

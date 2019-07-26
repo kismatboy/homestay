@@ -281,8 +281,8 @@ if(!isset($_SESSION["user"]))
 									
                                 </div>
                                 <?php
-								
-								$fsql = "SELECT * FROM `contact`";
+								$name= $_SESSION['user'];
+								$fsql = "SELECT * FROM `newsletter` ";
 								$fre = mysqli_query($con,$fsql);
 								$f =0;
 								while($row=mysqli_fetch_array($fre) )

@@ -62,8 +62,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["loggedin"] = true;
 
                             $_SESSION["id"] = $id;
-                            $_SESSION["user"] = $username;                            
-                            
+                            $_SESSION["user"] = $username;
+
                             // Redirect user to welcome page
                             header("location: ../home.php");
                         } else{

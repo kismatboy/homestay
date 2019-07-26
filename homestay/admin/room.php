@@ -74,6 +74,22 @@ if(!isset($_SESSION["user"]))
                                             
                                </div>   
                                <div class="form-group">
+                                            <label>number of room</label>
+                                            <select name="room_no" class="form-control" required>
+                                                <option value selected ></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="0">None</option>
+                                                                                             
+                                            </select>
+                                            
+                               </div>   
+                               <div class="form-group">
                                             <label>price: Rs.</label>
                                             <input type="number" name="price">
                                             
@@ -82,26 +98,38 @@ if(!isset($_SESSION["user"]))
 							</form>
 							<?php
 							 include('db.php');
-							 if(isset($_POST['add']))
+                            if(empty(trim($_POST['price']))){
+                                 echo "<script type='text/javascript'> alert('please enter price')</script>";
+                             }
+                                            
+							 else {
+                             if(isset($_POST['add']))
 							 {
 										$room = $_POST['troom'];
+                                        $no_of_room = $_POST['room_no'];
                                         $bed = $_POST['bed'];
                                         $price = $_POST['price'];
 										$place = 'Free';
+                                        $user_id=$_SESSION['user'];
 										
-										$check="SELECT * FROM room WHERE type = '$room' AND bedding = '$bed'";
+										$check="SELECT * FROM room WHERE type = '$room' AND bedding = '$bed' and owner='$user_id'
+                                        ;";
 										$rs = mysqli_query($con,$check);
-										$data = mysqli_fetch_array($rs, MYSQLI_NUM);
-										if($data[0] > 1) {
-											echo "<script type='text/javascript'> alert('Room Already in Exists')</script>";
-											
-										}
+                                        $rowcount=mysqli_num_rows($rs);
+                                         if ($rowcount!=0) {
+                                         echo "<script type='text/javascript'> alert('Room Already in Exists')</script>";
+                                            }
+										
 
 										else
 										{
-							 
+                                          $sql="SELECT id FROM homestay_info where owner_name='$user_id' ";
+                                       $result=mysqli_query($con,$sql);
+                                          foreach ($result as $row ) {
+                                              $h_id=$row['id'];	
+                                             }						 
 										
-										$sql ="INSERT INTO `room`( `type`, `bedding`,`place`,`price`) VALUES ('$room','$bed','$place','$price');" ;
+										$sql ="INSERT INTO `room`( `type`, `bedding`,`place`,`price`,`no_of_room`,`h_id`,`owner`) VALUES ('$room','$bed','$place','$price','$no_of_room','$h_id','$user_id');" ;
 										if(mysqli_query($con,$sql))
 										{
 										 echo '<script>alert("New Room Added") </script>' ;
@@ -110,6 +138,7 @@ if(!isset($_SESSION["user"]))
 										}
 							 }
 							}
+                        }
 							
 							?>
                         </div>
@@ -127,10 +156,7 @@ if(!isset($_SESSION["user"]))
                         <div class="panel-body">
 								<!-- Advanced Tables -->
                     <div class="panel panel-default">
-                        <?php
-						$sql = "select * from room limit 0,10";
-						$re = mysqli_query($con,$sql)
-						?>
+                      
                         <div class="panel-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -139,12 +165,16 @@ if(!isset($_SESSION["user"]))
                                             <th>Room ID</th>
                                             <th>Room Type</th>
 											<th>Bedding</th>
+                                            <th>num of room</th>
                                             
                                         </tr>
                                     </thead>
                                     <tbody>
 									
 									<?php
+                        $sql = "select * from room where owner='$user_id' limit 0,10 ;";
+                        $re = mysqli_query($con,$sql);
+                        
 										while($row= mysqli_fetch_array($re))
 										{
 												$id = $row['id'];
@@ -154,6 +184,8 @@ if(!isset($_SESSION["user"]))
 													<td>".$row['id']."</td>
 													<td>".$row['type']."</td>
 												   <th>".$row['bedding']."</th>
+                                                   
+                          <td>".$row['no_of_room']."</td>
 												</tr>";
 											}
 											else
@@ -162,6 +194,8 @@ if(!isset($_SESSION["user"]))
 													<td>".$row['id']."</td>
 													<td>".$row['type']."</td>
 												   <th>".$row['bedding']."</th>
+                          <td>".$row['no_of_room']."</td>
+
 												</tr>";
 											
 											}

@@ -72,7 +72,8 @@ if(!isset($_SESSION["user"]))
                                         
 									<?php
 										include ('db.php');
-										$sql="select * from payment";
+                                        $user=$_SESSION['user'];
+										$sql="select * from payment where owner='$user'";
 										$re = mysqli_query($con,$sql);
 										while($row = mysqli_fetch_array($re))
 										{

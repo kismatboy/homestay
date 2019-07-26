@@ -204,8 +204,9 @@ if(!isset($_SESSION["user"]))
 					</div>
 					
 					<?php
-						$rsql ="select * from room";
-						$rre= mysqli_query($con,$rsql);
+					$owner =$_SESSION['user'];
+						$rsql ="select * from room where owner='$owner'";
+						if($rre= mysqli_query($con,$rsql)){
 						$r =0 ;
 						$sr = 0;
 						$dr = 0;
@@ -228,10 +229,12 @@ if(!isset($_SESSION["user"]))
 							
 						
 						}
+					}else{ echo mysqli_error($con);}
 						?>
 						
 						<?php
-						$csql ="select * from payment";
+							$owner =$_SESSION['user'];
+						$csql ="select * from payment where owner='$owner'";
 						$cre= mysqli_query($con,$csql);
 						$cr =0 ;
 					
@@ -241,9 +244,7 @@ if(!isset($_SESSION["user"]))
 						{
 							$cr = $cr + 1;
 							$cs = $crow['troom'];
-					
-							
-						
+											
 							if($cs=="Single Room" )
 							{
 								$csr = $csr + 1;
@@ -273,7 +274,7 @@ if(!isset($_SESSION["user"]))
 										echo $f3;
 									}
 									else{
-											echo $f3;
+											echo $f3 ;
 									}
 
 								?> </button></td> 
@@ -284,7 +285,8 @@ if(!isset($_SESSION["user"]))
 								
 								$f4 =$dr - $cdr; 
 								if($f4 <=0 )
-									{	$f4 = "NO";
+									{	
+									// $f4 = "NO";
 										echo $f4;
 									}
 									else{

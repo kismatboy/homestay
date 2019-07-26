@@ -16,7 +16,7 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        <li><a href="s.php"><i class="fa fa-user fa-fw"></i> User Profile</a>
                         </li>
                         <li><a href="settings.php"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
@@ -49,20 +49,19 @@
                         <ul >
                             <li class=""><a href="room.php" class="">Add Room</a></li>
                             <li class=""><a href="roomdel.php" class="">Remove Room</a></li>
-                            <li class=""><a href="#" class="">update Room</a>
-                            </li>
+                         
                         </ul>
 
 
                     <li>
+                        <a href="#"><i class="fa fa-qrcode"></i> gallery</a>
+                    </li><li>
                         <a href="payment.php"><i class="fa fa-qrcode"></i> Payment</a>
                     </li>
                     <li>
                         <a  href="profit.php"><i class="fa fa-qrcode"></i> Profit</a>
-                    </li>
-                     <li><a href="s.php"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="settings.php"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    </li> <li class="divider"></li>
+                     <li><a href="#"><i class="fa fa-user fa-fw"></i>Feedback</a>
                         </li>
                         <li class="divider"></li>
                     <li>

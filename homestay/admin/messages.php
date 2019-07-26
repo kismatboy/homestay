@@ -57,6 +57,7 @@ if(!isset($_SESSION["user"]))
 								$app=$rows['approval'];
 								if($app=="Allowed")
 								{
+                                    //mail sending code here.
 									
 								}
 						}

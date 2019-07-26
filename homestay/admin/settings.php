@@ -119,7 +119,59 @@ if(!isset($_SESSION["user"]))
                 </div>
                 <!-- /. ROW  -->
                 
-                                
+                                       <!-- update button-->
+                <div class='panel-body' >
+                    <div  style="text-align:right; ">
+                            <button class='btn btn-primary btn' data-toggle='modal' data-target='#myModal'>
+                              Update 
+                            </button>
+                            </div>
+                            <div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+                                <div class='modal-dialog'>
+                                    <div class='modal-content'>
+                                        <div class='modal-header'>
+                                            <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+                                            <h4 class='modal-title' id='myModalLabel'>Change the User name and Password</h4>
+                                        </div>
+                                        <form method='post'>
+                                        <div class='modal-body'>
+                                            <div class='form-group'>
+                                            <label>Change User name</label>
+                                            <input name='usname'  class='form-control' placeholder='Enter User name'>
+                                            </div>
+                                        </div>
+                                        <div class='modal-body'>
+                                            <div class='form-group'>
+                                            <label>old Password</label>
+                                            <input name='pasd' class='form-control' placeholder='Enter Password'>
+                                            </div>
+                                        </div>
+                                        <div class='modal-body'>
+                                            <div class='form-group'>
+                                            <label>new Password</label>
+                                            <input name='pasd' class='form-control' placeholder='Enter Password'>
+                                            </div>
+                                        </div>
+                                        <div class='modal-body'>
+                                            <div class='form-group'>
+                                            <label>confirm Password</label>
+                                            <input name='pasd' class='form-control' placeholder='Enter Password'>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class='modal-footer'>
+                                            <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+                                            
+                                           <input type='submit' name='up' value='Update' class='btn btn-primary'>
+                                          </form>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                <!--DEMO END-->
                   
             
 			 <!-- /. PAGE INNER  -->

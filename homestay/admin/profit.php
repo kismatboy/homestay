@@ -54,11 +54,10 @@ if(!isset($_SESSION["user"]))
 			
 				<?php 
 				//index.php
-				//$connect = mysqli_connect("localhost", "root", "", "hotel");
 				include('db.php');
 				
-					
-					$query = "SELECT * FROM payment";
+					$user=$_SESSION['user'];
+					$query = "SELECT * FROM payment where owner='$user'";
 					$result = mysqli_query($con, $query);
 					$chart_data = '';
 					$tot = '';
@@ -99,8 +98,8 @@ if(!isset($_SESSION["user"]))
                                     <tbody>
                                         
 									<?php
-										
-										$sql="select * from payment";
+										$user=$_SESSION['user'];
+					$sql = "SELECT * FROM payment where owner='$user'";
 										$re = mysqli_query($con,$sql);
 										while($row = mysqli_fetch_array($re))
 										{
