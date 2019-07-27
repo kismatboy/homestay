@@ -721,7 +721,7 @@ function getbottomsliderposts($table){
 				#code...display the results
 			echo '<li>
 			<div class="blog-item">
-			<img src="blogadmin/images/'.$slideritem['photo'].'" alt="test pic" class="img-fluid" style="width:450px;height:350px"/>
+			<img src="homestay/admin/profile_pic/'.$slideritem['photo'].'" alt="test pic" class="img-fluid" style="width:450px;height:350px"/>
 			<button type="button" class="btn btn-primary play">
 			<a href="single.php?id='.$slideritem['id'].'" style="text-decoration:none;color:white"><i class="fas fa-eye"></i></a>
 			</button>
@@ -760,7 +760,7 @@ function getblogridposts($table){
 			<div class="b-grid-top">
 			<div class="blog_info_left_grid">
 			<a href="single.php?id='.$griditem['id'].'">
-			<img src="blogadmin/images/'.$griditem['photo'].'" class="img-fluid" alt="fantastic cms" style="width:350px;height:250px">
+			<img src="homestay/admin/profile_pic/'.$griditem['photo'].'" class="img-fluid" alt="homestay Nepal pic" style="width:350px;height:250px">
 			</a>
 			</div>
 			<h3>
@@ -807,7 +807,7 @@ function getolderposts($table){
 			echo '<div class="blog-grids row mb-3">
 			<div class="col-md-5 blog-grid-left">
 			<a href="single.php?id='.$op['id'].'">
-			<img src="blogadmin/images/'.$op['photo'].'" class="img-fluid" alt="fantastic cms">
+			<img src="homestay/admin/profile_pic/'.$op['photo'].'" class="img-fluid" alt="homestay Nepal pic">
 			</a>
 			</div>
 			<div class="col-md-7 blog-grid-right">
@@ -845,9 +845,9 @@ function getfour($table){
       	# code...
 			echo '
 			<li>
-			<a href="blogadmin/images/'.$fourdata['photo'].'">
+			<a href="homestay/admin/profile_pic/'.$fourdata['photo'].'">
 				<h4 style="height:40px;overflow:hidden;text-overflow:ellipsis; color:lime;">'.$fourdata['title'].'</h4>		
-<img src="blogadmin/images/'.$fourdata['photo'].'" alt="homestay images" data-desoslide-caption="<h3>Latest Post '.$fourdata['id'].'</h3>">
+<img src="homestay/admin/profile_pic/'.$fourdata['photo'].'" alt="homestay images" data-desoslide-caption="<h3>Latest Post '.$fourdata['id'].'</h3>">
 <div class="mid-text-info">
 			
 			<p>'.$fourdata['author'].'</p>
@@ -883,7 +883,7 @@ function getonelatest($table){
 			<div class="b-grid-top">
 			<div class="blog_info_left_grid">
 			<a href="single.php?id='.$onedata['id'].'">
-			<img src="blogadmin/images/'.$onedata['photo'].'" class="img-fluid" alt="fantastic cms" style="width:900px;height:500px">
+			<img src="homestay/admin/profile_pic/'.$onedata['photo'].'" class="img-fluid" alt="homestay Nepal pic" style="width:900px;height:500px">
 			</a>
 			</div>
 			<div class="blog-info-middle">
@@ -930,7 +930,7 @@ function geteditorschoice($table){
       	//if there are rows available display all the results
 		foreach ($result as $edschoice => $choice) {
 			#get actual blog post data
-			$postid=$choice['blog'];
+			$postid=$choice['homestay'];
 			$sql="SELECT * FROM homestay_info WHERE id='$postid'";
 			if ($result=mysqli_query($con,$sql)) {
 				# code...
@@ -939,7 +939,7 @@ function geteditorschoice($table){
 					echo '<div class="blog-grids row mb-3">
 								<div class="col-md-5 blog-grid-left">
 									<a href="single.php?id='.$postdata['id'].'">
-										<img src="blogadmin/images/'.$postdata['photo'].'" class="img-fluid" alt="fantastic cms">
+										<img src="homestay/admin/profile_pic/'.$postdata['photo'].'" class="img-fluid" alt="homestay Nepal pic">
 									</a>
 								</div>
 								<div class="col-md-7 blog-grid-right">
@@ -979,7 +979,7 @@ function getcategoryblogs($table,$id){
       	# code...
 			echo '<div class="col-md-6 card">
 							<a href="single.php?id='.$cdata['id'].'">
-								<img src="blogadmin/images/'.$cdata['photo'].'" class="card-img-top img-fluid" alt="fantastic cms" style="width:480px;height:300px">
+								<img src="homestay/admin/profile_pic/'.$cdata['photo'].'" class="card-img-top img-fluid" alt="homestay Nepal pic" style="width:480px;height:300px">
 							</a>
 							<div class="card-body">
 								<ul class="blog-icons my-4">
@@ -1033,7 +1033,7 @@ function getpopularposts($table){
 					echo '<div class="blog-grids row mb-3">
 							<div class="col-md-5 blog-grid-left">
 								<a href="single.php?id='.$specificblog['id'].'">
-									<img src="blogadmin/images/'.$specificblog['photo'].'" class="img-fluid" alt="fantastic cms">
+									<img src="homestay/admin/profile_pic/'.$specificblog['photo'].'" class="img-fluid" alt="homestay Nepal pic">
 								</a>
 							</div>
 							<div class="col-md-7 blog-grid-right">

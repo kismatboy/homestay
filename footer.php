@@ -24,13 +24,15 @@
 					<div class="subscribe-main text-left">
 							<div class="subscribe-form" style="color: black; ">
 
-									<form  method="post" class="subscribe_form">
+									<form  method="post" class="subscribe_form" action=''>
 										<input class="form-control"  type="text" placeholder="first name" required="" name ='name'>
 										<input class="form-control" type="email" placeholder="Enter your email..." required="" name ='email'>
 										<button type="submit" class="btn btn-primary submit" name='save'>Submit</button>
 									</form>
 									<div class="clearfix"> </div>
 						   </div>
+						   
+
 						<p>We respect your privacy.No spam ever!</p>
 					</div>
 					<?php
@@ -44,7 +46,7 @@
 					
 					
 					if(mysqli_query($con,$sql)){
-						echo '<script> alert( "Thank you for your support ! :) ");</script>';
+						echo 'Thank you for your support ! :)';
 					}
 				
 

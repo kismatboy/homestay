@@ -54,7 +54,7 @@
 
 
                     <li>
-                        <a href="#"><i class="fa fa-qrcode"></i> gallery</a>
+                        <a href="gallery.php"><i class="fa fa-list"></i> gallery</a>
                     </li><li>
                         <a href="payment.php"><i class="fa fa-qrcode"></i> Payment</a>
                     </li>

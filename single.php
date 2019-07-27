@@ -20,7 +20,7 @@ $roo=mysqli_fetch_assoc($feedback);
 	<title><?php echo $row['title']; ?>|<?php getwebname("titles");?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<link id="browser_favicon" rel="shortcut icon" href="favicon/<?php geticon("titles"); ?>">
+	<link id="browser_favicon" rel="shortcut icon" href="homestay/icon/<?php geticon("homestay_info"); ?>">
 	<meta charset="utf-8" name="description" content="<?php getshortdescription("titles");?>">
 	<meta name="keywords" content="<?php getkeywords("titles");?>" />
 	<script>
@@ -69,10 +69,7 @@ $roo=mysqli_fetch_assoc($feedback);
 	echo $pn;
 
 	 updateInfo(); // Updates hit info 
-
-
-
-	?>
+?>
 	<div class="banner-inner">
 	</div>
 	<ol class="breadcrumb">
@@ -93,7 +90,7 @@ $roo=mysqli_fetch_assoc($feedback);
 						<div class="b-grid-top">
 							<div class="blog_info_left_grid">
 								<a href="#">
-									<img src="blogadmin/images/<?php echo $row['photo']; ?>" class="img-fluid" alt="image not available" style="width:900px;height:300px">
+									<img src="homestay/admin/profile_pic/<?php echo $row['photo']; ?>" class="img-fluid" alt="image not available" style="width:900px;height:300px">
 								</a>
 							</div>
 							<div class="blog-info-middle">

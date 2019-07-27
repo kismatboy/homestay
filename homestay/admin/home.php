@@ -169,7 +169,9 @@ if(!isset($_SESSION["user"]))
                                     <tbody>
                                         
 									<?php
-									$tsql = "select * from roombook";
+                                    include 'lib/fetch_data.php';
+                                    $h_id=gethomestayid();
+									$tsql = "select * from roombook where homestay_id='$h_id';";
 									$tre = mysqli_query($con,$tsql);
 									while($trow=mysqli_fetch_array($tre) )
 									{	

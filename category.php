@@ -10,7 +10,7 @@ $row = mysqli_fetch_assoc($result);?>
 	<title>Location-<?php echo $row['name']; ?>|<?php getwebname("titles");?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<link id="browser_favicon" rel="shortcut icon" href="blogadmin/images/<?php geticon("titles"); ?>">
+	<link id="browser_favicon" rel="shortcut icon" href="favicon/homestay_nepal.ico">
 	<meta charset="utf-8" name="description" content="<?php getshortdescription("titles");?>">
 	<meta name="keywords" content="<?php getkeywords("titles");?>" />
 	<script>
@@ -95,7 +95,7 @@ $row = mysqli_fetch_assoc($result);?>
 										</div>
 										<div class="tech-btm">
 											<h4>recent Homestay</h4>
-											<?php getolderposts("blogs");?>
+											<?php getolderposts("homestay_info");?>
 											<!--olderpostsendhere-->
 										</div>
 									</div>

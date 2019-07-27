@@ -171,7 +171,7 @@ if(!isset($_SESSION["user"]))
                             </div>
                         </div>
                 
-                <!--DEMO END-->
+                <!--DEMO END-->	
                   
             
 			 <!-- /. PAGE INNER  -->

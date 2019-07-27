@@ -98,11 +98,7 @@ if(!isset($_SESSION["user"]))
 							</form>
 							<?php
 							 include('db.php');
-                            if(empty(trim($_POST['price']))){
-                                 echo "<script type='text/javascript'> alert('please enter price')</script>";
-                             }
-                                            
-							 else {
+                 $user_id=$_SESSION['user'];
                              if(isset($_POST['add']))
 							 {
 										$room = $_POST['troom'];
@@ -110,7 +106,7 @@ if(!isset($_SESSION["user"]))
                                         $bed = $_POST['bed'];
                                         $price = $_POST['price'];
 										$place = 'Free';
-                                        $user_id=$_SESSION['user'];
+                                       
 										
 										$check="SELECT * FROM room WHERE type = '$room' AND bedding = '$bed' and owner='$user_id'
                                         ;";
@@ -123,6 +119,11 @@ if(!isset($_SESSION["user"]))
 
 										else
 										{
+                       if(empty(trim($_POST['price']))){
+                                 echo "<script type='text/javascript'> alert('please enter price')</script>";
+                             }
+                                            
+               else {
                                           $sql="SELECT id FROM homestay_info where owner_name='$user_id' ";
                                        $result=mysqli_query($con,$sql);
                                           foreach ($result as $row ) {
@@ -136,9 +137,10 @@ if(!isset($_SESSION["user"]))
 										}else {
 											echo '<script>alert("Sorry ! Check The System") </script>' ;
 										}
+                  }
 							 }
 							}
-                        }
+                        
 							
 							?>
                         </div>

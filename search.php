@@ -9,7 +9,7 @@ require_once('database/db.php');//db config file
 	<title>Search|<?php getwebname("titles"); echo"|"; gettagline("titles");?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<link id="browser_favicon" rel="shortcut icon" href="blogadmin/images/<?php geticon("titles"); ?>">
+	<link id="browser_favicon" rel="shortcut icon" href="favicon/homestay_nepal.ico">
 	<meta charset="utf-8" name="description" content="<?php getshortdescription("titles");?>">
 	<meta name="keywords" content="<?php getkeywords("titles");?>" />
 <script>
@@ -149,7 +149,7 @@ require_once('database/db.php');//db config file
                                 ?>
 						<div class="col-lg-4 card">
 							<a href="single.php?id=<?php echo $row['id']; ?>">
-								<img src="blogadmin/images/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="fantastic cms" style="width: 480px;height: 300px">
+								<img src="homstay/admin/profile_pic/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="homestay Nepal pic" style="width: 480px;height: 300px">
 							</a>
 							<div class="card-body">
 								<ul class="blog-icons my-4">

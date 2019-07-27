@@ -51,7 +51,7 @@ include('db.php')
                             PERSONAL INFORMATION
                         </div>
                         <div class="panel-body">
-						<form name="form" method="post">
+						<form name="form" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                             <label>Title*</label>
                                             <select name="title" class="form-control" required >
@@ -187,8 +187,10 @@ include('db.php')
                                <div class="form-group">
                                             <label>Payment voucher(optional)</label>
                                             <input name="voucher" type ="file" class="form-control">
-                                            
+                                            <label>bank info:
+                                            </label>
                                </div>
+
                        </div>
                         
                     </div>
@@ -215,8 +217,8 @@ include('db.php')
 							else
 							{
 							
-									//$con=mysqli_connect("localhost","root","","hotel");
-									$check="SELECT * FROM roombook WHERE email = '$_POST[email]'";
+									$h_id=$_REQUEST['id'];
+									$check="SELECT * FROM roombook WHERE email = '$_POST[email]' and homestay_id='$h_id'";
 									$rs = mysqli_query($con,$check);
 									$data = mysqli_fetch_array($rs, MYSQLI_NUM);
 									if($data[0] > 1) {
@@ -226,13 +228,50 @@ include('db.php')
 									}
 
 									else
-									{
-										$new ="Not Conform";
+									{ 
+                                        $sql='';
+                                        $new ="Not Conform";
                                         $id =$_REQUEST['id'];
-										$newUser="INSERT INTO `roombook`(`Title`, `FName`, `LName`, `Email`, `National`, `Country`, `Phone`, `TRoom`, `Bed`, `NRoom`, `Meal`, `cin`, `cout`,`stat`,`nodays`,`homestay_id`) VALUES ('$_POST[title]','$_POST[fname]','$_POST[lname]','$_POST[email]','$_POST[nation]','$_POST[country]','$_POST[phone]','$_POST[troom]','$_POST[bed]','$_POST[nroom]','$_POST[meal]','$_POST[cin]','$_POST[cout]','$new',datediff('$_POST[cout]','$_POST[cin]'),$id)";
-										if (mysqli_query($con,$newUser))
-										{
-											echo "<script type='text/javascript'> alert('Your Booking application has been sent')</script>";
+if($_FILES["voucher"]["name"]!==''){
+    $voucherName = time() . '-' . $_FILES["voucher"]["name"];
+    $target_file = "voucherimages/" . basename($voucherName);
+    if($_FILES['voucher']['size'] > 2000000) {
+     echo "<script type='text/javascript'> alert('Image size should not be greated than 2mb')</script>";
+     
+
+    }
+    // check if file exists
+    elseif(file_exists($target_file)) {
+      echo "<script type='text/javascript'> alert('File already exists')</script>";
+
+    } else{ 
+      if(move_uploaded_file($_FILES["voucher"]["tmp_name"], $target_file)) {
+        $sql = "INSERT INTO `roombook`(`Title`, `FName`, `LName`, `Email`, `National`, `Country`, `Phone`, `TRoom`, `Bed`, `NRoom`, `Meal`, `cin`, `cout`,`stat`,`nodays`,`homestay_id`,`voucher_pic`) VALUES ('$_POST[title]','$_POST[fname]','$_POST[lname]','$_POST[email]','$_POST[nation]','$_POST[country]','$_POST[phone]','$_POST[troom]','$_POST[bed]','$_POST[nroom]','$_POST[meal]','$_POST[cin]','$_POST[cout]','$new',datediff('$_POST[cout]','$_POST[cin]'),'$id','$voucherName');";
+        if(mysqli_query($con, $sql)){
+       echo "<script type='text/javascript'> alert('Image uploaded and saved in the Database')</script>";
+       echo mysqli_error($con);
+         $msg = "Image uploaded and saved in the Database";
+        } else {
+       echo "<script type='text/javascript'> alert('error in uploading file to file server)</script>";
+       echo mysqli_error($con);
+
+          
+        }
+      } else {
+       echo "<script type='text/javascript'> alert('There was an error uploading the file')</script>";
+      }
+    }
+    
+}
+else{
+
+										
+										$newUser="INSERT INTO `roombook`(`Title`, `FName`, `LName`, `Email`, `National`, `Country`, `Phone`, `TRoom`, `Bed`, `NRoom`, `Meal`, `cin`, `cout`,`stat`,`nodays`,`homestay_id`) VALUES ('$_POST[title]','$_POST[fname]','$_POST[lname]','$_POST[email]','$_POST[nation]','$_POST[country]','$_POST[phone]','$_POST[troom]','$_POST[bed]','$_POST[nroom]','$_POST[meal]','$_POST[cin]','$_POST[cout]','$new',datediff('$_POST[cout]','$_POST[cin]'),'$id')";
+
+						if (mysqli_query($con,$newUser))
+						{
+
+											echo "<script type='text/javascript'> alert('Your Booking application has been sent ')</script>";
 											
 										}
 										else
@@ -242,8 +281,9 @@ include('db.php')
 										}
 									}
 
-							$msg="Your code is correct";
+							
 							}
+                        }
 							}
 							?>
 						</form>
