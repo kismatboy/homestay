@@ -27,6 +27,56 @@ if(!isset($_SESSION["user"]))
         <!--/. NAV TOP  -->
         
         <!-- /. NAV SIDE  -->
+                <!--  nav side bar--> 
+        <nav class="navbar-default navbar-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+
+                    <li>
+                        <a class="" href="home.php"><i class="fa fa-dashboard"></i> Status</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/project_hstay_selected/homestay/admin/messages.php"><i class="fa fa-desktop"></i> News Letters</a>
+                    </li>
+                    <li>
+                        <a href="roombook.php"><i class="fa fa-bar-chart-o"></i> Room Booking</a>
+                    </li>
+
+                    <li  >
+                        <a style ="background-color:#225081!important;color:lime;" class="nav-link active-menu"><i class="fa fa-home"></i>Room</a>
+                        <ul >
+                            <li ><a  style ="background-color:#225081!important;color:lime;" href="room.php" class=""><p style ="color:lime;">Add Room</p></a></li>
+                            <li class=""><a href="roomdel.php" class="">Remove Room</a></li>
+                         
+                        </ul>
+
+
+                    <li>
+                        <a href="gallery.php"><i class="fa fa-list"></i> gallery</a>
+                    </li><li>
+                        <a href="payment.php"><i class="fa fa-qrcode"></i> Payment</a>
+                    </li>
+                    <li>
+                        <a  href="profit.php"><i class="fa fa-qrcode"></i> Profit</a>
+                    </li> <li class="divider"></li>
+                     <li><a href="#"><i class="fa fa-user fa-fw"></i>Feedback</a>
+                        </li>
+                        <li class="divider"></li>
+                    <li>
+                        <a href="test/logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                   
+
+
+                    
+                    </ul>
+
+            </div>
+
+        </nav>
+
+                <!--  nav side bar--> 
+
        
         
        

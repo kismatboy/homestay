@@ -1,11 +1,3 @@
-<?php
-if($_POST['submit']){
-
-    header('search.php');
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +18,6 @@ if($_POST['submit']){
     <div class="wrapper wrapper--w900">
         <div class="card card-4">
             <div class="card-body">
-
                 <div class="tab-content">
                     <div class="tab-pane active" id="tab1">
                         <form  action="" method="post"  name="form">

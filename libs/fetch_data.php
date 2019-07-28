@@ -184,6 +184,7 @@ function getprice($id,$type){
 		foreach ($result as $price) {
       	# code...
 			echo ''.$price['price'].'';
+			break;
 
 		}
 	}
@@ -708,28 +709,20 @@ function getbottomsliderposts($table){
 			echo 'No posts to fetch';
 		}
       	//if there are rows available display all the results
-		foreach ($result as $sliderposts => $slideritem) {
+		else {
+			foreach ($result as $sliderposts => $slideritem) {
       	# code...fetch actual category from categories table
-			$category_id=$slideritem['category'];
-			$sql="SELECT * FROM location WHERE id='$category_id'";
-			if ($result=mysqli_query($con,$sql))
-			{
-				foreach ($result as $results => $actualcategory) {
-					$ctgry=$actualcategory['name'];
-				}
-			}
-				#code...display the results
+			
 			echo '<li>
 			<div class="blog-item">
-			<img src="homestay/admin/profile_pic/'.$slideritem['photo'].'" alt="test pic" class="img-fluid" style="width:450px;height:350px"/>
+			<img src="homestay/admin/profile_pic/'.$slideritem['photo'].'" alt="homestay pic" class="img-fluid" style="width:450px;height:350px"/>
 			<button type="button" class="btn btn-primary play">
 			<a href="single.php?id='.$slideritem['id'].'" style="text-decoration:none;color:white"><i class="fas fa-eye"></i></a>
 			</button>
 			<div class="floods-text">
 			<h3>'.$slideritem['title'].'
-			<span>'.$ctgry.'
-			<label>|</label>
-			<i>'.$slideritem['author'].'</i>
+			</label>
+			<i>'.$slideritem['owner_name'].'</i>
 			</span>
 			</h3>
 
@@ -737,6 +730,7 @@ function getbottomsliderposts($table){
 			</div>
 			</li>';
 		}
+	}
 	}
 
 	mysqli_close($con);

@@ -22,10 +22,17 @@
 				<div class="col-lg-4 subscribe-main footer-grid-agileits-w3ls text-left">
 					<h2>Signup to our newsletter</h2>
 					<div class="subscribe-main text-left">
-							<div class="subscribe-form" style="color: black; ">
+						<style type="text/css">
+							
+							.subscribe-form input::placeholder{
+								color: white;
+							}
+						</style>
+							<div class="subscribe-form">
 
 									<form  method="post" class="subscribe_form" action=''>
-										<input class="form-control"  type="text" placeholder="first name" required="" name ='name'>
+										<input style="background-color:rgba(241, 245, 249, 0.08);font-size: 16px;border: none;" class="form-control"  type="text" placeholder="Your name" required="" name ='name'>
+										<br/>
 										<input class="form-control" type="email" placeholder="Enter your email..." required="" name ='email'>
 										<button type="submit" class="btn btn-primary submit" name='save'>Submit</button>
 									</form>

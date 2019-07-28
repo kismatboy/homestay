@@ -102,7 +102,7 @@ p {
   width: 230px;
 }
 
-#login form input[type="submit"] {
+#login  input[type="submit"] {
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;

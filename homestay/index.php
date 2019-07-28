@@ -188,7 +188,7 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
       	# code...
 			echo '
 				<div class="col-md-3 gallery-grid gallery1"><a href="homestay/admin/Gallery/'.$info["pic_name"].' " class="swipebox">
-				<img src="homestay/admin/Gallery/'.$info["pic_name"].'" class="img-responsive" alt="test">
+				<img src="homestay/admin/Gallery/'.$info["pic_name"].'" class="img-responsive" alt="Homestay nepal pic">
 						<div class="textbox">
 						<h4>'.$row['title'].'</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>

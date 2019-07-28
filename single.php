@@ -71,7 +71,8 @@ $roo=mysqli_fetch_assoc($feedback);
 	 updateInfo(); // Updates hit info 
 ?>
 	<div class="banner-inner">
-	</div>
+		</div>
+	
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item">
 			<a href="index.php">Home</a>
