@@ -187,8 +187,8 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 		foreach ($result as $info) {
       	# code...
 			echo '
-				<div class="col-md-3 gallery-grid gallery1"><a href="homestay/images/'.$info["pic_name"].' " class="swipebox">
-				<img src="homestay/images/'.$info["pic_name"].'" class="img-responsive" alt="test">
+				<div class="col-md-3 gallery-grid gallery1"><a href="homestay/admin/Gallery/'.$info["pic_name"].' " class="swipebox">
+				<img src="homestay/admin/Gallery/'.$info["pic_name"].'" class="img-responsive" alt="test">
 						<div class="textbox">
 						<h4>'.$row['title'].'</h4>
 							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>

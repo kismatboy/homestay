@@ -288,7 +288,7 @@ font-size: 13px;
 line-height: 21px;
 padding-top: 4px;
 }
-.active-menu {
+.a .active-menu {
     background-color:#225081!important;
 }
 
@@ -327,8 +327,32 @@ padding-top: 4px;
 	color:#fff;
 	background:transparent;
 	text-shadow:none;
+
 	
 }
+.sidebar-collapse .nav > li >ul> li > a {
+    color:#fff;
+    background:transparent;
+    text-shadow:none;
+
+    
+}
+
+.sidebar-collapse .nav > li > a:hover {
+    color:#fff;
+    background:transparent;
+    text-shadow:none;
+    background-color:#225081!important;
+    
+}
+.sidebar-collapse 3:visited {
+    color:#fff;
+    background:transparent;
+    text-shadow:none;
+    background-color:#225081!important;
+    
+}
+
 .sidebar-collapse > .nav > li > a {
 	padding:15px 10px;
 }

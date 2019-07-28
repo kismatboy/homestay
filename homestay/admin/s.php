@@ -4,12 +4,35 @@ if(!isset($_SESSION["user"]))
 {
  header("location:index.php");
 }
+
+
 include('db.php');
 include('lib/fetch_data.php');
 $user_id=$_SESSION['user'];
 $h_id =gethomestayid();
 
+
+
 if(isset($_POST['insert_h'])){
+  $owner=$_SESSION['user'];
+  $sql="SELECT * FROM homestay_info where owner_name='$owner';";
+  if ($result=mysqli_query($con,$sql))
+  {
+        //count number of rows in query result
+    $rowcount=mysqli_num_rows($result);
+        //if no rows returned show no news alert
+    if ($rowcount==0) {
+          # code...
+      echo 'No homestay information found!! Add homestay first';
+    }else{
+        $hostname=$_POST['hostname'];
+        $email=$_POST['email'];
+        $about=$_POST['about'];
+
+   
+  }
+  }
+}
 //host wala insert garni code.
 //                   if($_FILES["img"]["name"]!==''){
 //                      $pic_name = $_FILES["img"]["name"];
@@ -45,7 +68,7 @@ if(isset($_POST['insert_h'])){
 // }
 // echo 'please upload image first';
 //               }  
-}
+
 
 
 if(isset($_POST['homestay_insert'])){
@@ -76,10 +99,6 @@ if(isset($_POST['homestay_insert'])){
       }else{
         echo mysqli_error($con);
       }
-
-
-  
- 
     }
     else{
       // update command
@@ -226,6 +245,8 @@ document.getElementById("defaultOpen").click();
        </div> 
        <div class="row">
         <div class="col-md-12">
+           <button class="tablink" onclick="openCity('host', this, 'orange')" id="defaultOpen">homestay</button>
+        <button class="tablink" onclick="openCity('homestay', this, 'green')">host</button>
           <div id="host" class="tabcontent">
             <!--to create table      -->
             <form style="color:black"  action='' method="post" enctype="multipart/form-data">
@@ -310,9 +331,7 @@ document.getElementById("defaultOpen").click();
               <form action='' method="post" enctype="multipart/form-data">
                <tr>
                 <td>Name </td>
-                <td><input type="text" name="fname" placeholder="FIRST NAME"></td>
-
-                <td  align="right"><input type="text" name="lname" placeholder="LAST NAME"></td>
+                <td  align="right"><input type="text" name="hostname" placeholder="full NAME"></td>
               </tr> 
               <tr>
                 <td colspan="2" align="left">Photo </td>
@@ -321,7 +340,7 @@ document.getElementById("defaultOpen").click();
 
               <tr>
                 <td>Email </td>
-                <td><input type="text" name="email" placeholder="eg:abc@gmail.com"> </td>
+                <td><input type="email" name="email" placeholder="eg:abc@gmail.com"> </td>
               </tr>
               <tr>
                 <td>About </td>
@@ -353,8 +372,7 @@ document.getElementById("defaultOpen").click();
           </form> 
         </div>
 
-        <button class="tablink" onclick="openCity('host', this, 'orange')" id="defaultOpen">homestay</button>
-        <button class="tablink" onclick="openCity('homestay', this, 'green')">host</button>
+       
 
 
 <!-- 
