@@ -101,7 +101,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </style>
 </head>
 <body>
-    <div class="wrapper">
+   <!--  <div class="wrapper">
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
@@ -120,4 +120,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
         </form>
-    </div>    
+    </div>     -->
+
+<p> incorrect login details<a href="../../../index.php">please click here to go to homepage</p></a>
+</body>

@@ -79,7 +79,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         }
          
         // Close statement
-        mysqli_stmt_close($stmt);
     }
     
     // Validate password
@@ -105,7 +104,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO user (full_name,username, password,email) VALUES (?, ?,?,?)";
+        $sql = "INSERT INTO user (full_name,email, password,username) VALUES (?, ?,?,?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
