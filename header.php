@@ -528,6 +528,78 @@ hr {
      width: 100%;
   }
 }
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+
 </style>
 
 
@@ -670,16 +742,17 @@ hr {
 								<a class="nav-link" href="about.php">About</a>
 							</li>
 							
-							<li class="nav-item dropdown">
+						<!-- 	<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
 								    aria-expanded="false">
 									Home Stays
 								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 									<a class="dropdown-item" href="#"></a>
-									<?php getcategoriesmenu("location"); ?>
-								</div>
-							</li>
+									<?php //getcategoriesmenu("location");
+									?>
+								</div> 
+							</li> -->
 							<li class="nav-item">
 								<a class="nav-link" href="contact.php">Contact</a>
 							</li>
@@ -707,6 +780,34 @@ hr {
 			</div>
 	</header>
 	<!--//header-->
+
+
+<button class="open-button" style="border-radius: 50%;width: 90px;background-color: green;" onclick="openForm_chat()">Chat</button>
+
+<div class="chat-popup" id="myForm_chat">
+  <form action="/action_page.php" class="form-container">
+    <h1>Chat</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+   <center> <button type="button" class="btn cancel" style="border-radius: 50%;width: 90px;" onclick="closeForm_chat()">Close</button></center>
+  </form>
+</div>
+
+<script>
+function openForm_chat() {
+  document.getElementById("myForm_chat").style.display = "block";
+}
+
+function closeForm_chat() {
+  document.getElementById("myForm_chat").style.display = "none";
+}
+</script>
+
+
+
 
 
 

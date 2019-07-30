@@ -99,6 +99,17 @@
 				<div class="w3layouts-agile-copyrightbottom">
 					<p> Homestay website © <?php $current=date("Y"); print_r($current);?> 
 					</p>
+					<fieldset><h4><strong>Language</strong></h4>
+						<div id="google_translate_element1"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element1');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</fieldset>
 
 				</div>
 			</div>

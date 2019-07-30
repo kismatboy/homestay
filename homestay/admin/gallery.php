@@ -60,7 +60,7 @@ if(!isset($_SESSION["user"]))
                     <li>
                         <a  href="profit.php"><i class="fa fa-qrcode"></i> Profit</a>
                     </li> <li class="divider"></li>
-                     <li><a href="#"><i class="fa fa-user fa-fw"></i>Feedback</a>
+                     <li><a href="feedback.php"><i class="fa fa-user fa-fw"></i>Feedback</a>
                         </li>
                         <li class="divider"></li>
                     <li>
