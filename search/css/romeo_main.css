@@ -1,4 +1,6 @@
 
+
+
 /* ==========================================================================
    #GRID
    ========================================================================== */
@@ -20,6 +22,7 @@
   -moz-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+height: 60px;
 }
 
 .row-refine {
@@ -62,55 +65,7 @@ html {
   box-sizing: inherit;
 }
 
-/* ==========================================================================
-   #RESET
-   ========================================================================== */
-/**
- * A very simple reset that sits on top of Normalize.css.
- */
-body,
-h1, h2, h3, h4, h5, h6,
-blockquote, p, pre,
-dl, dd, ol, ul,
-figure,
-hr,
-fieldset, legend {
-  margin: 0;
-  padding: 0;
-}
 
-/**
- * Remove trailing margins from nested lists.
- */
-li > ol,
-li > ul {
-  margin-bottom: 0;
-}
-
-/**
- * Remove default table spacing.
- */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/**
- * 1. Reset Chrome and Firefox behaviour which sets a `min-width: min-content;`
- *    on fieldsets.
- */
-fieldset {
-  min-width: 0;
-  /* [1] */
-  border: 0;
-}
-
-button {
-  outline: none;
-  background: none;
-  border: none;
-  font-family: inherit;
-}
 
 /* ==========================================================================
    #PAGE WRAPPER
@@ -119,11 +74,7 @@ button {
   min-height: 100vh;
 }
 
-body {
-  font-family: "Lato", "Arial", "Helvetica Neue", sans-serif;
-  font-weight: 400;
-  font-size: 14px;
-}
+
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
@@ -167,21 +118,7 @@ a {
   transition: all 0.4s ease;
 }
 
-a:link {
-  text-decoration: none;
-}
 
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
-a:active {
-  text-decoration: none;
-}
 
 /* ==========================================================================
    #BACKGROUND
@@ -193,73 +130,8 @@ a:active {
 /* ==========================================================================
    #SPACING
    ========================================================================== */
-.p-t-15 {
-  padding-top: 15px;
-}
 
-.p-t-5 {
-  padding-top: 5px;
-}
 
-.p-t-275 {
-  padding-top: 275px;
-}
-
-@media (max-width: 767px) {
-  .p-t-275 {
-    padding-top: 120px;
-  }
-}
-
-.p-t-200 {
-  padding-top: 200px;
-}
-
-@media (max-width: 767px) {
-  .p-t-200 {
-    padding-top: 150px;
-  }
-}
-
-.p-t-165 {
-  padding-top: 165px;
-}
-
-@media (max-width: 767px) {
-  .p-t-165 {
-    padding-top: 120px;
-  }
-}
-
-.p-b-100 {
-  padding-bottom: 100px;
-}
-
-@media (max-width: 767px) {
-  .p-b-100 {
-    padding-bottom: 250px;
-  }
-}
-
-.p-b-120 {
-  padding-bottom: 120px;
-}
-
-@media (max-width: 767px) {
-  .p-b-120 {
-    padding-bottom: 250px;
-  }
-}
-
-.m-r-45 {
-  margin-right: 45px;
-}
-
-@media (max-width: 767px) {
-  .m-r-45 {
-    margin-right: 15px;
-  }
-}
 
 /* ==========================================================================
    #WRAPPER
@@ -272,6 +144,7 @@ a:active {
 .btn-submit {
   display: block;
   width: 100%;
+  height: 60px;
   line-height: 60px;
   font-family: inherit;
   background: #6c7ae0;
@@ -292,17 +165,7 @@ a:active {
   background: #5866cc;
 }
 
-.m-t-0 {
-  margin-top: 0;
-}
 
-.m-t-15 {
-  margin-top: 15px;
-}
-
-.m-t-35 {
-  margin-top: 35px;
-}
 
 /* ==========================================================================
    #DATEPICKER
@@ -507,10 +370,6 @@ textarea {
 input:disabled {
   background: transparent;
   cursor: pointer;
-}
-
-textarea {
-  resize: none;
 }
 
 button {
@@ -1022,3 +881,21 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
+
+        .tab-content > .tab-pane {
+  display: none;
+  padding: 49px 55px;
+  padding-bottom: 70px;
+}
+
+.tab-content > .tab-pane.active {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .tab-content > .tab-pane {
+    padding: 30px;
+    padding-bottom: 45px;
+  }
+}
+    

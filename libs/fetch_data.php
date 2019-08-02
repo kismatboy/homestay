@@ -768,7 +768,7 @@ function getblogridposts($table){
 			</li>
 			<li class="mx-2">
 			<a href="#">
-			<i class="far fa-user"></i> '.$griditem['author'].'</a>
+			<i class="far fa-user"></i> '.$griditem['owner_name'].'</a>
 			</li>
 			<li>
 			<a href="#">
@@ -844,7 +844,7 @@ function getfour($table){
 <img src="homestay/admin/profile_pic/'.$fourdata['photo'].'" alt="homestay images" data-desoslide-caption="<h3>Latest Post '.$fourdata['id'].'</h3>">
 <div class="mid-text-info">
 			
-			<p>'.$fourdata['author'].'</p>
+			<p>'.$fourdata['owner_name'].'</p>
 			<div class="sub-meta">
 			<span>
 			<i class="far fa-clock"></i> '.$fourdata['date'].'</span>
@@ -892,7 +892,7 @@ function getonelatest($table){
 			</li>
 			<li>
 			<a href="#">
-			<i class="far fa-user"></i> '.$onedata['author'].'</a>
+			<i class="far fa-user"></i> '.$onedata['owner_name'].'</a>
 			</li>
 
 			</ul>
@@ -983,7 +983,7 @@ function getcategoryblogs($table,$id){
 									</li>
 									<li class="mx-2">
 										<a href="#">
-											<i class="far fa-user"></i> '.$cdata['author'].'</a>
+											<i class="far fa-user"></i> '.$cdata['owner_name'].'</a>
 									</li>
 									<li>
 										<a href="#">

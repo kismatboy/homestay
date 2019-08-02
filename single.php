@@ -59,8 +59,14 @@ $roo=mysqli_fetch_assoc($feedback);
 </head>
 
 <body>
+
+	<!--for facebook comment-->
+	<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
+
+<!-- for facebook comment end-->
 	<!--Header-->
-	<?php include("single_header.php");?>
+	<?php include("header.php");?>
 	<!--//header-->
 	<!--update database on page views-->
 	<?php  require_once('database/connection.php');
@@ -131,12 +137,7 @@ $roo=mysqli_fetch_assoc($feedback);
 
 //getcommentsscript("links");
 ?>
-</div>
-
-
-<?php //getcommentsscript("links"); 
-?>
-</div>
+</div></div>
 
 
 <!--right-->
@@ -185,6 +186,8 @@ $roo=mysqli_fetch_assoc($feedback);
 										</div>
 												</aside>
 												</div></div>
+												<div id="fb-root"></div>
+
 </section>
 									<!--footer-->
 									<?php include("footer.php");?>

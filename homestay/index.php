@@ -271,7 +271,7 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 		</div>
 	</div>
   <!-- visitors -->
-  <div class ='row'>
+  <div class ='row' style="padding: 100px 0px;">
 	<div class="w3l-visitors-agile" >
 		<div class="container">
                  <h3 class="title-w3-agileits title-black-wthree">What other visitors experienced</h3> 
@@ -288,6 +288,83 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 
 </div>
   <!-- visitors -->
+
+
+  <!--comments-->
+  <div class="section" id="contact" >
+  <div class="cc-contact-information" style="background-color: gray ;align-content: center;">
+    <div class="container" >
+      <div class="cc-contact">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card mb-0" data-aos="zoom-in">
+              <div class="h4 text-center title">Contacts</div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <form action="email.php" method="POST">
+                      <div class="p pb-3"><strong>Feel free to contact us </strong></div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            <input class="form-control" type="text" name="name" placeholder="Name" required="required"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input class="form-control" type="email" name="replyto" placeholder="E-mail" required="required"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
+                            <input class="form-control" type="text" name="subject" placeholder="Subject" required="required"/>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <div class="col">
+                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-comments"></i></span>
+                            <textarea class="form-control" name="message" placeholder="Your Message" required="required"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <button class="btn btn-primary" type="submit">Send</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <p class="mb-0"><strong>Address </strong></p>
+                    <p class="pb-2">Pokhara, 25, Hemja, Nepal</p>
+                    <p class="mb-0"><strong>Phone</strong></p>
+                    <p class="pb-2">+977-9806705494</p>
+                    <p class="mb-0"><strong>Email</strong></p>
+                    <p>Sunilsapkota9@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--comments-->
+
+
+<script src="https://www.powr.io/powr.js?platform=html"></script><div  style="margin-top: 10px;" class="powr-comments" id="f1e0a67e_1564676927"></div>
+ <?php //getcommentsscript("links"); 
+?>
 
 <!-- js -->
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>

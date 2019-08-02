@@ -212,6 +212,7 @@ if(!isset($_SESSION["user"]))
 											<th>Check In</th>
 											<th>Check Out</th>
 											<th>Status</th>
+                                            <th>voucher</th>
 											<th>More</th>
 											
                                         </tr>
@@ -238,9 +239,21 @@ if(!isset($_SESSION["user"]))
 												<th>".$trow['Meal']."</th>
 												<th>".$trow['cin']."</th>
 												<th>".$trow['cout']."</th>
-												<th>".$trow['stat']."</th>
+                                                <th>".$trow['stat']."</th>";
+
+                                                if($trow['voucher_pic']==''){
+                                                    echo "<th> not paid </th>";
+
+                                                }else{
+                                                    echo "<th><a href='voucherimages/".$trow['voucher_pic']."'>view</a>  </th>";
+
+                                                }
+
+
+                                                
 												
-												<th><a href='roombook.php?rid=".$trow['id']." ' class='btn btn-primary'>Action</a></th>
+												
+												echo "<th><a href='roombook.php?rid=".$trow['id']." ' class='btn btn-primary'>Action</a></th>
 												</tr>";
 										}	
 									

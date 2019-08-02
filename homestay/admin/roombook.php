@@ -37,6 +37,7 @@ if(!isset($_SESSION["user"]))
 					$cin = $row['cin'];
 					$cout = $row['cout'];
 					$sta = $row['stat'];
+					$voucher = $row['voucher_pic'];
 					$days = $row['nodays'];
 					
 				
@@ -223,6 +224,7 @@ if(!isset($_SESSION["user"]))
                                             <th><?php echo $sta; ?></th>
                                             
                                         </tr>
+                                      
                                    
                                   
                                         

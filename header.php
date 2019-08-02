@@ -22,8 +22,10 @@ $username_err = $password_err = $confirm_password_err = $email_err=$name_err="";
 
  
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+
 	 if(isset($_POST['login'])){
+
+    echo "<script>alert('hello');</script>";
  
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
@@ -89,12 +91,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         // Close statement
         mysqli_stmt_close($stmt);
+          // Close connection
+    mysqli_close($con);
+
+
     }
     
-    // Close connection
-    mysqli_close($con);
-}
-
+  
 
 
 //for sign up.
@@ -117,7 +120,7 @@ if(isset($_POST['signup'])){
         $email_err = "Please enter a email.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE email = ?";
+        $sql = "SELECT id FROM user WHERE email = ?";
         
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -150,7 +153,7 @@ if(isset($_POST['signup'])){
         $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM users WHERE username = ?";
+        $sql = "SELECT id FROM user WHERE username = ?";
         
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -200,11 +203,11 @@ if(isset($_POST['signup'])){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO user (full_name,email, password,username) VALUES (?, ?,?,?)";
+        $sql = "INSERT INTO user (full_name,email,username, password) VALUES (?, ?,?,?)";
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ssss", $param_fullname,$param_username, $param_password,$email);
+            mysqli_stmt_bind_param($stmt, "ssss", $param_fullname,$email,$param_username, $param_password);
             
             // Set parameters
             $param_fullname = $name;
@@ -215,7 +218,7 @@ if(isset($_POST['signup'])){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: login.php");
+                header("location: homestay/admin/home.php");
             } else{
                 echo "Something went wrong. Please try again later.";
             }
@@ -242,6 +245,120 @@ if(isset($_POST['signup'])){
 ?>
 <!--Header-->
 <header>
+
+  <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+
+}
+
+/* Set a style for all buttons */
+
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: gray;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar1 {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 700px; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+
+}
+</style>
+</head>
+<body>
+<!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
+
+
 		<style>
 body {font-family: Arial, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
@@ -337,11 +454,7 @@ button:hover {
   opacity:1;
 }
 
-/* Extra styles for the cancel button */
-.cancelbtn {
 
-  background-color: #f44336;
-}
 
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .signupbtn {
@@ -355,27 +468,9 @@ button:hover {
   padding: 16px;
 }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
-  padding-top: 50px;
-}
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
+
+
 
 /* Style the horizontal ruler */
 hr {
@@ -452,7 +547,7 @@ button:hover {
 .cancelbtn {
 float: left;
   width: 50%;
-  background-color: #f44336;
+  background-color: gray;
 }
 
 /* Float cancel and signup buttons and add an equal width */
@@ -469,28 +564,6 @@ float: left;
 /* Add padding to container elements */
 .container {
   padding: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: #474e5d;
-  padding-top: 50px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* Style the horizontal ruler */
@@ -613,10 +686,54 @@ hr {
 					<span>Welcome Back!</span>
 					<span class="mx-lg-4 mx-md-2  mx-1">					
 						<!-- <a href="homestay/admin/test/login.php"> -->
-							<button  onclick="openForm()"><i class="fas fa-lock"></i> <strong style="color: black">Sign In</button></strong>
+							<button  class="btn cancel" onclick="document.getElementById('id_login').style.display='block'" style="width:auto;"><i class="fas fa-lock"></i> <strong style="color: black;">Sign In</button></strong>
+
+              <div id="id_login" class="modal" >
+  
+  <form class="modal-content animate" action="" style="max-width: 700px">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id_login').style.display='none'" class="close" title="Close Modal" style="font-size: 20px">&times;</span>
+      <img src="images/img_avatar2.png" alt="Avatar" class="avatar1">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input style ="  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;" type="text" placeholder="Enter Username" name="username" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input style="  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;" type="password" placeholder="Enter Password" name="password" required>
+        
+      
+        <p><input type="checkbox" checked="checked" name="remember"> Remember me</p>
+   <br />
+
+      <!-- <button type="submit">Login</button> -->
+      <input style="width: 100px; background-color: green;"type="submit" value="Login" name="Login" />
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1;">
+      <button type="button" onclick="document.getElementById('id_login').style.display='none'" class="cancelbtn" style=" max-width: 200px;margin-left: 0px">Cancel</button>
+        
+      <span class="psw"><a style="color:blue;" href="#">Forgot password?</a></span>
+  </div>
+  </form>
+</div>
+
+
+<!-- 
 					
 					<div class="form-popup" id="myForm">
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" class="form-container">
+  <form method="post" action="" class="form-container">
     <h1>Login</h1>
 
     <label for="email"><b>Email</b></label>
@@ -628,7 +745,7 @@ hr {
     <input type="submit" class="btn" name='login'>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
-</div>
+</div> -->
 					<!-- <span >
 				
 							<button  onclick="signupopenForm()" class="btn" ><i style="color:green;" class="far fa-user"></i> <strong style="color:black;">Register</strong></button>
@@ -639,12 +756,14 @@ hr {
 
 
 <span >
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="far fa-user"></i> <strong style="color:black;">Register</strong></button>
+<button class="btn cancel" onclick="document.getElementById('id_reg').style.display='block'" ><i class="far fa-user"></i> <strong style="color:black;">Register</strong></button>
 </span>
-<div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-  <form class="modal-content" action="" method="post">
+<div id="id_reg" class="modal ">
+ 
+  <form class="modal-content animate" action="" method="post">
+
     <div class="container">
+       <span onclick="document.getElementById('id_reg').style.display='none'" class="close" title="Close Modal" style="font-size: 20px">&times;</span>
       <h1>Sign Up</h1>
       <p>Please fill in this form to create an account.</p>
       <hr>
@@ -656,7 +775,7 @@ hr {
 
         <div class=" <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
                 <label>full name</label>
-                <input type="text" name="name"  value="<?php echo $name; ?>">
+                <input type="text" name="name" placeholder="enter full name" value="<?php echo $name; ?>">
                 <span class="help-block"><?php echo $name_err; ?></span>
 
            
@@ -680,12 +799,12 @@ hr {
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
       </label>
 
-      <p>By creating an account you agree to our <a href="http://localhost/project_hstay_selected/terms.php" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      <h4>By creating an account you agree to our <a href="http://localhost/project_hstay_selected/terms.php" style="color:dodgerblue">Terms & Privacy</a>.</h4>
 
-      <div class="clearfix">
+      <div class="clearfix" >
 
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <input type="submit" class="signupbtn"  name='signup'>
+        <button type="button" onclick="document.getElementById('id_reg').style.display='none'" class="cancelbtn">Cancel</button>
+        <input style="margin-top: 5px;height:45px;" type="submit" class="signupbtn"  name='signup' >
       </div>
     </div>
   </form>
@@ -782,14 +901,24 @@ hr {
 	<!--//header-->
 
 
-<button class="open-button" style="border-radius: 50%;width: 90px;background-color: green;" onclick="openForm_chat()">Chat</button>
+<button class="open-button" style="background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;border-radius: 50%;width: 90px;background-color: green;  z-index: 9;" onclick="openForm_chat()">Feedback</button>
 
 <div class="chat-popup" id="myForm_chat">
   <form action="/action_page.php" class="form-container">
-    <h1>Chat</h1>
+    <h3>Give Your Feedback</h3>
+    <input type="text" name="" placeholder="enter your name" required>
 
-    <label for="msg"><b>Message</b></label>
-    <textarea placeholder="Type message.." name="msg" required></textarea>
+<!--     <label for="msg"><b>Message</b></label>
+ -->    <textarea placeholder="Type message.." name="msg" required></textarea>
 
     <button type="submit" class="btn">Send</button>
    <center> <button type="button" class="btn cancel" style="border-radius: 50%;width: 90px;" onclick="closeForm_chat()">Close</button></center>
@@ -821,12 +950,16 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 // Get the modal
-var modal = document.getElementById('id01');
+var modal_reg = document.getElementById('id_reg');
+var modal_login = document.getElementById('id_login');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == modal_reg ) {
+    modal_reg.style.display = "none";
+  } 
+  if (event.target == modal_login) {
+    modal_login.style.display = "none";
   }
 }
 

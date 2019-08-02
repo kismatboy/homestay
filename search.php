@@ -39,34 +39,34 @@ require_once('database/db.php');//db config file
     	$search_keyword = $_POST['search']['keyword'];
 
     		require("database/db_connect.php");
-	$sql="SELECT * FROM location LIMIT 10";
-	if ($result=mysqli_query($con,$sql))
-	{
+	// $sql="SELECT * FROM location LIMIT 10";
+	// if ($result=mysqli_query($con,$sql))
+	// {
 
-      	//if there are rows available display all the results
-		foreach ($result as $categoriescount => $categorydata) {
-				#count how many times each category appears in blogs
-			if($_POST['search']['keyword']==$categorydata['name']){
-				$url ="category.php?id=".$categorydata['id'];
-				 if (!headers_sent())
-    {    
-        header('Location: '.$url);
-        exit;
-        }
-    else
-        {  
-        echo '<script type="text/javascript">';
-        echo 'window.location.href="'.$url.'";';
-        echo '</script>';
-        echo '<noscript>';
-        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
-        echo '</noscript>'; exit;
-    }
-			}
-		}
-	}
+ //      	//if there are rows available display all the results
+	// 	foreach ($result as $categoriescount => $categorydata) {
+	// 			#count how many times each category appears in blogs
+	// 		if($_POST['search']['keyword']==$categorydata['name']){
+	// 			$url ="category.php?id=".$categorydata['id'];
+	// 			 if (!headers_sent())
+ //    {    
+ //        header('Location: '.$url);
+ //        exit;
+ //        }
+ //    else
+ //        {  
+ //        echo '<script type="text/javascript">';
+ //        echo 'window.location.href="'.$url.'";';
+ //        echo '</script>';
+ //        echo '<noscript>';
+ //        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
+ //        echo '</noscript>'; exit;
+ //    }
+	// 		}
+	// 	}
+	// }
 
-    }
+ //    }
 
     $sql = 'SELECT * FROM homestay_info WHERE title LIKE :keyword OR content LIKE :keyword  OR tags LIKE :keyword OR author LIKE :keyword ORDER BY id DESC ';
    
@@ -104,11 +104,11 @@ require_once('database/db.php');//db config file
     $pdo_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
     $pdo_statement->execute();
     $result = $pdo_statement->fetchAll();
+}
 
 
-
-     include('database/connection.php');
-    $sql1='SELECT * FROM location WHERE name LIKE :keyword ORDER BY id DESC ';
+    //  include('database/connection.php');
+    // $sql1='SELECT * FROM location WHERE name LIKE :keyword ORDER BY id DESC ';
     
     ?>
 	<!--/banner-->
@@ -149,7 +149,7 @@ require_once('database/db.php');//db config file
                                 ?>
 						<div class="col-lg-4 card">
 							<a href="single.php?id=<?php echo $row['id']; ?>">
-								<img src="homstay/admin/profile_pic/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="homestay Nepal pic" style="width: 480px;height: 300px">
+								<img src="homestay/admin/profile_pic/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="homestay Nepal pic" style="width: 480px;height: 300px">
 							</a>
 							<div class="card-body">
 								<ul class="blog-icons my-4">
@@ -159,7 +159,7 @@ require_once('database/db.php');//db config file
 									</li>
 									<li class="mx-2">
 										<a href="#">
-											<i class="far fa-user"></i><?php echo $row['author']; ?></a>
+											<i class="far fa-user"></i><?php echo $row['owner_name']; ?></a>
 									</li>
 									<li>
 										<a href="#">

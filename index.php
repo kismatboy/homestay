@@ -26,6 +26,8 @@
 	<link href="css/fontawesome-all.css" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
 	rel="stylesheet">
+  <link href="search/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+  <link href="search/css/romeo_main.css" rel="stylesheet" media="all">
 
 </head>
 
@@ -38,9 +40,115 @@
   margin-right: auto;
  
  ">
-	
-<iframe src="search/index.php" width="900" height="450" frameborder="0">
-</iframe>
+
+
+</head>
+
+<body bgcolor="gray">
+
+
+    <div style=" max-width: 680px; margin: 0 auto;">
+        <div style="background: rgba(0, 0, 0, 0.8);">
+                <div class="tab-content" style="height: 500px">
+                                  
+                                  
+
+
+                                    <div class="tab-pane active" id="tab1">
+                        <form  action="" method="post"  name="form">
+
+                            <div class="input-group input-group-big" style="height:120px;">
+                                <label class="label">where:</label>
+                                <input class="input--style-1" type="text" name="search[keyword]" placeholder="City, region or specific hotel" required="required">
+                                <i class="zmdi zmdi-search input-group-symbol"></i>
+                            </div>
+                            <div class="row row-space" style="height:100px;">
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <label class="label">check-in:</label>
+                                        <input class="input--style-1" type="text" name="check-in" placeholder="mm/dd/yyyy" id="input-start">
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="height:60px;">
+                                    <div class="input-group">
+                                        <label class="label">check-out:</label>
+                                        <input class="input--style-1" type="text" name="check-out" placeholder="mm/dd/yyyy" id="input-end">
+                                    </div>
+                                </div>
+                          	
+                            <div class="row row-space" >
+                                <div class="col-md-8" >
+                                    <div class="input-group">
+                                        <label class="label">travellers:</label>
+                                        <div class="input-group-icon" id="js-select-special">
+                                            <input class="input--style-1 input--style-1-small" type="text" name="traveller" value="1 Adult, 0 Children, 1 Room" disabled="disabled" id="info">
+                                            <i class="zmdi zmdi-chevron-down input-icon"></i>
+                                        </div>
+                                        <div class="dropdown-select">
+                                            <ul class="list-room">
+                                                <li class="list-room__item">
+                                                    <span class="list-room__name">Room 1</span>
+                                                    <ul class="list-person">
+                                                        <li class="list-person__item">
+                                                            <span class="name">Adults</span>
+                                                            <div class="quantity quantity1">
+                                                                <span class="minus">-</span>
+                                                                <input class="inputQty" type="number" min="0" value="1">
+                                                                <span class="plus">+</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-person__item">
+                                                            <span class="name">Children</span>
+                                                            <div class="quantity quantity2">
+                                                                <span class="minus">-</span>
+                                                                <input class="inputQty" type="number" min="0" value="0">
+                                                                <span class="plus">+</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <div class="list-room__footer">
+                                                <a href="#" id="btn-add-room">Add room</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3" >
+                                    <button  style="outline: none;
+  background: blue;
+  border: none;
+height:70px;"class="btn-submit" type="submit" name='search'>search</button>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Jquery JS-->
+<script src="search/vendor/jquery/jquery.min.js"></script>
+<!-- Vendor JS-->
+<script src="search/vendor/select2/select2.min.js"></script>
+<script src="search/vendor/jquery-validate/jquery.validate.min.js"></script>
+<script src="search/vendor/bootstrap-wizard/bootstrap.min.js"></script>
+<script src="search/vendor/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+<script src="search/vendor/datepicker/moment.min.js"></script>
+<script src="search/vendor/datepicker/daterangepicker.js"></script>
+
+<!-- Main JS-->
+<script src="search/js/global.js"></script>
+
+
+
+
+
 
 </div>
 	<section class="bottom-slider">

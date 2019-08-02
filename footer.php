@@ -3,8 +3,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 footer-grid-agileits-w3ls text-left">
-					<h3>About US</h3>
-					<p><?php getshortdescription("titles"); ?></p>
+					<h3>About US</h3><mark style="color:white;font-size:20px">
+					<p><em><?php getshortdescription("titles"); ?></em></p></mark>
 					<div class="read">
 						<a href="about.php" class="btn btn-primary read-m">Read More</a>
 					</div>
@@ -24,16 +24,16 @@
 					<div class="subscribe-main text-left">
 						<style type="text/css">
 							
-							.subscribe-form input::placeholder{
+							.subscribe-form input:placeholder{
 								color: white;
 							}
 						</style>
 							<div class="subscribe-form">
 
 									<form  method="post" class="subscribe_form" action=''>
-										<input style="background-color:rgba(241, 245, 249, 0.08);font-size: 16px;border: none;" class="form-control"  type="text" placeholder="Your name" required="" name ='name'>
+										<input style="background-color:white;font-size: 16px;border: none; height: 14px;" class="form-control"  type="text" placeholder="Your name" required="" name ='name'>
 										<br/>
-										<input class="form-control" type="email" placeholder="Enter your email..." required="" name ='email'>
+										<input style="background-color:white;font-size: 16px;border: none;height: 14px;"class="form-control" type="email" placeholder="Enter your email..." required="" name ='email'>
 										<button type="submit" class="btn btn-primary submit" name='save'>Submit</button>
 									</form>
 									<div class="clearfix"> </div>

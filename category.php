@@ -61,10 +61,7 @@ $row = mysqli_fetch_assoc($result);?>
 				<!--right-->
 				<aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
 					<div class="right-blog-info text-left">
-						<h4><strong>Location</strong></h4>
-						<ul class="list-group single">
-							<?php countcategories();?>
-						</ul>
+						
 						<div class="tech-btm widget_social">
 							<h4>Stay Connected</h4>
 							<ul>

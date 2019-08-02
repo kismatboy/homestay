@@ -1563,16 +1563,16 @@ section.contact-w3ls button.btn.btn-primary:hover {
     border: 2px solid #ffce14;
 }
 input::-webkit-input-placeholder {
-color: #fff !important;
+color: black !important;
 } 
 input:-moz-placeholder { /* Firefox 18- */
-color: #fff !important;  
+color: black !important;  
 } 
 input::-moz-placeholder {  /* Firefox 19+ */
-color: #fff !important;  
+color: black !important;  
 } 
 input:-ms-input-placeholder {  
-color: #fff !important;  
+color: black !important;  
 }
 .footer-icons-agileinfo{
 	margin-left:0!important;
