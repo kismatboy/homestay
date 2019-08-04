@@ -25,9 +25,20 @@ if(isset($_POST['insert_h'])){
           # code...
       echo 'No homestay information found!! Add homestay first';
     }else{
-        $hostname=$_POST['hostname'];
-        $email=$_POST['email'];
-        $about=$_POST['about'];
+      echo $_POST['hostphone'];
+        $hostname=$_POST['hostaddress'];
+        $phone=$_POST['hostphone'];
+        $email=$_POST['hostemail'];
+        $about=$_POST['hostabout'];
+        $img_file=$_FILES['hostimg']['temp'];
+        //photo
+        $sql="insert into user (email,phone,about,owner_id) VALUES ('$email','$phone','$phone','$about','$user_id')";
+        if(mysqli_query($con,$sql)){
+          echo $img_file;
+
+        }else{
+          echo mysqli_error($con);
+        }
 
    
   }
@@ -217,8 +228,8 @@ document.getElementById("defaultOpen").click();
   }
 
   /* Style each tab content individually */ 
-  #host {background-color:orange;}
-  #homestay {background-color:green;}
+  #host {background-color:gray;}
+  #homestay {background-color:gray;}
   td {
     padding:10px 10px 10px 10px;
 
@@ -295,7 +306,7 @@ document.getElementById("defaultOpen").click();
        </div> 
        <div class="row">
         <div class="col-md-12">
-           <button class="tablink" onclick="openCity('host', this, 'orange')" id="defaultOpen">homestay</button>
+           <button class="tablink" onclick="openCity('host', this, 'green')" id="defaultOpen">homestay</button>
         <button class="tablink" onclick="openCity('homestay', this, 'green')">host</button>
           <div id="host" class="tabcontent">
             <!--to create table      -->
@@ -305,7 +316,7 @@ document.getElementById("defaultOpen").click();
               <table >
                 <tr>
                   <td >Name </td>
-                  <td ><input type="text" name="name" placeholder="name"> </td>
+                  <td ><input type="text" name="name" placeholder="name"style="width:400px"> </td>
                 </tr>
 
                 <tr>
@@ -381,22 +392,33 @@ document.getElementById("defaultOpen").click();
               <form action='' method="post" enctype="multipart/form-data">
                <tr>
                 <td>Name </td>
-                <td  align="right"><input type="text" name="hostname" placeholder="full NAME"></td>
+                <td  ><input style="width: 400px;margin-left: 50px;"type="text" name="hostname" placeholder="full NAME"></td>
+              </tr>  
+                 <tr>
+                <td>phone number (+977)</td>
+                <td  ><input style="width: 400px;margin-left: 50px;" type="number" name="hostphone" placeholder="phone number"></td>
+              </tr>  
+              
+              <td>address </td>
+                <td  ><input style="width: 400px;margin-left: 50px;"type="text" name="hostaddress" placeholder="address"></td>
               </tr> 
               <tr>
-                <td colspan="2" align="left">Photo </td>
-                <td align="right"><input type="file" name="img" id="img"></td>
+                <td  align="left">Photo </td>
+                <td><input style="width: 400px;margin-left: 50px;" type="file" name="hostimg" id="img"></td>
               </tr>
 
               <tr>
                 <td>Email </td>
-                <td><input type="email" name="email" placeholder="eg:abc@gmail.com"> </td>
+                <td><input style="width: 400px;margin-left: 50px;" type="email" name="hostemail" placeholder="eg:abc@gmail.com"> </td>
               </tr>
               <tr>
                 <td>About </td>
-                <td colspan="2">
+                <td >
+                  <textarea name="hostabout" style="height: 300px;width: 400px;margin-left: 50px">
+                    
+                  </textarea>
 
-                  <div class="adjoined-bottom">
+                 <!--  <div class="adjoined-bottom">
                     <div class="grid-container">
                       <div class="grid-width-100">
                         <div id="editor">
@@ -408,7 +430,7 @@ document.getElementById("defaultOpen").click();
                   </div>
                   <script>
                     initSample();
-                  </script>
+                  </script> -->
                 </td>
               </tr>
 

@@ -151,7 +151,9 @@ if(!isset($_SESSION["user"]))
                 <!-- /. ROW  -->
 				<?php
 						include ('db.php');
-						$sql = "select * from roombook";
+                        include 'lib/fetch_data.php';
+                        $h_id=gethomestayid();
+						$sql = "select * from roombook where homestay_id=$h_id";
 						$re = mysqli_query($con,$sql);
 						$c =0;
 						while($row=mysqli_fetch_array($re) )
@@ -220,10 +222,10 @@ if(!isset($_SESSION["user"]))
                                     <tbody>
                                         
 									<?php
-                                    include 'lib/fetch_data.php';
-                                    $h_id=gethomestayid();
+                                    
+                                   
 									$tsql = "select * from roombook where homestay_id='$h_id';";
-									$tre = mysqli_query($con,$tsql);
+									if($tre = mysqli_query($con,$tsql)){
 									while($trow=mysqli_fetch_array($tre) )
 									{	
 										$co =$trow['stat']; 
@@ -257,7 +259,11 @@ if(!isset($_SESSION["user"]))
 												</tr>";
 										}	
 									
-									}
+									} 
+                                }
+                                else{
+                                    echo mysqli_error($con);
+                                }
 									?>
                                         
                                     </tbody>

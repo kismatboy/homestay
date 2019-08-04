@@ -99,22 +99,40 @@ if(!isset($_SESSION["user"]))
                           Send Your Feedback.
                         </div>
                         <div class="panel-body">
-						<form name="form" method="post">
+						<form name="form" method="post" action=''>
+                              <div class="form-group">
+                                            <label>subject</label>
+                                          <input type="text" style="width: 100%;" name='subject'></textarea>
+                              </div>
                             <div class="form-group">
                                             <label>Message</label>
-                                          <textarea style="width: 100%;height: 220px"></textarea>
+                                          <textarea style="width: 100%;height: 220px" name='msg'></textarea>
                               </div>
+
 							  
 							 
                              
-							 <input type="submit" name="add" value="send" class="btn btn-primary"> 
+							 <input type="submit" name="send" value="send" class="btn btn-primary"> 
 							</form>
+
+
 							
                         </div>
                         
                     </div>
                 </div>
-                
+                <?php 
+                if (isset($_POST['send'])){
+                include ('../../libs/PHPMailer/sendmail.php');
+                $message=$_POST['msg'];
+                $subject= 'feedback from homestay owners:' .$_POST['subject'] ;
+
+
+                send_mail('homestaypkr@gmail.com',$_SESSION["user"],$subject,$message);
+            }
+
+
+                ?>
          
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->

@@ -86,7 +86,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
  ">
 				   <div class="ab-w3l-spa" id='about_host'>
                             <h3 class="title-w3-agileits title-black-wthree">About host</h3> 
-						   <p class="about-para-w3ls"><?php gethostdetails($_REQUEST['id'],'owner_info');?>
+						   <p class="about-para-w3ls"><?php gethostdetails($_REQUEST['id'],'user');?>
 						 
 
 										
@@ -270,26 +270,6 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 			</div>
 		</div>
 	</div>
-  <!-- visitors -->
-  <div class ='row' style="padding: 100px 0px;">
-	<div class="w3l-visitors-agile" >
-		<div class="container">
-                 <h3 class="title-w3-agileits title-black-wthree">What other visitors experienced</h3> 
-		</div>
-		<div class="w3layouts_work_grids">
-			<ul class="slides">
- 	
-				<?php getstarreview($_REQUEST['id']);?>
-				</ul>
-
-
-		</div>	
-	</div>
-
-</div>
-  <!-- visitors -->
-
-
   <!--comments-->
   <div class="section" id="contact" >
   <div class="cc-contact-information" style="background-color: gray ;align-content: center;">
@@ -343,11 +323,12 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
                 <div class="col-md-6">
                   <div class="card-body">
                     <p class="mb-0"><strong>Address </strong></p>
-                    <p class="pb-2">Pokhara, 25, Hemja, Nepal</p>
+                    <!--id homestay ko $id-->
+                 <p class="pb-2"><?php getaddress($id)?></p>
                     <p class="mb-0"><strong>Phone</strong></p>
-                    <p class="pb-2">+977-9806705494</p>
+                    <p class="pb-2">+977-<?php getphonenum($id)?></p>
                     <p class="mb-0"><strong>Email</strong></p>
-                    <p>Sunilsapkota9@gmail.com</p>
+                    <p><?php getemail($id)?></p>
                   </div>
                 </div>
               </div>
@@ -360,6 +341,44 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 </div>
 
 <!--comments-->
+  <!-- visitors -->
+<!--   <div class ='row' style="padding: 100px 0px;">
+	<div class="w3l-visitors-agile" >
+		<div class="container">
+                 <h3 class="title-w3-agileits title-black-wthree">What other visitors experienced</h3> 
+		</div>
+		<div class="w3layouts_work_grids">
+			<ul class="slides">
+				<style type="text/css">
+					.checked{
+						color:yellow;
+
+					}
+				</style>
+ 	
+				<?php getstarreview($id);?>
+				</ul><br/><br/>
+				<div style="color:black; border: 3px;">
+				<span class="fa fa-star checked"></span>
+				<span class="fa fa-star checked"></span>
+				<span class="fa fa-star checked"></span>
+				<span class="fa fa-star checked"></span>
+				<span class="fa fa-star"></span>
+				<form class="col-md-6">
+					<input type="text" name="username" placeholder="username" style="width:300px;background-color: white;"><br/>
+					<input type="text" name="title" placeholder="username" style="width: 300px;background-color: white;">
+					<textarea type="text" name="username" placeholder="username" style="width: 100%"></textarea> 
+					choose your avtar:<br/><input type="file" name="avtar" >
+					<input type="submit" name="submit" value="submit">
+				</form>
+				</div>
+
+
+		</div>	
+	</div>
+
+</div> -->
+  <!-- visitors -->
 
 
 <script src="https://www.powr.io/powr.js?platform=html"></script><div  style="margin-top: 10px;" class="powr-comments" id="f1e0a67e_1564676927"></div>

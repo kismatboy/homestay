@@ -54,6 +54,8 @@ $roo=mysqli_fetch_assoc($feedback);
 <link href="//fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Federo" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+
 
 	
 </head>
@@ -67,6 +69,45 @@ $roo=mysqli_fetch_assoc($feedback);
 <!-- for facebook comment end-->
 	<!--Header-->
 	<?php include("header.php");?>
+
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active">
+								<a class="nav-link" href="index.php">Home
+									<span class="sr-only">(current)</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<p></p>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#about_host"> Host</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#location">Location</a>
+							</li>
+							
+							<li class="nav-item">
+								<a class="nav-link" href="#reservation">Reservation</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#Rules">Rules</a>
+							</li>
+
+						</ul>
+						
+							<form action="search.php" method="post" class="form-inline my-2 my-lg-0 header-search" name="form" >
+							
+								<input class="form-control mr-sm-2" type="search" placeholder="Search here..." required="yes" type="text" name="search[keyword]">
+								<button class="btn btn1 my-2 my-sm-0" type="submit" name="submit"><i class="fas fa-search"></i></button>
+							</form>
+		
+						
+
+					</div>
+				</nav>
+
+			</div>
 	<!--//header-->
 	<!--update database on page views-->
 	<?php  require_once('database/connection.php');
