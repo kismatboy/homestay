@@ -32,9 +32,6 @@ $username_err = $password_err = $confirm_password_err = $email_err=$name_err="";
 // Processing form data when form is submitted
 
 if(isset($_POST['login'])){
-
-  echo "<script>alert('hello');</script>";
-
     // Check if username is empty
   if(empty(trim($_POST["username"]))){
     $username_err = "Please enter username.";
@@ -84,15 +81,19 @@ if(isset($_POST['login'])){
                             // Redirect user to welcome page
               header("location: homestay/admin/home.php");
             } else{
+               echo "<script>alert('password incorrect');</script>";
+
                             // Display an error message if password is not valid
               $password_err = "The password you entered was not valid.";
             }
           }
         } else{
+           echo "<script>alert('password incorrect1');</script>";
                     // Display an error message if username doesn't exist
           $username_err = "No account found with that username.";
         }
       } else{
+         echo "<script>alert('password incorrect2');</script>";
         echo "Oops! Something went wrong. Please try again later.";
       }
     }
@@ -104,6 +105,7 @@ if(isset($_POST['login'])){
 
 
   }
+}
 
   
 
@@ -226,9 +228,37 @@ if(isset($_POST['login'])){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
 
+              $s="insert into homestay_info (owner_name) values( '$param_username');";
+                               
+
+             
+              if($r=mysqli_query($con,$s)){
+
+                // $sql1 = "SELECT * from user where username='$param_username'";
+$sqll="select * from user where username='$param_username';";
+                if($s=mysqli_query($con,$sqll)){
+                       foreach ($s as $id) {
+                         $_SESSION["loggedin"] = '';
+              $_SESSION["user"] = '';
+                 $_SESSION['id'] ='';
+                 session_destroy();
+       //session started
+                 session_start();
+                   $_SESSION["loggedin"] = true;
+
+            
+              $_SESSION["user"] = $param_username;
+                 $_SESSION['id'] =$id['id'];
+                  header("location: homestay/admin/home.php");
+                 }
+               }
+              }else{
+                 echo 'error... 1' . mysqli_error($con);
+              }
+
               // session start
                 // Redirect to login page
-              header("location: homestay/admin/home.php");
+             
             } else{
               echo "Something went wrong. Please try again later.";
             }
@@ -236,20 +266,20 @@ if(isset($_POST['login'])){
             mysqli_stmt_close($stmt);
           }
           else{
-            echo 'error...'.mysqli_error($con);
+            echo 'error... 1' . mysqli_error($con);
           }
 
         // Close statement
 
         }
         else{
-          echo 'error...'.mysqli_error($con);
+          echo mysqli_error($con);
         }
 
     // Close connection
         mysqli_close($con);
       }
-    }
+
 
 
     ?>
@@ -667,7 +697,7 @@ if(isset($_POST['login'])){
 
      <div id="id_login" class="modal" >
 
-      <form class="modal-content animate" action="login.php" method="POST" style="max-width: 700px">
+      <form class="modal-content animate" action="" method="POST" style="max-width: 700px">
         <div class="imgcontainer">
           <span onclick="document.getElementById('id_login').style.display='none'" class="close" title="Close Modal" style="font-size: 20px">&times;</span>
           <img src="images/img_avatar2.png" alt="Avatar" class="avatar1">
@@ -695,7 +725,7 @@ if(isset($_POST['login'])){
           <br />
 
           <!-- <button type="submit">Login</button> -->
-          <input style="width: 100px; background-color: green;" type="submit" value="Login" name="Login" />
+          <input style="width: 100px; background-color: green;" type="submit" value="login" name="login" />
         </div>
 
         <div class="container" style="background-color:#f1f1f1;">
@@ -705,8 +735,6 @@ if(isset($_POST['login'])){
         </div>
       </form>
     </div>
-
-
 
 
     <span >

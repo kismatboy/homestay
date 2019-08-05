@@ -54,8 +54,6 @@ $roo=mysqli_fetch_assoc($feedback);
 <link href="//fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Federo" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
-
 
 	
 </head>
@@ -69,8 +67,7 @@ $roo=mysqli_fetch_assoc($feedback);
 <!-- for facebook comment end-->
 	<!--Header-->
 	<?php include("header.php");?>
-
-						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav mr-auto">
 							<li class="nav-item active">
 								<a class="nav-link" href="index.php">Home
@@ -107,7 +104,7 @@ $roo=mysqli_fetch_assoc($feedback);
 					</div>
 				</nav>
 
-			</div>
+			</div> -->
 	<!--//header-->
 	<!--update database on page views-->
 	<?php  require_once('database/connection.php');

@@ -8,12 +8,12 @@ html, body{
 
 }
 body a {
-	text-decoration:none;
+	/*text-decoration:none;
 	transition:0.5s all;
 	-webkit-transition:0.5s all;
 	-moz-transition:0.5s all;
 	-o-transition:0.5s all;
-	-ms-transition:0.5s all;
+	-ms-transition:0.5s all;*/
 }
 a:hover{
  text-decoration:none;

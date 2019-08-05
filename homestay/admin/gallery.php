@@ -116,7 +116,7 @@ if(!isset($_SESSION["user"]))
 
                <input type="submit" name="update" value="insert" class="btn btn-primary"> 
               </form>
-               <form name="form" method="post"  enctype="multipart/form-data">
+             <!--   <form name="form" method="post"  enctype="multipart/form-data">
                             <div class="form-group">
                                             <label>update Homestay icon</label>
                                             
@@ -124,7 +124,7 @@ if(!isset($_SESSION["user"]))
                               </div>
 
                <input type="submit" name="insert_icon" value="upload icon" class="btn btn-primary"> 
-              </form>
+              </form> -->
               <?php
                include('db.php');
                include('lib/fetch_data.php');
@@ -165,9 +165,7 @@ if(!isset($_SESSION["user"]))
       }
     }
     
-}
-echo 'please upload image first';
-              }  
+}              }  
               if(isset($_POST['update']))
                {
                    

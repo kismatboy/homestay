@@ -1,3 +1,4 @@
+
 <?php  
 session_start();  
 if(!isset($_SESSION["user"]))
@@ -157,7 +158,9 @@ echo 'please upload image first';
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta charset="utf-8" />
+    <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js" type="text/javascript"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Homestay nepal</title>
   <!-- Bootstrap Styles-->
@@ -234,6 +237,9 @@ document.getElementById("defaultOpen").click();
     padding:10px 10px 10px 10px;
 
   }
+    #hiddenFormWrap{
+        display: none;
+    }
 
 </style>
 
@@ -382,6 +388,16 @@ document.getElementById("defaultOpen").click();
                 
               </form>
 </table>
+   <script type="text/javascript">
+              $(document).ready(function(){
+        $("#insert").click(function(){
+            data = $("#editor").html();
+            script (data);
+            $("#useDataField").val(data);
+            $("#formdata").submit();
+        });
+    });
+        </script>
 
 
             </div>
@@ -389,9 +405,10 @@ document.getElementById("defaultOpen").click();
             <div id="homestay" class="tabcontent">
              <legend><b>HOST INFORMATION</b></legend>
              <table>
-              <form action='' method="post" enctype="multipart/form-data">
+
+              <form action='' method="post" id='formdata' enctype="multipart/form-data">
                <tr>
-                <td>Name </td>
+                <td >Name </td>
                 <td  ><input style="width: 400px;margin-left: 50px;"type="text" name="hostname" placeholder="full NAME"></td>
               </tr>  
                  <tr>
@@ -408,21 +425,24 @@ document.getElementById("defaultOpen").click();
               </tr>
 
               <tr>
-                <td>Email </td>
+                <td >Email </td>
                 <td><input style="width: 400px;margin-left: 50px;" type="email" name="hostemail" placeholder="eg:abc@gmail.com"> </td>
               </tr>
               <tr>
                 <td>About </td>
                 <td >
-                  <textarea name="hostabout" style="height: 300px;width: 400px;margin-left: 50px">
-                    
-                  </textarea>
 
-                 <!--  <div class="adjoined-bottom">
+                  
+                    
+                 
+
+                  <div class="adjoined-bottom">
                     <div class="grid-container">
                       <div class="grid-width-100">
                         <div id="editor">
+                          <div id="1">
                           <h1>your homestay details</h1>
+                        </div>
 
                         </div>
                       </div>
@@ -430,19 +450,35 @@ document.getElementById("defaultOpen").click();
                   </div>
                   <script>
                     initSample();
-                  </script> -->
+                 
+                  </script>
+                  <div id="hiddenFormWrap">
+        <textarea type="hidden" name="divData" id="useDataField" ></textarea>
+    </div>
+                 
+
+                  
+
+                  
                 </td>
               </tr>
 
 
               <tr><td></td>
-                <td  ><input style="color:#fff; background-color: black" type="submit" name="insert_h" id="insert" value="insert"></td>
+                <td  ><input style="color:#fff; background-color: black" type="submit" name="insert_h1" id="insert" value="insert"></td>
               </tr>
 
             </table>
 
           </form> 
         </div>
+    
+        <?php
+    $postedDiv = "";
+    if(isset($_POST['insert_h1'])){
+       echo  "You saved:" . $_POST['divData'];
+    }
+    ?>
 
        
 

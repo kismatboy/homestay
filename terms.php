@@ -29,8 +29,14 @@
 
 </head>
 
-<body>
-
+	<style>
+	h1{
+background-color:grey;
+	}
+	p{
+		margin-top: 20 px;
+	}
+</style>
 <body>
 	<!--Header-->
 	<?php include("header.php");?> 
@@ -88,11 +94,11 @@
         </div>
       </nav>
 
-    </div>
-
-<h2><center>Welcome to our homestay management system</center></h2>
+    </div><div style="margin:50px 10px 10px 10px">
+<h1>
+	<center>Welcome to our homestay management system</center></h1>
 	<br><p>These terms and conditions outline the rules and regulations for the use of homestay's Website.</p> <br /> 
-	<span style="text-transform: capitalize;"> homestay</span> is located at:<br /> 
+	<span> homestay</span> is located at:<br /> 
 	<address>Pokhara Pokhara <br />33700 , Nepal<br />
 	</address>
 	<p>By accessing this website we assume you accept these terms and conditions in full. Do not continue to use homestay's website 
@@ -106,13 +112,19 @@
 	of a fixed duration, or any other means, for the express purpose of meeting the Client's needs in respect
 	of provision of the Company's stated services/products, in accordance with and subject to, prevailing law
 	of Nepal. Any use of the above terminology or other words in the singular, plural,
-	capitalisation and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p><h2>Cookies</h2>
+	capitalisation and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p>
+	<br><br>
+	<h2>Cookies</h2>
+	<br>
 	<p>We employ the use of cookies. By using homestay's website you consent to the use of cookies 
 	in accordance with homestay's privacy policy.</p><p>Most of the modern day interactive web sites
 	use cookies to enable us to retrieve user details for each visit. Cookies are used in some areas of our site
 	to enable the functionality of this area and ease of use for those people visiting. Some of our 
-	affiliate / advertising partners may also use cookies.</p><h2>License</h2>
-	<p>Unless otherwise stated, homestay and/or it's licensors own the intellectual property rights for
+	affiliate / advertising partners may also use cookies.</p>
+	<br><br><br>
+<h2>License</h2>
+
+	<p style="margin-top: 5px;">Unless otherwise stated, homestay and/or it's licensors own the intellectual property rights for
 	all material on homestay. All intellectual property rights are reserved. You may view and/or print
 	pages from http://homestay.rf.gd for your own personal use subject to restrictions set in these terms and conditions.</p>
 	<p>You must not:</p>
@@ -122,7 +134,10 @@
 		<li>Reproduce, duplicate or copy material from http://homestay.rf.gd</li>
 	</ol>
 	<p>Redistribute content from homestay (unless content is specifically made for redistribution).</p>
+	<br><br><br>
+
 <h2>User Comments</h2>
+<br>
 	<ol>
 		<li>This Agreement shall begin on the date hereof.</li>
 		<li>Certain parts of this website offer the opportunity for users to post and exchange opinions, information,
@@ -136,7 +151,7 @@
 		<li>homestayreserves the right to monitor all Comments and to remove any Comments which it considers
 		in its absolute discretion to be inappropriate, offensive or otherwise in breach of these Terms and Conditions.</li>
 		<li>You warrant and represent that:
-			<ol>
+			<ol type="a">
 				<li>You are entitled to post the Comments on our website and have all necessary licenses and consents to
 						do so;</li>
 				<li>The Comments do not infringe any intellectual property right, including without limitation copyright,
@@ -151,10 +166,12 @@
 		edit and authorize others to use, reproduce and edit any of your Comments in any and all forms, formats
 		or media.</li>
 	</ol>
+	<br><br><br>
+
 <h2>Hyperlinking to our Content</h2>
 	<ol>
 		<li>The following organizations may link to our Web site without prior written approval:
-			<ol>
+			<ol type="a">
 			<li>Government agencies;</li>
 			<li>Search engines;</li>
 			<li>News organizations;</li>
@@ -164,15 +181,13 @@
 				and charity fundraising groups which may not hyperlink to our Web site.</li>
 			</ol>
 		</li>
-	</ol>
-	<ol start="2">
 		<li>These organizations may link to our home page, to publications or to other Web site information so long
 			as the link: (a) is not in any way misleading; (b) does not falsely imply sponsorship, endorsement or
 			approval of the linking party and its products or services; and (c) fits within the context of the linking
 			party's site.
 		</li>
 		<li>We may consider and approve in our sole discretion other link requests from the following types of organizations:
-			<ol>
+			<ol type="a">
 				<li>commonly-known consumer and/or business information sources such as Chambers of Commerce, American
 					Automobile Association, AARP and Consumers Union;</li>
 				<li>dot.com community sites;</li>
@@ -213,14 +228,20 @@
 	</ol>
 	<p>No use of homestay's logo or other artwork will be allowed for linking absent a trademark license
 	agreement.</p>
+	<br><br><br>
+
 <h2>Iframes</h2>
 	<p>Without prior approval and express written permission, you may not create frames around our Web pages or
 	use other techniques that alter in any way the visual presentation or appearance of our Web site.</p>
+	<br><br><br>
+
 <h2>Reservation of Rights</h2>
 	<p>We reserve the right at any time and in its sole discretion to request that you remove all links or any particular
 	link to our Web site. You agree to immediately remove all links to our Web site upon such request. We also
 	reserve the right to amend these terms and conditions and its linking policy at any time. By continuing
 	to link to our Web site, you agree to be bound to and abide by these linking terms and conditions.</p>
+	<br><br><br>
+
 <h2>Removal of links from our website</h2>
 	<p>If you find any link on our Web site or any linked web site objectionable for any reason, you may contact
 	us about this. We will consider requests to remove links but will have no obligation to do so or to respond
@@ -228,12 +249,16 @@
 	<p>Whilst we endeavour to ensure that the information on this website is correct, we do not warrant its completeness
 	or accuracy; nor do we commit to ensuring that the website remains available or that the material on the
 	website is kept up to date.</p>
+	<br><br><br>
+
 <h2>Content Liability</h2>
 	<p>We shall have no responsibility or liability for any content appearing on your Web site. You agree to indemnify
 	and defend us against all claims arising out of or based upon your Website. No link(s) may appear on any
 	page on your Web site or within any context containing content or materials that may be interpreted as
 	libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or
 	other violation of, any third party rights.</p>
+	<br><br><br>
+
 <h2>Disclaimer</h2>
 	<p>To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website (including, without limitation, any warranties implied by law in respect of satisfactory quality, fitness for purpose and/or the use of reasonable care and skill). Nothing in this disclaimer will:</p>
 	<ol>
@@ -242,12 +267,15 @@
 	<li>limit any of our or your liabilities in any way that is not permitted under applicable law; or</li>
 	<li>exclude any of our or your liabilities that may not be excluded under applicable law.</li>
 	</ol>
+	<br><br><br>
+
 	<p>The limitations and exclusions of liability set out in this Section and elsewhere in this disclaimer: (a)
 	are subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer or
 	in relation to the subject matter of this disclaimer, including liabilities arising in contract, in tort
 	(including negligence) and for breach of statutory duty.</p>
 	<p>To the extent that the website and the information and services on the website are provided free of charge,
-	we will not be liable for any loss or damage of any nature.</p>	
+	we will not be liable for any loss or damage of any nature.</p>
+	<br><br>
 	<?php include("footer.php");?> 
 
 	<script src="js/jquery-2.2.3.min.js"></script>

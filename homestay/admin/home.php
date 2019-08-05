@@ -150,12 +150,19 @@ if(!isset($_SESSION["user"]))
                 <!--DEMO END-->
                 <!-- /. ROW  -->
 				<?php
+
 						include ('db.php');
                         include 'lib/fetch_data.php';
                         $h_id=gethomestayid();
+                        
 						$sql = "select * from roombook where homestay_id=$h_id";
-						$re = mysqli_query($con,$sql);
-						$c =0;
+                        $c =0;
+
+						if($re = mysqli_query($con,$sql)){
+
+						
+                        if(mysqli_num_rows($re)>0){
+
 						while($row=mysqli_fetch_array($re) )
 						{
 								$new = $row['stat'];
@@ -169,6 +176,9 @@ if(!isset($_SESSION["user"]))
 								}
 						
 						}
+
+                    }
+                }
 						
 									
 									

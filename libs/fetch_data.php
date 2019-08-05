@@ -255,7 +255,7 @@ function getprice($id,$type){
       	//if no rows returned show no icon alert
 		if ($rowcount==0) {
       		# code...
-			echo 'NA';
+			echo 'N/A';
 		}
       	//if there are rows available display all the results
 		foreach ($result as $price) {
