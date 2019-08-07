@@ -38,20 +38,11 @@ if(!isset($_SESSION["user"]))
 					$cout = $row['cout'];
 					$sta = $row['stat'];
 					$voucher = $row['voucher_pic'];
-					$days = $row['nodays'];
-					
-				
-				
+					$days = $row['nodays'];				
 				}
-					
-					
-				
 		
 	}
-		
-		
-		
-			?> 
+		?> 
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -223,13 +214,7 @@ if(!isset($_SESSION["user"]))
                                             <th>Status Level</th>
                                             <th><?php echo $sta; ?></th>
                                             
-                                        </tr>
-                                      
-                                   
-                                  
-                                        
-                                        
-                                    
+                                        </tr>        
                                 </table>
                             </div>
                         
@@ -288,7 +273,6 @@ if(!isset($_SESSION["user"]))
 						$csql ="select * from payment where owner='$owner'";
 						$cre= mysqli_query($con,$csql);
 						$cr =0 ;
-					
 						$csr = 0;
 						$cdr = 0;
 						while($crow=mysqli_fetch_array($cre))
@@ -415,16 +399,7 @@ if(!isset($_SESSION["user"]))
 							{
 									$urb = "UPDATE `roombook` SET `stat`='$st' WHERE id = '$id'";
 									
-								if($f1=="NO" )
-								{
-									echo "<script type='text/javascript'> alert('Sorry! Not Available Superior Room ')</script>";
-								}
-								else if($f2 =="NO")
-									{
-										echo "<script type='text/javascript'> alert('Sorry! Not Available Guest House')</script>";
-										
-									}
-									else if ($f3 == "NO")
+							if ($f3 == "NO")
 									{
 										echo "<script type='text/javascript'> alert('Sorry! Not Available Single Room')</script>";
 									}
