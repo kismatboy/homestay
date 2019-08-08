@@ -7,10 +7,11 @@ if(!isset($_SESSION["user"]))
 ?> 
 
 <?php
+$owner =$_SESSION['user'];
 		if(!isset($_GET["rid"]))
 		{
 				
-			 header("location:index.php");
+			 header("location:home.php");	
 		}
 		else {
 				$curdate=date("Y/m/d");
@@ -50,7 +51,7 @@ if(!isset($_SESSION["user"]))
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Administrator	</title>
+    <title><?php echo $owner ?> |Administrator 	</title>
     <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -165,6 +166,11 @@ if(!isset($_SESSION["user"]))
                                             <th><?php echo $nat; ?></th>
                                             
                                         </tr>
+                                        <tr>
+                                            <th>owner name </th>
+                                            <th><?php echo $owner; ?></th>
+                                            
+                                        </tr>
 										<tr>
                                             <th>Country </th>
                                             <th><?php echo $country;  ?></th>
@@ -222,7 +228,7 @@ if(!isset($_SESSION["user"]))
 							
                         </div>
                         <div class="panel-footer">
-                            <form method="post">
+                            <form method="post" action="">
 										<div class="form-group">
 														<label>Select the Conformation</label>
 														<select name="conf"class="form-control">
@@ -232,7 +238,7 @@ if(!isset($_SESSION["user"]))
 															
 														</select>
 										 </div>
-							<input type="submit" name="co" value="Conform" class="btn btn-success">
+							<input type="submit" name="conform_order" value="Conform" class="btn btn-success">
 							
 							</form>
                         </div>
@@ -240,7 +246,7 @@ if(!isset($_SESSION["user"]))
 					</div>
 					
 					<?php
-					$owner =$_SESSION['user'];
+					
 						$rsql ="select * from room where owner='$owner'";
 						if($rre= mysqli_query($con,$rsql)){
 						$r =0 ;
@@ -269,7 +275,7 @@ if(!isset($_SESSION["user"]))
 						?>
 						
 						<?php
-							$owner =$_SESSION['user'];
+							
 						$csql ="select * from payment where owner='$owner'";
 						$cre= mysqli_query($con,$csql);
 						$cr =0 ;
@@ -319,7 +325,7 @@ if(!isset($_SESSION["user"]))
 								<td><button type="button" class="btn btn-primary btn-circle"><?php 
 								
 								$f4 =$dr - $cdr; 
-								if($f4 <=0 )
+								if($f4 <= 0 )
 									{	
 									// $f4 = "NO";
 										echo $f4;
@@ -389,42 +395,40 @@ if(!isset($_SESSION["user"]))
 </html>
 
 <?php
-						if(isset($_POST['co']))
+						if(isset($_POST['conform_order']))
 						{	
 							$st = $_POST['conf'];
-							
+
 							 
 							
 							if($st=="Conform")
 							{
 									$urb = "UPDATE `roombook` SET `stat`='$st' WHERE id = '$id'";
 									
-							if ($f3 == "NO")
-									{
-										echo "<script type='text/javascript'> alert('Sorry! Not Available Single Room')</script>";
-									}
-										else if($f4=="NO")
-										{
-										echo "<script type='text/javascript'> alert('Sorry! Not Available Deluxe Room')</script>";
-										}
+							// if ($f3 == "NO")
+							// 		{
+							// 			echo "<script type='text/javascript'> alert('Sorry! Not Available Single Room')</script>";
+							// 		}
+							// 			else if($f4=="NO")
+							// 			{
+							// 			echo "<script type='text/javascript'> alert('Sorry! Not Available Deluxe Room')</script>";
+							// 			}
 										
-										else if( mysqli_query($con,$urb))
+										// else if( mysqli_query($con,$urb))
+										// 	{
+											 if( mysqli_query($con,$urb))
 											{	
+										
+
+
 												
 												 $type_of_room = 0;       
-														if($troom=="Superior Room")
-														{
-															$type_of_room = 320;
 														
-														}
-														else if($troom=="Deluxe Room")
+														if($troom=="Deluxe Room")
 														{
 															$type_of_room = 220;
 														}
-														else if($troom=="Guest House")
-														{
-															$type_of_room = 180;
-														}
+														
 														else if($troom=="Single Room")
 														{
 															$type_of_room = 150;
@@ -478,24 +482,29 @@ if(!isset($_SESSION["user"]))
 														
 														$fintot = $ttot + $mepr + $btot ;
 															
-														$psql = "INSERT INTO `payment`(`id`, `title`, `fname`, `lname`, `troom`, `tbed`, `nroom`, `cin`, `cout`, `ttot`,`meal`, `mepr`, `btot`,`fintot`,`noofdays`,`owner_name`) VALUES ('$id','$title','$fname','$lname','$troom','$bed','$nroom','$cin','$cout','$ttot','$meal','$mepr','$btot','$fintot','$days','$owner')";
+														$psql = "INSERT INTO `payment`(`id`, `title`, `fname`, `lname`, `troom`, `tbed`, `nroom`, `cin`, `cout`, `ttot`,`meal`, `mepr`, `btot`,`fintot`,`noofdays`,`owner`) VALUES ('$id','$title','$fname','$lname','$troom','$bed','$nroom','$cin','$cout','$ttot','$meal','$mepr','$btot','$fintot','$days','$owner')";
 														
 														if(mysqli_query($con,$psql))
 														{	$notfree="NotFree";
 															$rpsql = "UPDATE `room` SET `place`='$notfree',`cusid`='$id' where bedding ='$bed' and type='$troom' ";
 															if(mysqli_query($con,$rpsql))
 															{
-															echo "<script type='text/javascript'> alert('Booking Conform')</script>";
-															echo "<script type='text/javascript'> window.location='roombook.php'</script>";
+															echo "<script type='text/javascript'> alert('Booking Conform');
+
+															 window.location='/project_hstay_selected/homestay/admin/home.php'
+															 </script>";
 															}
 															
 															
+														}
+														else{
+															echo mysqli_error($con);
 														}
 												
 											}
 									
                                         
-							}	
+								}	
 					
 						}
 					

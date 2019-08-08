@@ -412,7 +412,7 @@ CREATE TABLE `payment` (
   `meal` varchar(30) DEFAULT NULL,
   `btot` double(8,2) DEFAULT NULL,
   `noofdays` int(11) DEFAULT NULL,
-  `owner` int(11) NOT NULL
+  `owner` varchar(65) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

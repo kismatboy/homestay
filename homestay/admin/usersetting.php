@@ -11,6 +11,8 @@ ob_start();
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
       <meta charset="utf-8" />
+              <title><?php echo $_SESSION['user'] ?> |Administrator </title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />

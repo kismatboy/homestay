@@ -14,7 +14,7 @@ include 'lib/fetch_data.php';
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Administrator	</title>
+        <title><?php echo $_SESSION['user'] ?> |Administrator </title>
     <!-- Bootstrap Styles-->
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->

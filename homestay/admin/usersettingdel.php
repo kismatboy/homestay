@@ -4,7 +4,7 @@
 include ('db.php');
 
 			
-			$id =$_GET['eid'];		
+			if($id =$_GET['eid'];){		
 			$newsql ="DELETE FROM `login` WHERE id ='$id' ";
 			if(mysqli_query($con,$newsql))
 				{
@@ -12,6 +12,7 @@ include ('db.php');
 							
 						
 				}
+			}
 			header("Location: usersetting.php");
 		
 ?>

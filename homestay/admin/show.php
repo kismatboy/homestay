@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Details of Book key</title>
+        <title><?php echo $_SESSION['user'] ?> |Administrator </title>
 		
 		<style>
 		/* reset */
