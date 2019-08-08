@@ -398,7 +398,7 @@ document.getElementById("defaultOpen").click();
    <script type="text/javascript">
               $(document).ready(function(){
         $("#insert").click(function(){
-            data = $("#editor").html();
+            data = $("#test").html();
             script (data);
             $("#useDataField").val(data);
             $("#formdata").submit();
@@ -443,7 +443,7 @@ document.getElementById("defaultOpen").click();
                     
                  
 
-                  <div class="adjoined-bottom">
+                  <div class="adjoined-bottom" id="test">
                     <div class="grid-container">
                       <div class="grid-width-100">
                         <div id="editor">
@@ -472,7 +472,7 @@ document.getElementById("defaultOpen").click();
 
 
               <tr><td></td>
-                <td  ><input style="color:#fff; background-color: black" type="submit" name="insert_h1" id="insert" value="insert"></td>
+                <td  ><input style="color:#fff; background-color: black" type="submit"  id="insert"  name="insert_h1" value="insert"></td>
               </tr>
 
             </table>
@@ -481,7 +481,6 @@ document.getElementById("defaultOpen").click();
         </div>
     
         <?php
-    $postedDiv = "";
     if(isset($_POST['insert_h1'])){
        echo  "You saved:" . $_POST['divData'];
     }

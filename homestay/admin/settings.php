@@ -92,7 +92,10 @@ if(!isset($_SESSION["user"]))
                                  
             <?php
 						include ('db.php');
-						$sql = "select * from room";
+                        include 'lib/fetch_data.php';
+
+                        $h_id=gethomestayid();
+						$sql = "select * from room where h_id=$h_id";
 						$re = mysqli_query($con,$sql)
 				?>
                 <div class="row">
@@ -170,12 +173,59 @@ if(!isset($_SESSION["user"]))
                     
                 </div>
                 <!-- /. ROW  -->
+
+
+                   <!-- update button-->
+                    <div class='panel-body' >
+                        <div  style="text-align:right; ">
+                            <button class='btn btn-primary btn' data-toggle='modal' data-target='#myModal1'>
+                              Update username
+                          </button>
+                      </div>
+                      <div class='modal fade' id='myModal1' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+                        <div class='modal-dialog'>
+                            <div class='modal-content'>
+                                <div class='modal-header'>
+                                    <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+                                    <h4 class='modal-title' id='myModalLabel'>Change the Username </h4>
+                                </div>
+                                <form method='post' action="update_settings.php">
+                                    <div class='modal-body'>
+                                        <div class='form-group'>
+                                            <label>current Username</label>
+                                            <input name='c_name'  class='form-control' placeholder='Enter User name'>
+                                        </div>
+                                    </div>
+                                    <div class='modal-body'>
+                                        <div class='form-group'>
+                                            <label>New Username</label>
+                                            <input name='n_name'  class='form-control' placeholder='Enter User name'>
+                                        </div>
+                                    </div>
+                                    <div class='modal-body'>
+                                        <div class='form-group'>
+                                            <label>Your Password</label>
+                                            <input name='pasd' class='form-control' placeholder='Enter Password'>
+                                        </div>
+                                    </div>
+
+
+                                    <div class='modal-footer'>
+                                        <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
+
+                                        <input type='submit' name='update_username' value='Update' class='btn btn-primary'>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 
                                        <!-- update button-->
                 <div class='panel-body' >
                     <div  style="text-align:right; ">
                             <button class='btn btn-primary btn' data-toggle='modal' data-target='#myModal'>
-                              Update 
+                              Update password
                             </button>
                             </div>
                             <div class='modal fade' id='myModal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
@@ -185,36 +235,36 @@ if(!isset($_SESSION["user"]))
                                             <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
                                             <h4 class='modal-title' id='myModalLabel'>Change the User name and Password</h4>
                                         </div>
-                                        <form method='post'>
-                                        <div class='modal-body'>
+                                        <form method='post' action="update_settings.php">
+                                      <!--   <div class='modal-body'>
                                             <div class='form-group'>
                                             <label>Change User name</label>
                                             <input name='usname'  class='form-control' placeholder='Enter User name'>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class='modal-body'>
                                             <div class='form-group'>
                                             <label>old Password</label>
-                                            <input name='pasd' class='form-control' placeholder='Enter Password'>
+                                            <input name='pass_old' class='form-control' placeholder='Enter Password'>
                                             </div>
                                         </div>
                                         <div class='modal-body'>
                                             <div class='form-group'>
                                             <label>new Password</label>
-                                            <input name='pasd' class='form-control' placeholder='Enter Password'>
+                                            <input name='pass_new' class='form-control' placeholder='Enter Password'>
                                             </div>
                                         </div>
                                         <div class='modal-body'>
                                             <div class='form-group'>
                                             <label>confirm Password</label>
-                                            <input name='pasd' class='form-control' placeholder='Enter Password'>
+                                            <input name='pass_new_conform' class='form-control' placeholder='Enter Password'>
                                             </div>
                                         </div>
                                         
                                         <div class='modal-footer'>
                                             <button type='button' class='btn btn-default' data-dismiss='modal'>Close</button>
                                             
-                                           <input type='submit' name='up' value='Update' class='btn btn-primary'>
+                                           <input type='submit' name='update_settings' value='change password' class='btn btn-primary'>
                                           </form>
                                            
                                         </div>

@@ -32,19 +32,12 @@ $username_err = $password_err = $confirm_password_err = $email_err=$name_err="";
 // Processing form data when form is submitted
 
 if(isset($_POST['login'])){
-    // Check if username is empty
-  if(empty(trim($_POST["username"]))){
-    $username_err = "Please enter username.";
-  } else{
-    $username = trim($_POST["username"]);
-  }
+   
+    $username = trim($_POST["username"]); 
+  
 
-    // Check if password is empty
-  if(empty(trim($_POST["password"]))){
-    $password_err = "Please enter your password.";
-  } else{
     $password = trim($_POST["password"]);
-  }
+  
 
     // Validate credentials
   if(empty($username_err) && empty($password_err)){
@@ -105,6 +98,8 @@ if(isset($_POST['login'])){
 
 
   }
+$_POST["username"]='';
+$_POST["password"]='';
 }
 
   
@@ -705,7 +700,7 @@ $sqll="select * from user where username='$param_username';";
 
         <div class="container">
           <label for="uname"><b>Username</b></label>
-          <input style ="  width: 100%;
+          <input style ="width: 100%;
           padding: 12px 20px;
           margin: 8px 0;
           display: inline-block;
@@ -713,7 +708,7 @@ $sqll="select * from user where username='$param_username';";
           box-sizing: border-box;" type="text" placeholder="Enter Username" name="username" required>
 
           <label for="psw"><b>Password</b></label>
-          <input style="  width: 100%;
+          <input style="width: 100%;
           padding: 12px 20px;
           margin: 8px 0;
           display: inline-block;

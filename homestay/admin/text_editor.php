@@ -7,7 +7,7 @@
 </head></head>
 <body>
 
-<div class="adjoined-bottom">
+<div class="adjoined-bottom" id="test">
 		<div class="grid-container">
 			<div class="grid-width-100">
 				<div id="editor">
