@@ -4,7 +4,27 @@ include('db.php');
 <?php //code to get the item using its id
 include("database/conn.php");//database config file
 $id=$_REQUEST['id']; $query="SELECT * from homestay_info where id='".$id."'"; $result=mysqli_query($GLOBALS["___mysqli_ston"],$query) or die ( ((is_object($GLOBALS["___mysqli_ston"]))? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ?$___mysqli_res : true)));
-$row = mysqli_fetch_assoc($result); ?>
+$row = mysqli_fetch_assoc($result); 
+
+
+// to create email sending script
+
+$owner_email=getemail($id);
+
+if(isset($_POST['send_message_to_owner'])){
+	include 'libs/PHPMailer/sendmail.php';
+	$visitor_name=$_POST['visitor_name'];
+	$visitor_email=$_POST['visitor_email'];
+	$visitor_subject=$_POST['visitor_subject'];
+	$visitor_message=$_POST['visitor_message'];
+	
+
+  send_mail($owner_email,$visitor_name,$visitor_subject,$visitor_message);
+
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -164,12 +184,107 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 				</div>
 			</div></div>
 
+<style type="text/css">
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: lime;
+  font-weight: bold;
+  font-size: 30px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: yellow;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 10px;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+</style>
+
+<h2 style="text-align:center">Gallery</h2>
+
+<div class="container">
 
 
 
-<section class="portfolio-w3ls" id="gallery">
-	<h3 class="title-w3-agileits title-black-wthree">Gallery</h3>
-		<?php
+	<?php
 		require("database/db_connect.php");
 $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
 	if ($result=mysqli_query($con,$sql))
@@ -186,23 +301,59 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
       	//if there are rows available display all the results
 		foreach ($result as $info) {
       	# code...
-			echo '
-				<div class="col-md-3 gallery-grid gallery1"><a href="homestay/admin/Gallery/'.$info["pic_name"].' " class="swipebox">
-				<img src="homestay/admin/Gallery/'.$info["pic_name"].'" class="img-responsive" alt="Homestay nepal pic">
-						<div class="textbox">
-						<h4>'.$row['title'].'</h4>
-							<p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
-						</div>
-				</a>
-				</div>';
+			echo '  <div class="mySlides">
+<a href="homestay/admin/Gallery/'.$info["pic_name"].' "  target="_blank">
+    
+    <img src="homestay/admin/Gallery/'.$info["pic_name"].'" style="width:100%;height:500px; "alt="Homestay nepal pic" class="img-responsive" >
+    </a>
+  <div class="numbertext">'.$a.'/'. $rowcount.'</div>
+</div> ';
+$a++;
 	}
 	mysqli_close($con);
 }
 		?>
+    
+  <a class="prev" style="  color: yellow;" onclick="plusSlides(-1)">❮</a>
+  <a class="next" style="  color: yellow;" onclick="plusSlides(1)">❯</a>
 
-				
-				<div class="clearfix"> </div>
-</section>
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+
 	 <!-- rooms & rates -->
       <div class="plans-section" id="rooms ">
 				 <div class="container" id='reservation'>
@@ -282,39 +433,39 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
               <div class="row">
                 <div class="col-md-6">
                   <div class="card-body">
-                    <form action="email.php" method="POST">
+                    <form action="" method="POST">
                       <div class="p pb-3"><strong>Feel free to contact us </strong></div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input class="form-control" type="text" name="name" placeholder="Name" required="required"/>
+                            <input class="form-control" type="text" name="visitor_name" placeholder="Name" required="required"/>
                           </div>
                         </div>
                       </div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                            <input class="form-control" type="email" name="replyto" placeholder="E-mail" required="required"/>
+                            <input class="form-control" type="email" name="visitor_email" placeholder="E-mail" required="required"/>
                           </div>
                         </div>
                       </div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
-                            <input class="form-control" type="text" name="subject" placeholder="Subject" required="required"/>
+                            <input class="form-control" type="text" name=" visitor_subject" placeholder="Subject" required="required"/>
                           </div>
                         </div>
                       </div>
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-comments"></i></span>
-                            <textarea class="form-control" name="message" placeholder="Your Message" required="required"></textarea>
+                            <textarea class="form-control" name="visitor_message" placeholder="Your Message" required="required"></textarea>
                           </div>
                         </div>
                       </div>
                       <div class="row">
                         <div class="col">
-                          <button class="btn btn-primary" type="submit">Send</button>
+                          <button class="btn btn-primary" type="submit" name=send_message_to_owner>Send</button>
                         </div>
                       </div>
                     </form>
@@ -328,7 +479,7 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
                     <p class="mb-0"><strong>Phone</strong></p>
                     <p class="pb-2">+977-<?php getphonenum($id)?></p>
                     <p class="mb-0"><strong>Email</strong></p>
-                    <p><?php getemail($id)?></p>
+                    <p><?php echo $owner_email ?></p>
                   </div>
                 </div>
               </div>
@@ -339,6 +490,8 @@ $sql="SELECT * FROM gallery where homestay_id=".$row['id'];
     </div>
   </div>
 </div>
+
+
 
 <!--comments-->
   <!-- visitors -->

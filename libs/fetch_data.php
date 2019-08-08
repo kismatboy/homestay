@@ -88,7 +88,7 @@ function getemail($id){
 				$rowcount=mysqli_num_rows($result);
 				foreach ($result as $owner ) {
       	# code...
-					echo ''.$owner['email'].'';
+					return $owner['email'];
 				}
 			}
 		}
