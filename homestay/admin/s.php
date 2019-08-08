@@ -113,8 +113,17 @@ if(isset($_POST['homestay_insert'])){
       }
     }
     else{
+        $sql_insert ="
+
+
+UPDATE  homestay_info SET title = '$name' , tags = '$tagline' , owner_name = '$user_id' , content = '$about' , location = '$location' , posted = 'publish' , address = '$address' ,meals = '$meal' ,video_link = '$y_link' , rules = '$rules' where owner_name = '$user_id';";
+      if( $rs=mysqli_query($con,$sql_insert)){
+        echo '<script>alert("success");</script>';
+
+      }else{
+        echo mysqli_error($con);
+      }
       // update command
-      echo 'you have homestay information delete it first.';
     }
 
   }
@@ -145,14 +154,12 @@ if(isset($_POST['homestay_insert'])){
 
 
      }
-   }}else{
+   }
+ }
+ else{
 echo 'please upload image first';
 
 }  
-
-
-
-
 }
 ?> 
 <!DOCTYPE html>

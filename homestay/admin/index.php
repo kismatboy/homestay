@@ -1,4 +1,4 @@
 <?php  
       session_start();  
-      header("location:test/login.php");   
+      header("location:/project_hstay_selected/");   
  ?>

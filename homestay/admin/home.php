@@ -2,8 +2,11 @@
 session_start();  
 if(!isset($_SESSION["user"]))
 {
- header("location:test/login.php");
+ header("location:index.php");
 }
+include ('db.php');
+include 'lib/fetch_data.php';
+ $h_id=gethomestayid();
 ?> 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -151,9 +154,8 @@ if(!isset($_SESSION["user"]))
                 <!-- /. ROW  -->
 				<?php
 
-						include ('db.php');
-                        include 'lib/fetch_data.php';
-                        $h_id=gethomestayid();
+						
+                       
                         
 						$sql = "select * from roombook where homestay_id=$h_id";
                         $c =0;
@@ -288,7 +290,7 @@ if(!isset($_SESSION["user"]))
                                 </div>
 								<?php
 								
-								$rsql = "SELECT * FROM `roombook`";
+								$rsql = "SELECT * FROM `roombook` where homestay_id=$h_id";
 								$rre = mysqli_query($con,$rsql);
 								$r =0;
 								while($row=mysqli_fetch_array($rre) )
@@ -320,7 +322,7 @@ if(!isset($_SESSION["user"]))
                                     <div id="collapseOne" class="panel-collapse collapse" style="height: 0px;">
                                         <div class="panel-body">
 										<?php
-										$msql = "SELECT * FROM `roombook`";
+										$msql = "SELECT * FROM `roombook`  where homestay_id=$h_id";
 										$mre = mysqli_query($con,$msql);
 										
 										while($mrow=mysqli_fetch_array($mre) )

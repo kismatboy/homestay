@@ -9,7 +9,9 @@ ob_start();
 
 <?php
 include('db.php');
-$rsql ="select id from room";
+include 'lib/fetch_data.php';
+ $h_id=gethomestayid();
+$rsql ="select id from room where H_id=$h_id";
 $rre=mysqli_query($con,$rsql);
 
 ?>
@@ -155,13 +157,18 @@ $rre=mysqli_query($con,$rsql);
                   
            <?php
 						include ('db.php');
-						$sql = "select * from room";
-						$re = mysqli_query($con,$sql)
+						$sql = "select * from room where H_id=$h_id";
+						$re = mysqli_query($con,$sql);
 				?>
                 <div class="row">
 				
 				
 				<?php
+                $rowcounting = mysqli_num_rows($re);
+                if ($rowcounting==0){
+                    echo ' no rooms found';
+                }
+                else{
 										while($row= mysqli_fetch_array($re))
 										{
 												$id = $row['type'];
@@ -200,6 +207,7 @@ $rre=mysqli_query($con,$rsql);
 											
 											}
 										}
+                                    }
 									?>
                     
                 </div>
