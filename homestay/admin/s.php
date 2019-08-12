@@ -9,13 +9,20 @@ if(!isset($_SESSION["user"]))
 
 include('db.php');
 include('lib/fetch_data.php');
-$user_id=$_SESSION['user'];
+$user_name=$_SESSION['user'];
 $h_id =gethomestayid();
+
 
 
 
 if(isset($_POST['insert_h'])){
   $owner=$_SESSION['user'];
+   $hostname=$_POST['host_name'];
+        $phone=$_POST['host_phone'];
+        $email=$_POST['host_email'];
+        $about=$_POST['host_about'];
+        $address=$_POST['host_address'];
+        // $img_file=$_FILES['hostimg']['name'];
   $sql="SELECT * FROM homestay_info where owner_name='$owner';";
   if ($result=mysqli_query($con,$sql))
   {
@@ -23,27 +30,79 @@ if(isset($_POST['insert_h'])){
     $rowcount=mysqli_num_rows($result);
         //if no rows returned show no news alert
     if ($rowcount==0) {
+
           # code...
       echo 'No homestay information found!! Add homestay first';
     }else{
-      echo $_POST['hostphone'];
-        $hostname=$_POST['hostaddress'];
-        $phone=$_POST['hostphone'];
-        $email=$_POST['hostemail'];
-        $about=$_POST['hostabout'];
-        $img_file=$_FILES['hostimg']['temp'];
+       $sql="SELECT * FROM user where username='$owner';";
+  if ($result=mysqli_query($con,$sql))
+  {
+        //count number of rows in query result
+    $rowcount=mysqli_num_rows($result);
+        //if no rows returned show no news alert
+    if ($rowcount==0) {
+
+      // echo $_POST['hostphone'];
+       
         //photo
-        $sql="insert into user (email,phone,about,owner_id) VALUES ('$email','$phone','$phone','$about','$user_id')";
+        $sql="insert into user (full_name,email,username,phone,about,homestay_id) VALUES ('$hostname','$email','$owner','$phone','$about','$h_id')";
         if(mysqli_query($con,$sql)){
-          echo $img_file;
+         // echo $img_file;
+
+        }else{
+          echo mysqli_error($con);
+        }
+          }
+          else{
+
+              $sql="UPDATE user set full_name = '$hostname', email = '$email', username = '$owner', phone = '$phone', about = '$about', homestay_id ='$h_id' where username='$owner';";
+        if(mysqli_query($con,$sql)){
+          echo "<script>alert('Successfully updated')</script>";
+         // echo $img_file;
 
         }else{
           echo mysqli_error($con);
         }
 
+            // update code here
+           
+
+          }
+        }
+          
+
    
   }
   }
+   if($_FILES["hostimg"]["name"]!==''){
+   $pic_name = $_FILES["hostimg"]["name"];
+   $target_file = "profile_pic/" . basename($pic_name);
+   if($_FILES['hostimg']['size'] > 2000000) {
+    echo "<script type='text/javascript'> alert('Image size should not be greated than 2mb')</script>";
+  }
+    // check if file exists
+  elseif(file_exists($target_file)) {
+    echo "<script type='text/javascript'> alert('File already exists')</script>";
+
+  } else{ 
+    if(move_uploaded_file($_FILES["hostimg"]["tmp_name"], $target_file)) {
+
+
+
+      $sql = "update user set pic ='$pic_name' where homestay_id='$h_id';";
+        if(mysqli_query($con, $sql)){
+       echo "<script type='text/javascript'> alert('Image uploaded and saved in the Database')</script>";
+       }else{
+       echo mysqli_error($con);
+        } 
+      }else {
+       echo "<script type='text/javascript'> alert('error in uploading file to file server)</script>";
+       // echo mysqli_error($con);
+
+
+     }
+   }
+ }
 }
 //host wala insert garni code.
 //                   if($_FILES["img"]["name"]!==''){
@@ -88,13 +147,13 @@ if(isset($_POST['homestay_insert'])){
   $name=$_POST['name'];
   $tagline=$_POST['tagline'];
   $about=$_POST['about'];
-  $address=$_POST['address'];
+   $address=$_POST['address'];
   $location=$_POST['location'];
   $meal=$_POST['meal'];
   $rules=$_POST['rules'];
   $y_link=$_POST['y_link'];
 
-  $sql="SELECT id FROM homestay_info where owner_name = '$user_id'";
+  $sql="SELECT id FROM homestay_info where owner_name = '$user_name'";
 
   if ($result=mysqli_query($con,$sql))
   {
@@ -104,21 +163,18 @@ if(isset($_POST['homestay_insert'])){
     if ($rowcount==0) {
           # code...
      //insert comand
-      $sql_insert ="INSERT INTO `homestay_info`(`title`,`tags`,`owner_name`,`content`,`location`,`posted`,`category`,`meals`,`video_link`,`rules`) VALUES ( '$name','$tagline','$user_id','$about','$location','publish','$address','$meal','$y_link','$rules');";
+      $sql_insert ="INSERT INTO `homestay_info`(`title`,`tags`,`owner_name`,`content`,`location`,`posted`,`category`,`meals`,`video_link`,`rules`) VALUES ( '$name','$tagline','$user_name','$about','$location','publish','$address','$meal','$y_link','$rules');";
       if( $rs=mysqli_query($con,$sql_insert)){
-        echo 'success';
+        echo '<script>alert("insert success");</script>';
 
       }else{
         echo mysqli_error($con);
       }
     }
     else{
-        $sql_insert ="
-
-
-UPDATE  homestay_info SET title = '$name' , tags = '$tagline' , owner_name = '$user_id' , content = '$about' , location = '$location' , posted = 'publish' , address = '$address' ,meals = '$meal' ,video_link = '$y_link' , rules = '$rules' where owner_name = '$user_id';";
+        $sql_insert ="UPDATE  homestay_info SET title = '$name' , tags = '$tagline' , owner_name = '$user_name' , content = '$about' , location = '$location' , posted = 'publish' , address = '$address' ,meals = '$meal' ,video_link = '$y_link' , rules = '$rules' where owner_name = '$user_name';";
       if( $rs=mysqli_query($con,$sql_insert)){
-        echo '<script>alert("success");</script>';
+        echo '<script>alert("update success");</script>';
 
       }else{
         echo mysqli_error($con);
@@ -221,7 +277,7 @@ document.getElementById("defaultOpen").click();
     cursor: pointer;
     padding: 14px 16px;
     font-size: 17px;
-    width: 25%;
+    width: 50%;
   }
 
   /* Change background color of buttons on hover */
@@ -235,11 +291,12 @@ document.getElementById("defaultOpen").click();
     display: none;
     padding: 50px;
     text-align: center;
+    margin-top: 20px;
   }
 
   /* Style each tab content individually */ 
-  #host {background-color:gray;}
-  #homestay {background-color:gray;}
+  #host {background-color:gray;width: 100%;}
+  #homestay {background-color:gray;width: 100%;}
   td {
     padding:10px 10px 10px 10px;
 
@@ -395,7 +452,7 @@ document.getElementById("defaultOpen").click();
                 
               </form>
 </table>
-   <script type="text/javascript">
+<!--    <script type="text/javascript">
               $(document).ready(function(){
         $("#insert").click(function(){
             data = $("#test").html();
@@ -404,7 +461,7 @@ document.getElementById("defaultOpen").click();
             $("#formdata").submit();
         });
     });
-        </script>
+        </script> -->
 
 
             </div>
@@ -416,32 +473,33 @@ document.getElementById("defaultOpen").click();
               <form action='' method="post" id='formdata' enctype="multipart/form-data">
                <tr>
                 <td >Name </td>
-                <td  ><input style="width: 400px;margin-left: 50px;"type="text" name="hostname" placeholder="full NAME"></td>
+                <td  ><input style="width: 100%;margin-left: 50px;"type="text" name="host_name" placeholder="full NAME"></td>
               </tr>  
                  <tr>
                 <td>phone number (+977)</td>
-                <td  ><input style="width: 400px;margin-left: 50px;" type="number" name="hostphone" placeholder="phone number"></td>
+                <td  ><input style="width: 100%;margin-left: 50px;" type="number" name="host_phone" placeholder="phone number"></td>
               </tr>  
               
               <td>address </td>
-                <td  ><input style="width: 400px;margin-left: 50px;"type="text" name="hostaddress" placeholder="address"></td>
+                <td  ><input style="width: 100%;margin-left: 50px;"type="text" name="host_address" placeholder="address"></td>
               </tr> 
               <tr>
-                <td  align="left">Photo </td>
-                <td><input style="width: 400px;margin-left: 50px;" type="file" name="hostimg" id="img"></td>
+                <td >Photo </td>
+                <td><input style="width: 100%;margin-left: 50px;" type="file" name="hostimg" id="img"></td>
               </tr>
 
               <tr>
                 <td >Email </td>
-                <td><input style="width: 400px;margin-left: 50px;" type="email" name="hostemail" placeholder="eg:abc@gmail.com"> </td>
+                <td><input style="width: 100%;margin-left: 50px;" type="email" name="host_email" placeholder="eg:abc@gmail.com"> </td>
               </tr>
               <tr>
                 <td>About </td>
                 <td >
+                  <input type="textarea" name="host_about" style="width:100%;height:100px; margin-left: 50px; align-content: right;">
 
                   
                     
-                 
+               <!--   
 
                   <div class="adjoined-bottom" id="test">
                     <div class="grid-container">
@@ -462,7 +520,7 @@ document.getElementById("defaultOpen").click();
                   <div id="hiddenFormWrap">
         <textarea type="hidden" name="divData" id="useDataField" ></textarea>
     </div>
-                 
+                  -->
 
                   
 
@@ -472,7 +530,7 @@ document.getElementById("defaultOpen").click();
 
 
               <tr><td></td>
-                <td  ><input style="color:#fff; background-color: black" type="submit"  id="insert"  name="insert_h1" value="insert"></td>
+                <td  ><input style="color:#fff; background-color: black" type="submit"  id="insert"  name="insert_h" value="insert host infromation"></td>
               </tr>
 
             </table>
@@ -480,11 +538,11 @@ document.getElementById("defaultOpen").click();
           </form> 
         </div>
     
-        <?php
-    if(isset($_POST['insert_h1'])){
-       echo  "You saved:" . $_POST['divData'];
-    }
-    ?>
+       <!--  <?php
+   // if(isset($_POST['insert_h1'])){
+      // echo  "You saved:" . $_POST['divData'];
+    //}
+    ?> -->
 
        
 

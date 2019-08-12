@@ -46,30 +46,14 @@ function getaddress($id){
 }
 function getphonenum($id){
 	require("database/db_connect.php");
-	$sql="SELECT owner_name FROM homestay_info where id = $id ";
+	$sql="SELECT * FROM user where homestay_id = $id";
 	if ($result=mysqli_query($con,$sql))
 	{
-		$rowcount=mysqli_num_rows($result);
-		foreach ($result as $owner_name ) {
+		foreach ($result as $phone ) {
 
-			$sql="SELECT owner_id FROM user where username = '".$owner_name['owner_name']."';";
-			if ($result=mysqli_query($con,$sql))
-			{
-				$rowcount=mysqli_num_rows($result);
-				foreach ($result as $owner_id ) {
-
-					$sql="SELECT phone FROM user where id = ".$owner_id['owner_id']." ; ";
-					if ($result=mysqli_query($con,$sql))
-					{
-						foreach ($result as $phone ) {
-      	# code...
-							echo ''.$phone['phone'].'';
+			echo ''.$phone['phone'].'';
 						}
 					}
-				}
-			}
-		}
-	}
 
 	mysqli_close($con);
 }
@@ -394,7 +378,7 @@ function gethomestayname($id,$table){
 }
 function gethostdetails($id,$table){
 	require("database/db_connect.php");
-	$sql="SELECT * FROM $table";
+	$sql="SELECT * FROM $table where homestay_id=$id";
 	if ($result=mysqli_query($con,$sql))
 	{
       	//count number of rows in query result
@@ -402,39 +386,41 @@ function gethostdetails($id,$table){
       	//if no rows returned show no script alert
 		if ($rowcount==0) {
       		# code...
-			echo 'Homestay Name Not Found';
+			echo 'host details Not Found';
 		}
 		foreach ($result as $t_data) {
 
 
 
       	# code...
-			if ($t_data['id']==$id){
+			// if ($t_data['id']==$id){
 				echo ''. $t_data['about'].'</p>';
-				$sql="SELECT * FROM user where owner_id=".$t_data['id'].";";
-				if ($result=mysqli_query($con,$sql))
-				{
-      	//count number of rows in query result
-					$rowcount=mysqli_num_rows($result);
-      	//if no rows returned show no script alert
-					if ($rowcount==0) {
-      		# code...
-						echo 'owner image Not Found';
-					}
-					foreach ($result as $img) {
+				echo '<img src="homestay/admin/profile_pic/'.$t_data["pic"].'"  alt="about the host" height="400px">';
+
+				// $sql="SELECT * FROM user where owner_id=".$t_data['id'].";";
+				// if ($result=mysqli_query($con,$sql))
+				// {
+    //   	//count number of rows in query result
+				// 	$rowcount=mysqli_num_rows($result);
+    //   	//if no rows returned show no script alert
+				// 	if ($rowcount==0) {
+    //   		# code...
+				// 		echo 'owner image Not Found';
+				// 	}
+				// 	foreach ($result as $img) {
 
 
-						echo '<img src="homestay/images/'.$img["pic"].'"  alt="about the host" height="400px">';
-					}
-				}
-				else{
-					echo mysqli_error($con);
-				}
+				// 		echo '<img src="homestay/images/'.$img["pic"].'"  alt="about the host" height="400px">';
+				// 	}
+				// }
+				// else{
+				// 	echo mysqli_error($con);
+				// }
 
 			}
 
 			
-		}
+		// }
 	}
 	mysqli_close($con);
 }
