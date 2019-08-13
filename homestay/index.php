@@ -44,6 +44,7 @@ if(isset($_POST['send_message_to_owner'])){
 <link href="//fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Federo" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
 <!--//fonts-->
 </head>
 <body>
@@ -82,18 +83,27 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 					</li>
 					<li>
 						<div class="w3_grid_effect">
+							<!-- <i class="fas fa-tree-large"></i> -->
 							<span class="cbp-ig-icon w3_users"></span>
-							<h4 class="cbp-ig-title">LARGE CAFE</h4>
+							<h4 class="cbp-ig-title">Natural beauty</h4>
 							<span class="cbp-ig-category"><?php gethomestayname($_REQUEST['id'],'homestay_info')?></span>
 						</div>
-					</li>
+					</li><li>
+						<div class="w3_grid_effect">
+							<!-- <i class="fas fa-tree-large"></i> -->
+														<span class="cbp-ig-icon w3_ticket"></span>
+
+							<h4 class="cbp-ig-title">good WIFI COVERAGE</h4>
+							<span class="cbp-ig-category"><?php gethomestayname($_REQUEST['id'],'homestay_info')?></span>
+						</div>
+					</li><!-- 
 					<li>
 						<div class="w3_grid_effect">
 							<span class="cbp-ig-icon w3_ticket"></span>
 							<h4 class="cbp-ig-title">WIFI COVERAGE</h4>
-							<span class="cbp-ig-category"><?php gethomestayname($_REQUEST['id'],'homestay_info')?></span>
+							<span class="cbp-ig-category"><?php //gethomestayname($_REQUEST['id'],'homestay_info')?></span>
 						</div>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 		</div>
@@ -490,6 +500,36 @@ function showSlides(n) {
     </div>
   </div>
 </div>
+<?php //include 'comment/index.php';
+ ?>
+
+  <div class="container">
+   <form method="POST" id="comment_form">
+    <div class="form-group">
+     <input type="text" name="comment_name" id="comment_name" class="form-control" placeholder="Enter Name" />
+    </div>
+    <div class="form-group">
+     <textarea name="comment_content" id="comment_content" class="form-control" placeholder="Enter Comment" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+     <input type="hidden" name="comment_id" id="comment_id" value="0" />
+     <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" />
+    </div>
+   </form>
+   <span id="comment_message"></span>
+   <br />
+   <div id="display_comment"></div>
+  </div>
+<script>
+
+
+ load_comment();
+
+</script>
+
+ 
+
+
 
 
 
@@ -509,7 +549,7 @@ function showSlides(n) {
 					}
 				</style>
  	
-				<?php getstarreview($id);?>
+				<?php //getstarreview($id);?>
 				</ul><br/><br/>
 				<div style="color:black; border: 3px;">
 				<span class="fa fa-star checked"></span>
@@ -533,8 +573,9 @@ function showSlides(n) {
 </div> -->
   <!-- visitors -->
 
-
-<script src="https://www.powr.io/powr.js?platform=html"></script><div  style="margin-top: 10px;" class="powr-comments" id="f1e0a67e_1564676927"></div>
+<!-- 
+<script src="https://www.powr.io/powr.js?platform=html"></script>
+<div  style="margin-top: 10px;" class="powr-comments" id="f1e0a67e_1564676927"></div> -->
  <?php //getcommentsscript("links"); 
 ?>
 

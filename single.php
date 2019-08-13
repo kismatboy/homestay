@@ -54,7 +54,12 @@ $roo=mysqli_fetch_assoc($feedback);
 <link href="//fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Federo" rel="stylesheet">
 <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!--  for ajax -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	
 </head>
 
@@ -127,7 +132,7 @@ $roo=mysqli_fetch_assoc($feedback);
 	<!--//banner-->
 	<section class="banner-bottom">
 		<!--/blog-->
-		<div class="container">
+		<div class="container"  style="margin-left: 90px;margin-right: 90px;max-width: 1400px;">
 			<div class="row">
 				<!--left-->
 				<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
@@ -179,7 +184,7 @@ $roo=mysqli_fetch_assoc($feedback);
 
 
 <!--right-->
-								<aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
+								<aside class="col-lg-4 col-md-4 agileits-w3ls-right-blog-con text-right" style="padding-left: 90px;">
 									<div class="right-blog-info text-left">
 										
 										<div class="tech-btm widget_social">
