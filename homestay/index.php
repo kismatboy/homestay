@@ -129,25 +129,18 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 <div class="advantages">
 	<div class="container">
 		<div class="advantages-main">
-				<h3 class="title-w3-agileits"> Our services</h3>
+				<h3 class="title-w3-agileits"> What We Offer</h3>
 		   <div class="advantage-bottom">
-			 <div class="col-md-6 advantage-grid left-w3ls wow bounceInLeft" data-wow-delay="0.3s">
+			 <div class="col-md-12 advantage-grid left-w3ls wow bounceInLeft" data-wow-delay="0.3s">
 			 	<div class="advantage-block ">
 					
-			 		<h4> <i class="fa fa-briefcase" aria-hidden="true" style="color:yellow;"></i><br/>We include the following things: </h4>
+			 		<h4> <i class="fa fa-heart" aria-hidden="true" style="color:yellow;"></i><br/>We include the following things: </h4>
 			 		<?php getfeatures($_REQUEST['id'])?>
 					
 			 		
 			 	</div>
 			 </div>
-			 <div class="col-md-6 advantage-grid right-w3ls wow zoomIn" data-wow-delay="0.3s">
-			 	<div class="advantage-block">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-			 		<h4>welcome:</h4>
-			 		<?php getallowed($_REQUEST['id'])?>
-					
-			 	</div>
-			 </div>
+		
 			<div class="clearfix"> </div>
 			</div>
 		</div>

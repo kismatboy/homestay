@@ -151,7 +151,7 @@ $roo=mysqli_fetch_assoc($feedback);
 										</li>
 										<li class="mx-2">
 											<a href="#">
-												<i class="far fa-user"></i><?php echo $row['author']; ?></a>
+												<i class="far fa-user"></i><?php echo $row['owner_name']; ?></a>
 											</li>
 											<li>
 												<a href="#">
@@ -177,8 +177,6 @@ $roo=mysqli_fetch_assoc($feedback);
 									<!--comments script will go here-->
 <div style="margin-top: 40px;">
 <?php require_once('homestay/index.php');
-
-//getcommentsscript("links");
 ?>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

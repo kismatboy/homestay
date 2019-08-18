@@ -152,6 +152,7 @@ if(isset($_POST['homestay_insert'])){
   $meal=$_POST['meal'];
   $rules=$_POST['rules'];
   $y_link=$_POST['y_link'];
+  $Features=$_POST['Features'];
 
   $sql="SELECT id FROM homestay_info where owner_name = '$user_name'";
 
@@ -163,7 +164,7 @@ if(isset($_POST['homestay_insert'])){
     if ($rowcount==0) {
           # code...
      //insert comand
-      $sql_insert ="INSERT INTO `homestay_info`(`title`,`tags`,`owner_name`,`content`,`location`,`posted`,`category`,`meals`,`video_link`,`rules`) VALUES ( '$name','$tagline','$user_name','$about','$location','publish','$address','$meal','$y_link','$rules');";
+      $sql_insert ="INSERT INTO `homestay_info`(`title`,`tags`,`owner_name`,`content`,`location`,`posted`,`category`,`meals`,`video_link`,`rules`,`Features`) VALUES ( '$name','$tagline','$user_name','$about','$location','publish','$address','$meal','$y_link','$rules','$Features');";
       if( $rs=mysqli_query($con,$sql_insert)){
         echo '<script>alert("insert success");</script>';
 
@@ -172,7 +173,7 @@ if(isset($_POST['homestay_insert'])){
       }
     }
     else{
-        $sql_insert ="UPDATE  homestay_info SET title = '$name' , tags = '$tagline' , owner_name = '$user_name' , content = '$about' , location = '$location' , posted = 'publish' , address = '$address' ,meals = '$meal' ,video_link = '$y_link' , rules = '$rules' where owner_name = '$user_name';";
+        $sql_insert ="UPDATE  homestay_info SET title = '$name' , tags = '$tagline' , owner_name = '$user_name' , content = '$about' , location = '$location' , posted = 'publish' , address = '$address' ,meals = '$meal' ,video_link = '$y_link' , rules = '$rules', Features = '$Features' where owner_name = '$user_name';";
       if( $rs=mysqli_query($con,$sql_insert)){
         echo '<script>alert("update success");</script>';
 
@@ -424,9 +425,8 @@ document.getElementById("defaultOpen").click();
               <tr>
                 <td>Features </td>
                 <td >
-                  <input type="checkbox" name="features[]" value="internet"><label>   Internet  </label>
-                  <input type="checkbox" name="features[]" value="laundry"><label>    Laundry  </label>
-                  <input type="checkbox" name="features[]" value="parking"><label>Parking</label>
+                   <textarea rows="5" cols="50" name="Features" placeholder="Input details about the rules and regulations"></textarea>
+                 
                 </td>
               </tr>
 

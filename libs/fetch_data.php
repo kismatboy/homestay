@@ -149,7 +149,7 @@ function getvideo($id){
 
 function getfeatures($id){
 	require("database/db_connect.php");
-	$sql="SELECT features FROM features where h_id ='$id';";
+	$sql="SELECT features FROM homestay_info where id ='$id';";
 	if ($result=mysqli_query($con,$sql))
 	{
       	//count number of rows in query result
