@@ -180,8 +180,87 @@ $roo=mysqli_fetch_assoc($feedback);
 
 //getcommentsscript("links");
 ?>
-</div></div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
+
+<div class="container" style="margin-top: 40px;">
+   <form method="POST" id="comment_form">
+    <div class="form-group">
+     <input type="text" name="comment_name" id="comment_name" class="form-control" placeholder="Enter Name" />
+    </div>
+    <div class="form-group">
+     <textarea name="comment_content" id="comment_content" class="form-control" placeholder="Enter Comment" rows="5"></textarea>
+    </div>
+    <div class="form-group">
+     <input type="hidden" name="comment_id" id="comment_id" value="0" />
+     <input type="hidden" name="h_id" id="comment_id" value="<?php echo $_GET['id']; ?>" />
+     <input type="submit" name="submit_comment" id="submit" class="btn btn-info" value="Submit" />
+    </div>
+   </form>
+   <span id="comment_message"></span>
+   <br />
+   <div id="display_comment"></div>
+  </div>
+  <script type="text/javascript">
+
+
+$(document).ready(function(){
+ 
+ $('#comment_form').on('submit', function(event){
+  event.preventDefault();
+// alert("thank you!");
+  var form_data = $(this).serialize();
+ // alert(form_data);
+    $.ajax({
+     url:"add_comment.php",
+     method:"POST",
+     data:form_data,
+     dataType:"JSON",
+     success:function(data)
+     {
+      if(data.error != '')
+      {
+     
+       $('#comment_form')[0].reset();
+       $('#comment_message').html(data.error);
+       $('#comment_id').val('0');
+       load_comment();
+      }
+     }
+    })
+ });
+
+
+ function load_comment()
+ {
+  $.ajax({
+   url:"fetch_comment.php?id=<?php echo $_GET['id']; ?>",
+   method:"POST",
+   success:function(data)
+   {
+    $('#display_comment').html(data);
+
+   }
+  })
+ }
+        load_comment();
+
+
+ $(document).on('click', '.reply', function(){
+  var comment_id = $(this).attr("id");
+  $('#comment_id').val(comment_id);
+  $('#comment_name').focus();
+ });
+ 
+});
+</script>
+
+
+<?php //include 'star/show_rating.php';?>
+</div>
+</div>
 
 <!--right-->
 								<aside class="col-lg-4 col-md-4 agileits-w3ls-right-blog-con text-right" style="padding-left: 90px;">
