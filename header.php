@@ -690,7 +690,7 @@ $sqll="select * from user where username='$param_username';";
     <!-- <a href="homestay/admin/test/login.php"> -->
      <button  class="btn cancel" onclick="document.getElementById('id_login').style.display='block'" style="width:auto;"><i class="fas fa-lock"></i> <strong style="color: black;">Sign In</button></strong>
 
-     <div id="id_login" class="modal" style="z-index: 0;">
+     <div id="id_login" class="modal"style="z-index: 11;overflow: scroll;">
 
       <form class="modal-content animate" action="" method="POST" style="max-width: 700px">
         <div class="imgcontainer">
@@ -735,9 +735,9 @@ $sqll="select * from user where username='$param_username';";
     <span >
       <button class="btn cancel" onclick="document.getElementById('id_reg').style.display='block'" ><i class="far fa-user"></i> <strong style="color:black;">Register</strong></button>
     </span>
-    <div id="id_reg" class="modal ">
+    <div id="id_reg" class="modal" style="z-index: 11;overflow: auto;">
 
-      <form class="modal-content animate" action="" method="post">
+      <form class="modal-content animate" action="" method="post" >
 
         <div class="container">
          <span onclick="document.getElementById('id_reg').style.display='none'" class="close" title="Close Modal" style="font-size: 20px">&times;</span>

@@ -164,15 +164,15 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 			</div></div>
 
 			<div class="team" id="team">
-	<div class="container about-wthree" id="Rules" >
+	<div class="container about-wthree" id="Rules" style="margin-bottom: 0px;">
 			<h3 class="title-w3-agileits title-black-wthree">Rules:-</h3>
-			<div id="verticalTab">
+			
 				
 				
 
 						<?php getrules($_REQUEST['id']); ?>
 					
-				</div>
+				
 			</div></div>
 				<div class="team" id="team">
 	<div class="container">
@@ -181,7 +181,6 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 				
 					<div class="resp-tabs-container">
 
-						<!-- video url iframe-->
 						<iframe width="100%" height="600" src="<?php getlocation($_REQUEST['id']);?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				</div>
