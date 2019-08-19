@@ -328,7 +328,7 @@ $sqll="select * from user where username='$param_username';";
         .modal {
           display: none; /* Hidden by default */
           position: fixed; /* Stay in place */
-          z-index: 1; /* Sit on top */
+          z-index: 10; /* Sit on top */
           left: 0;
           top: 0;
           width: 100%; /* Full width */
@@ -690,7 +690,7 @@ $sqll="select * from user where username='$param_username';";
     <!-- <a href="homestay/admin/test/login.php"> -->
      <button  class="btn cancel" onclick="document.getElementById('id_login').style.display='block'" style="width:auto;"><i class="fas fa-lock"></i> <strong style="color: black;">Sign In</button></strong>
 
-     <div id="id_login" class="modal" >
+     <div id="id_login" class="modal" style="z-index: 0;">
 
       <form class="modal-content animate" action="" method="POST" style="max-width: 700px">
         <div class="imgcontainer">
@@ -834,7 +834,7 @@ $sqll="select * from user where username='$param_username';";
   opacity: 0.9;
   position: fixed;
   bottom: 23px;
-  right: 28px;
+  right: 55px;
   width: 280px;border-radius: 50%;width: 90px;background-color: green;  z-index: 9;" onclick="openForm_chat()">Feedback</button>
 
   <div class="chat-popup" id="myForm_chat">

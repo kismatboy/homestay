@@ -1063,8 +1063,9 @@ h3.title-w3-agileits {
 /*--//main--*/
 /*-- /about --*/
 .about-wthree {
-    padding: 5em 0 22.6em 0px;
+    /*padding: 5em 0 22.6em 0px;*/
     background: #eceef2;
+    margin-bottom: 50px;
 }
 .ab-w3l-spa {
     text-align: center;

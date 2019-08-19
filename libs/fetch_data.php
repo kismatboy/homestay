@@ -440,7 +440,7 @@ function getrules($id){
 		foreach ($result as $t_data) {
       	# code...
 			if ($t_data['id']==$id){
-				echo '</p>'.$t_data["rules"].'</p>';
+				echo '</p> <p font-size:150px><b>'.$t_data["rules"].'</p></b>';
 			}
 		}
 

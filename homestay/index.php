@@ -110,11 +110,11 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 	</div>
 <!-- //banner-bottom -->
 <!-- /about -->
- 	<div class="about-wthree" id="about">
-		  <div  style=" height: 400px;  width: 100%; max-width: 900px; margin-left: auto;
+ 	<div class="about-wthree" >
+		  <div  style="   width: 100%; max-width: 900px; margin-left: auto;
   margin-right: auto;
  ">
-				   <div class="ab-w3l-spa" id='about_host'>
+				   <div  >
                             <h3 class="title-w3-agileits title-black-wthree">About host</h3> 
 						   <p class="about-para-w3ls"><?php gethostdetails($_REQUEST['id'],'user');?>
 						 
@@ -126,7 +126,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 </div>
  	<!-- //about -->
 <!--sevices-->
-<div class="advantages">
+<div class="advantages" >
 	<div class="container">
 		<div class="advantages-main">
 				<h3 class="title-w3-agileits"> What We Offer</h3>
@@ -157,21 +157,21 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 					<div class="resp-tabs-container">
 
 						<!-- video url iframe-->
-						<?php getvideo($_REQUEST['id']);?>
+						<iframe width="100%" height="600px" src="<?php getvideo($_REQUEST['id']);?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						
 					</div>
 				</div>
 			</div></div>
 
 			<div class="team" id="team">
-	<div class="container" id="Rules">
+	<div class="container about-wthree" id="Rules" >
 			<h3 class="title-w3-agileits title-black-wthree">Rules:-</h3>
 			<div id="verticalTab">
 				
-					<div class="resp-tabs-container">
+				
 
-						<!-- video url iframe-->
 						<?php getrules($_REQUEST['id']); ?>
-					</div>
+					
 				</div>
 			</div></div>
 				<div class="team" id="team">
@@ -182,7 +182,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 					<div class="resp-tabs-container">
 
 						<!-- video url iframe-->
-						<?php getlocation($_REQUEST['id']);?>
+						<iframe width="100%" height="600" src="<?php getlocation($_REQUEST['id']);?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div></div>
