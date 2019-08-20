@@ -430,7 +430,12 @@ function showSlides(n) {
                       <div class="row mb-3">
                         <div class="col">
                           <div class="input-group"><span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            <input class="form-control" type="text" name="visitor_name" placeholder="Name" required="required"/>
+                          	<style type="text/css">
+                          		.form-control{
+                          			margin-top: 0px;
+                          		}
+                          	</style>
+                            <input class="form-control" style="margin-top: 0px;" type="text" name="visitor_name" placeholder="Name" required="required"/>
                           </div>
                         </div>
                       </div>
@@ -443,8 +448,8 @@ function showSlides(n) {
                       </div>
                       <div class="row mb-3">
                         <div class="col">
-                          <div class="input-group"><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
-                            <input class="form-control" type="text" name=" visitor_subject" placeholder="Subject" required="required"/>
+                          <div class="input-group" ><span class="input-group-addon"><i class="fa fa-file-text"></i></span>
+                            <input class="form-control" style="margin-top: 0px;" type="text" name=" visitor_subject" placeholder="Subject" required="required"/>
                           </div>
                         </div>
                       </div>

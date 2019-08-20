@@ -1,6 +1,6 @@
 <?php
 // session_start();
-include 'class/Rating.php';
+include 'star/class/Rating.php';
 $rating = new Rating();
 
 $rating->saveRating($_POST);	

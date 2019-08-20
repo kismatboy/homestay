@@ -27,16 +27,18 @@ $(function() {
 	$('#ratingForm').on('submit', function(event){
 		event.preventDefault();
 		var formData = $(this).serialize();
+		alert('hello');
 		$.ajax({
+			// alert('hello');
 			type : 'POST',
 			dataType: "json",	
 			url : 'action.php',					
 			data : formData,
 			success:function(response){
-				if(response.success == 1) {
+				// if(response.success == 1) {
 					$("#ratingForm")[0].reset();
 					window.location.reload();
-				}
+				// }
 			}
 		});		
 	});
