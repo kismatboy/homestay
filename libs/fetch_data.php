@@ -394,8 +394,10 @@ function gethostdetails($id,$table){
 
       	# code...
 			// if ($t_data['id']==$id){
-				echo ''. $t_data['about'].'</p>';
-				echo '<img src="homestay/admin/profile_pic/'.$t_data["pic"].'"  alt="about the host" height="400px">';
+				echo '<center><p align="justify">'. $t_data['about'].'</p></center><br><br>';
+
+
+				echo '<center><img src="homestay/admin/profile_pic/'.$t_data["pic"].'"  alt="about the host" height="400px" width="100%">		</center>';
 
 				// $sql="SELECT * FROM user where owner_id=".$t_data['id'].";";
 				// if ($result=mysqli_query($con,$sql))

@@ -93,17 +93,10 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 							<!-- <i class="fas fa-tree-large"></i> -->
 														<span class="cbp-ig-icon w3_ticket"></span>
 
-							<h4 class="cbp-ig-title">good WIFI COVERAGE</h4>
+							<h4 class="cbp-ig-title">good WIFI</h4>
 							<span class="cbp-ig-category"><?php gethomestayname($_REQUEST['id'],'homestay_info')?></span>
 						</div>
-					</li><!-- 
-					<li>
-						<div class="w3_grid_effect">
-							<span class="cbp-ig-icon w3_ticket"></span>
-							<h4 class="cbp-ig-title">WIFI COVERAGE</h4>
-							<span class="cbp-ig-category"><?php //gethomestayname($_REQUEST['id'],'homestay_info')?></span>
-						</div>
-					</li> -->
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -117,10 +110,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 				   <div  >
                             <h3 class="title-w3-agileits title-black-wthree">About host</h3> 
 						   <p class="about-para-w3ls"><?php gethostdetails($_REQUEST['id'],'user');?>
-						 
-
-										
-								
+							
 		          </div>
     </div>
 </div>
@@ -149,7 +139,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 <!--//sevices-->
 
 <!-- Gallery -->
-<div class="team" id="team">
+<div class="team" id="team" style="padding-top:0px;padding-bottom:0px;">
 	<div class="container">
 			<h3 class="title-w3-agileits title-black-wthree">Testimonial</h3>
 			<div id="verticalTab">
@@ -163,7 +153,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 				</div>
 			</div></div>
 
-			<div class="team" id="team">
+			<div class="team" id="team" style="padding-bottom: 10px;">
 	<div class="container about-wthree" id="Rules" style="margin-bottom: 0px;">
 			<h3 class="title-w3-agileits title-black-wthree">Rules:-</h3>
 			
@@ -174,7 +164,7 @@ echo '<a href="homestay/admin/reservation.php?id=' .$_REQUEST['id'] . '"><h2>ROO
 					
 				
 			</div></div>
-				<div class="team" id="team">
+				<div class="team" id="team" style="padding-top:0px;">
 	<div class="container">
 			<h3 class="title-w3-agileits title-black-wthree" id="location">location</h3>
 			<div id="verticalTab">
@@ -665,7 +655,4 @@ fit: true
 	</div>
 <!-- //smooth scrolling -->
 <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
-</body>
-</html>
-
 
