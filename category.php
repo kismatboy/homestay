@@ -52,7 +52,7 @@ $row = mysqli_fetch_assoc($result);?>
 				<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
 					<div class="row mb-4">
 						<?php  
-							$categoryid=$row['id'];
+							$categoryid=$_GET['id'];
 							getcategoryblogs("homestay_info",$categoryid);
 						?>
 					</div>
@@ -127,14 +127,6 @@ $row = mysqli_fetch_assoc($result);?>
 
 	<script>
 		$(document).ready(function () {
-			/*
-									var defaults = {
-							  			containerID: 'toTop', // fading element id
-										containerHoverID: 'toTopHover', // fading element hover id
-										scrollSpeed: 1200,
-										easingType: 'linear' 
-							 		};
-									*/
 
 			$().UItoTop({
 				easingType: 'easeOutQuart'

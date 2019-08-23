@@ -110,11 +110,12 @@
 
 
                                     <div class="tab-pane active" id="tab1">
-                        <form  action="" method="post"  name="form">
+                        <!-- <form  action="" method="post"  name="form"> -->
+                        	 <form action="search.php" method="post" name="form">
 
                             <div class="input-group input-group-big" style="height:120px;">
                                 <label class="label">where:</label>
-                                <input class="input--style-1" type="text" name="search[keyword]" placeholder="City, region or specific hotel" required="required">
+                                <input class="input--style-1" type="search" name="search[keyword]" placeholder="City, region or specific hotel" required="required">
                                 <i class="zmdi zmdi-search input-group-symbol"></i>
                             </div>
                             <div class="row row-space" style="height:100px;">

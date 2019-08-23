@@ -2,6 +2,7 @@
 <?php
 define("ROW_PER_PAGE",6);
 require_once('database/db.php');//db config file
+require_once('database/db_connect.php');//db config file
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -9,7 +10,7 @@ require_once('database/db.php');//db config file
 	<title>Search|<?php getwebname("titles"); echo"|"; gettagline("titles");?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<link id="browser_favicon" rel="shortcut icon" href="favicon/homestay_nepal.ico">
+	<link id="browser_favicon" rel="shortcut icon" href="blogadmin/images/<?php geticon("titles"); ?>">
 	<meta charset="utf-8" name="description" content="<?php getshortdescription("titles");?>">
 	<meta name="keywords" content="<?php getkeywords("titles");?>" />
 <script>
@@ -66,9 +67,9 @@ require_once('database/db.php');//db config file
 	// 	}
 	// }
 
- //    }
+    }
 
-    $sql = 'SELECT * FROM homestay_info WHERE title LIKE :keyword OR content LIKE :keyword  OR tags LIKE :keyword OR author LIKE :keyword ORDER BY id DESC ';
+    $sql = 'SELECT * FROM homestay_info WHERE title LIKE :keyword OR content LIKE :keyword  OR tags LIKE :keyword OR owner_name LIKE :keyword OR address LIKE :keyword OR meals LIKE :keyword OR rules LIKE :keyword OR features LIKE :keyword ORDER BY id DESC ';
    
     /* Pagination Code starts */
     $per_page_html = '';
@@ -104,7 +105,7 @@ require_once('database/db.php');//db config file
     $pdo_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
     $pdo_statement->execute();
     $result = $pdo_statement->fetchAll();
-}
+
 
 
     //  include('database/connection.php');
@@ -149,7 +150,7 @@ require_once('database/db.php');//db config file
                                 ?>
 						<div class="col-lg-4 card">
 							<a href="single.php?id=<?php echo $row['id']; ?>">
-								<img src="homestay/admin/profile_pic/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="homestay Nepal pic" style="width: 480px;height: 300px">
+								<img src="homestay/admin/profile_pic/<?php echo $row['photo']; ?>" class="card-img-top img-fluid" alt="homestay pictures" style="width: 480px;height: 300px">
 							</a>
 							<div class="card-body">
 								<ul class="blog-icons my-4">

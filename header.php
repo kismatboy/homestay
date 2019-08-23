@@ -8,13 +8,7 @@ if (isset($_POST['send_feedback'])) {
   include 'libs/PHPMailer/sendmail.php';
   $message=$_POST['msg'];
   send_mail('homestaypkr@gmail.com',$_POST['f_name'],'feedback from users:',$message);
-      # code...
 }
-// Check if the user is already logged in, if yes then redirect him to welcome page
-// if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-//     header("location: ../home.php");
-//     exit;
-// }
 
 // Include config file
 include "database/db_connect.php";
@@ -674,9 +668,7 @@ $sqll="select * from user where username='$param_username';";
   opacity: 1;
 }
 
-
 </style>
-
 
 <div class="top-bar_sub_w3layouts container-fluid">
  <div class="row">

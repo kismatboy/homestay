@@ -10,8 +10,8 @@
 <div class="adjoined-bottom" id="test">
 		<div class="grid-container">
 			<div class="grid-width-100">
+
 				<div id="editor">
-					<h1>your homestay details</h1>
 					
 				</div>
 			</div>
@@ -20,6 +20,20 @@
 	<script>
 	initSample();
 </script>
+
+
+<button onclick="test();">send</button>
+
+
+<script type="text/javascript">
+	function test(){
+		var x=document.getElementById("cke_1_contents").innerHTML;
+		alert(x);
+	}
+</script>
+<?php 
+
+?>
 </body></html>
 
 
