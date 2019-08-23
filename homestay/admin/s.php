@@ -5,8 +5,6 @@ if(!isset($_SESSION["user"]))
 {
  header("location:index.php");
 }
-
-
 include('db.php');
 include('lib/fetch_data.php');
 $user_name=$_SESSION['user'];
@@ -64,14 +62,8 @@ if(isset($_POST['insert_h'])){
           echo mysqli_error($con);
         }
 
-            // update code here
-           
-
           }
         }
-          
-
-   
   }
   }
    if($_FILES["hostimg"]["name"]!==''){
@@ -104,44 +96,6 @@ if(isset($_POST['insert_h'])){
    }
  }
 }
-//host wala insert garni code.
-//                   if($_FILES["img"]["name"]!==''){
-//                      $pic_name = $_FILES["img"]["name"];
-//                      $target_file = "Gallery/" . basename($pic_name);
-//                      if($_FILES['photo1']['size'] > 2000000) {
-//                       echo "<script type='text/javascript'> alert('Image size should not be greated than 2mb')</script>";
-
-
-//                      }
-//     // check if file exists
-//     elseif(file_exists($target_file)) {
-//       echo "<script type='text/javascript'> alert('File already exists')</script>";
-
-//     } else{ 
-//       if(move_uploaded_file($_FILES["photo1"]["tmp_name"], $target_file)) {
-
-//         $sql = "INSERT INTO `gallery`(`homestay_id`, `pic_name`) VALUES ('$h_id','$pic_name');";
-//         if(mysqli_query($con, $sql)){
-//        echo "<script type='text/javascript'> alert('Image uploaded and saved in the Database')</script>";
-//        echo mysqli_error($con);
-//          $msg = "Image uploaded and saved in the Database";
-//         } else {
-//        echo "<script type='text/javascript'> alert('error in uploading file to file server)</script>";
-//        echo mysqli_error($con);
-
-
-//         }
-//       } else {
-//        echo "<script type='text/javascript'> alert('There was an error uploading the file')</script>";
-//       }
-//     }
-
-// }
-// echo 'please upload image first';
-//               }  
-
-
-
 if(isset($_POST['homestay_insert'])){
   // homestay wala
   $name=$_POST['name'];
@@ -451,16 +405,7 @@ document.getElementById("defaultOpen").click();
                 
               </form>
 </table>
-<!--    <script type="text/javascript">
-              $(document).ready(function(){
-        $("#insert").click(function(){
-            data = $("#test").html();
-            script (data);
-            $("#useDataField").val(data);
-            $("#formdata").submit();
-        });
-    });
-        </script> -->
+
 
 
             </div>

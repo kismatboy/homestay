@@ -289,7 +289,11 @@ echo 'please upload image first';
                         echo "<tr class=odd gradeX>
                           <td>".$row['homestay_id']."</td>
                           <td>".$row['pic_name']."</td>
-                           <th><button name='delete' onclick='submitForm();' > delete</button></th>
+                           <th>
+                           <form action='' method='POST'>
+                           <input type='hidden' name='delete' value='".$row['pic_name']."'/> 
+                           <input type='submit' name='delete_btn' value='Delete'>
+                           </form></th>
                                                    
                         </tr>";
                       }
@@ -298,11 +302,29 @@ echo 'please upload image first';
                         echo"<tr class=even gradeC>
                           <td>".$row['homestay_id']."</td>
                           <td>".$row['pic_name']."</td>
-                           <th> delete</th>
+                        <th>
+                           <form action='' method='POST'>
+                           <input type='hidden' name='delete' value='".$row['pic_name']."'/> 
+                           <input type='submit' name='delete_btn' value='Delete'>
+                           </form>
+                           </th>
                                                    
                         </tr>";
                       
                       }
+                    }
+                    if(isset($_POST['delete_btn'])){
+                      $f_name=$_POST['delete'];
+                      $path='Gallery/';
+                      $del_file =$path.$f_name;
+
+                      @unlink($del_file) or die("");
+
+                       $sql = "delete from gallery where homestay_id='$h_id' and pic_name='$f_name';";
+                        $re = mysqli_query($con,$sql);
+
+                      // echo "<script>alert('".$path.$f_name."');</script>";
+                      echo "<script>alert('File deleted successfully. ');</script>";
                     }
                   ?>
                                     </tbody>
