@@ -19,7 +19,11 @@ if(!isset($_SESSION["user"]))
      <!-- Google Fonts-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
            <title><?php echo $_SESSION['user'] ?> |Administrator </title>
-
+<script type="text/javascript">
+  function submitForm(){
+    document.forms["form_name"].submit();
+}
+</script>
 </head>
 <body>
     <div id="wrapper">
@@ -285,7 +289,7 @@ echo 'please upload image first';
                         echo "<tr class=odd gradeX>
                           <td>".$row['homestay_id']."</td>
                           <td>".$row['pic_name']."</td>
-                           <th> delete</th>
+                           <th><button name='delete' onclick='submitForm();' > delete</button></th>
                                                    
                         </tr>";
                       }

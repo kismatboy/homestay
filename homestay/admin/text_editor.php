@@ -1,37 +1,18 @@
-
 <html>
-<head>
-	<script src="text_editor/ckeditor.js"></script>
-	<script src="text_editor/samples/js/sample.js"></script>
-	
-</head></head>
+<head>	
+</head>
 <body>
 
-<div class="adjoined-bottom" id="test">
-		<div class="grid-container">
-			<div class="grid-width-100">
-
-				<div id="editor">
-					
-				</div>
-			</div>
-		</div>
-	</div>
-	<script>
-	initSample();
-</script>
-
-
-<button onclick="test();">send</button>
-
-
-<script type="text/javascript">
-	function test(){
-		var x=document.getElementById("cke_1_contents").innerHTML;
-		alert(x);
-	}
-</script>
+<form action="" method="POST">
+	<textarea name="text"></textarea>
+	<input type="submit" name="submit">
+</form>
+	<script src="text_editor/ckeditor.js"></script>
+		<script type="text/javascript"> CKEDITOR.replace('text');</script>
 <?php 
+if(isset($_POST['submit'])){
+	echo $_POST['text'];
+}
 
 ?>
 </body></html>

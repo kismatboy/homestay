@@ -223,12 +223,7 @@ height:70px;"class="btn-submit" type="submit" name='submit'>search</button>
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
-					<div class="modal-body">
-						<div class="embed-responsive embed-responsive-21by9">
-							<iframe src="https://www.youtube.com"></iframe>
-						</div>
-					</div>
-
+			
 				</div>
 			</div>
 		</div>
@@ -315,7 +310,7 @@ height:70px;"class="btn-submit" type="submit" name='submit'>search</button>
 							<div class="row">
 								<!--left-->
 								<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
-									<?php getonelatest("homestay_info");?>
+									<?php getmostpopular("homestay_info");?>
 								</div>
 								<!--//left-->
 								<!--right-->

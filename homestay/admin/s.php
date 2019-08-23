@@ -212,16 +212,15 @@ if(isset($_POST['homestay_insert'])){
 
      }
    }
- }
- else{
-echo 'please upload image first';
-
-}  
+ } 
 }
 ?> 
+
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+
     <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js" type="text/javascript"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -239,8 +238,6 @@ echo 'please upload image first';
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
   <!-- TABLE STYLES-->
   <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-  <script src="text_editor/ckeditor.js"></script>
-  <script src="text_editor/samples/js/sample.js"></script>
   <!--javascript-->
   <script>
     function openCity(cityName, elmnt, color) {
@@ -310,6 +307,8 @@ document.getElementById("defaultOpen").click();
 
 </head>
 <body>
+
+
   <div id="wrapper">
 
 
@@ -495,8 +494,15 @@ document.getElementById("defaultOpen").click();
               <tr>
                 <td>About </td>
                 <td >
-                  <input type="textarea" name="host_about" style="width:100%;height:100px; margin-left: 50px; align-content: right;">
+                  <text name="host_about" style="width:100%;height:100px; margin-left: 50px; align-content: right;">
 
+
+                  <!-- <textarea name="host_about"></textarea> -->
+
+                
+<!-- 
+      <script src="text_editor/ckeditor.js"></script>
+          <script type="text/javascript"> CKEDITOR.replace('host_about')</script> -->
                   
                     
                <!--   
@@ -536,7 +542,10 @@ document.getElementById("defaultOpen").click();
             </table>
 
           </form> 
+
+                     
         </div>
+   
     
        <!--  <?php
    // if(isset($_POST['insert_h1'])){
@@ -601,13 +610,13 @@ document.getElementById("defaultOpen").click();
     </table>
 </form>
 -->
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 <!-- /. PAGE WRAPPER  -->
 <!-- /. WRAPPER  -->

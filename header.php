@@ -27,10 +27,10 @@ $username_err = $password_err = $confirm_password_err = $email_err=$name_err="";
 
 if(isset($_POST['login'])){
    
-    $username = trim($_POST["username"]); 
+    $username = mysqli_real_escape_string($con,trim($_POST["username"])); 
   
 
-    $password = trim($_POST["password"]);
+    $password = mysqli_real_escape_string($con,trim($_POST["password"]));
   
 
     // Validate credentials
@@ -107,11 +107,11 @@ $_POST["password"]='';
 
 
    // Validate name
-    if(empty(trim($_POST["name"]))){
+    if(empty($_POST["name"])){
       $name_err = "Please enter a name.";     
 
     } else{
-      $name = trim($_POST["name"]);
+      $name =mysqli_real_escape_string($con,$_POST["name"]);
     }
 
     // Validate email
@@ -148,7 +148,7 @@ $_POST["password"]='';
 
     }
        // Validate username
-    if(empty(trim($_POST["username"]))){
+    if(empty($_POST["username"])){
       $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
@@ -169,7 +169,7 @@ $_POST["password"]='';
           if(mysqli_stmt_num_rows($stmt) == 1){
             $username_err = "This username is already taken.";
           } else{
-            $username = trim($_POST["username"]);
+            $username = mysqli_real_escape_string($con,trim($_POST["username"]));
           }
         } else{
           echo "Oops! Something went wrong. Please try again later.";
@@ -268,9 +268,6 @@ $sqll="select * from user where username='$param_username';";
     // Close connection
         mysqli_close($con);
       }
-
-
-
     ?>
     <!--Header-->
     <header>
@@ -278,10 +275,7 @@ $sqll="select * from user where username='$param_username';";
       <style>
         body {font-family: Arial, Helvetica, sans-serif;}
 
-        /* Full-width input fields */
-        input[type=text], input[type=password] {
-
-        }
+ 
 
         /* Set a style for all buttons */
 
@@ -744,7 +738,7 @@ $sqll="select * from user where username='$param_username';";
 
           <div class=" <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
             <label>full name</label>
-            <input type="text" name="name" placeholder="enter full name" value="<?php echo $name; ?>">
+            <input type="text" name="name" placeholder="enter full name" value="">
             <span class="help-block"><?php echo $name_err; ?></span>
 
 

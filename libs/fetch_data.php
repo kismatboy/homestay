@@ -826,7 +826,7 @@ function getbottomsliderposts($table){
 }
 function getblogridposts($table){
 	require("database/db_connect.php");
-	$sql="SELECT * FROM $table WHERE posted='publish' ORDER BY id DESC LIMIT 8";
+	$sql="SELECT * FROM $table WHERE posted='publish' ORDER BY id ASC LIMIT 8";
 	if ($result=mysqli_query($con,$sql))
 	{
       	//count number of rows in query result
@@ -874,7 +874,7 @@ function getblogridposts($table){
 }
 function getolderposts($table){
 	require("database/db_connect.php");
-	$sql="SELECT * FROM $table WHERE posted='publish' ORDER BY id ASC LIMIT 8";
+	$sql="SELECT * FROM $table WHERE posted='publish' ORDER BY id DESC LIMIT 8";
 	if ($result=mysqli_query($con,$sql))
 	{
       	//count number of rows in query result
@@ -947,18 +947,22 @@ function getfour($table){
 
 	mysqli_close($con);
 }
-function getonelatest($table){
+
+
+
+function getmostpopular($table){
 	require("database/db_connect.php");
-	$sql="SELECT * FROM $table ORDER BY id DESC LIMIT 1";
-	if ($result=mysqli_query($con,$sql))
+
+	$sql="SELECT * FROM page_hits ORDER BY count DESC LIMIT 1";
+	if ($result1=mysqli_query($con,$sql))
 	{
-      	//count number of rows in query result
-		$rowcount=mysqli_num_rows($result);
-      	//if no rows returned show no posts alert
-		if ($rowcount==0) {
-      		# code...
-			echo 'No posts to fetch';
-		}
+      	//if there are rows available display all the results
+		foreach ($result1 as $pagehits => $hits) {
+      	# code...get actual blog from blogs db
+			$storepage=$hits['page'];
+			$sql="SELECT * FROM homestay_info WHERE title='$storepage'";
+			if ($result=mysqli_query($con,$sql)) {
+				# code...
       	//if there are rows available display all the results
 		foreach ($result as $onelatest => $onedata) {
       	# code...
@@ -995,7 +999,8 @@ function getonelatest($table){
 			</div>';
 		}
 	}
-
+}
+}
 	mysqli_close($con);
 }
 function geteditorschoice($table){
