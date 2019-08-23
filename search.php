@@ -3,6 +3,7 @@
 define("ROW_PER_PAGE",6);
 require_once('database/db.php');//db config file
 require_once('database/db_connect.php');//db config file
+include("database/conn.php");//db config file
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -32,42 +33,12 @@ require_once('database/db_connect.php');//db config file
 
 <body>
 	<!--Header-->
-	<?php include("header.php");?>
+	<?php //include("header.php");?>
 	<!--//header-->
 	<?php	
     $search_keyword = '';
     if(!empty($_POST['search']['keyword'])) {
     	$search_keyword = $_POST['search']['keyword'];
-
-    		require("database/db_connect.php");
-	// $sql="SELECT * FROM location LIMIT 10";
-	// if ($result=mysqli_query($con,$sql))
-	// {
-
- //      	//if there are rows available display all the results
-	// 	foreach ($result as $categoriescount => $categorydata) {
-	// 			#count how many times each category appears in blogs
-	// 		if($_POST['search']['keyword']==$categorydata['name']){
-	// 			$url ="category.php?id=".$categorydata['id'];
-	// 			 if (!headers_sent())
- //    {    
- //        header('Location: '.$url);
- //        exit;
- //        }
- //    else
- //        {  
- //        echo '<script type="text/javascript">';
- //        echo 'window.location.href="'.$url.'";';
- //        echo '</script>';
- //        echo '<noscript>';
- //        echo '<meta http-equiv="refresh" content="0;url='.$url.'" />';
- //        echo '</noscript>'; exit;
- //    }
-	// 		}
-	// 	}
-	// }
-
-    }
 
     $sql = 'SELECT * FROM homestay_info WHERE title LIKE :keyword OR content LIKE :keyword  OR tags LIKE :keyword OR owner_name LIKE :keyword OR address LIKE :keyword OR meals LIKE :keyword OR rules LIKE :keyword OR features LIKE :keyword ORDER BY id DESC ';
    
@@ -105,6 +76,10 @@ require_once('database/db_connect.php');//db config file
     $pdo_statement->bindValue(':keyword', '%' . $search_keyword . '%', PDO::PARAM_STR);
     $pdo_statement->execute();
     $result = $pdo_statement->fetchAll();
+    }
+    else{
+
+}
 
 
 
@@ -141,9 +116,62 @@ require_once('database/db_connect.php');//db config file
     						echo "<p style=color:#37BC9B><b>Results($row_count)..</b></p>";
     					}
     					?>
-				<!--left-->
+
+    					<!-- ads -->
+<?php
+
+    					    		require("database/db_connect.php");
+	$sql1="SELECT * FROM ads LIMIT 2";
+	if ($result_ad=mysqli_query($con,$sql1))
+	{
+      	//if there are rows available display all the results
+		foreach ($result_ad as $add_data) {
+				$query="SELECT * from homestay_info where id='".$add_data['homestay_id']."'";
+ $result_ad=mysqli_query($GLOBALS["___mysqli_ston"],$query) or die ( ((is_object($GLOBALS["___mysqli_ston"]))? mysqli_error($GLOBALS["___mysqli_ston"]) : (($___mysqli_res = mysqli_connect_error()) ?$___mysqli_res : true))); 
+// $row = mysqli_fetch_assoc($result);
+
+?>
 				<div class="left-blog-info-w3layouts-agileits text-left">
 					<div class="row">
+						<?php
+    					if(!empty($result_ad)) { 
+    						foreach($result_ad as $row_ad) {
+                                ?>
+						<div class="col-lg-4 card">
+							<p> ads</p>
+							<a href="single.php?id=<?php echo $row_ad['id']; ?>">
+								<img src="homestay/admin/profile_pic/<?php echo $row_ad['photo']; ?>" class="card-img-top img-fluid" alt="homestay pictures" style="width: 480px;height: 300px">
+							</a>
+							<div class="card-body">
+								<ul class="blog-icons my-4">
+									<li>
+										<a href="#">
+											<i class="far fa-calendar-alt"></i> <?php echo $row_ad['date']; ?></a>
+									</li>
+									<li class="mx-2">
+										<a href="#">
+											<i class="far fa-user"></i><?php echo $row_ad['owner_name']; ?></a>
+									</li>
+									<li>
+										<a href="#">
+											<i class="fas fa-tags"></i><?php echo $row_ad['tags']; ?></a>
+									</li>
+
+								</ul>
+								<h5 class="card-title">
+									<a href="single.php?id=<?php echo $row_ad['id']; ?>"><?php echo $row_ad['title']; ?></a>
+								</h5>
+								<a href="single.php?id=<?php echo $row_ad['id']; ?>" class="btn btn-primary read-m">Read More</a>  <p>ads</p>
+							</div>
+						</div>
+						<?php
+                                  }
+                              }
+                          }
+                      }
+                              ?>
+                              
+		
 						<?php
     					if(!empty($result)) { 
     						foreach($result as $row) {

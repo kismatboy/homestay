@@ -174,7 +174,7 @@
                                     <button  style="outline: none;
   background: blue;
   border: none;
-height:70px;"class="btn-submit" type="submit" name='search'>search</button>
+height:70px;"class="btn-submit" type="submit" name='submit'>search</button>
                                 </div>
                             </div>
                         </div>
