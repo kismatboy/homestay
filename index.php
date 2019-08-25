@@ -31,7 +31,7 @@
 
 </head>
 
-<body>
+<body bgcolor="gray">
 	<?php include("header.php");?>
  <div class="header_top" id="home">
   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-right:10px;">
@@ -90,123 +90,7 @@
     </div>
 	<?php include("banner.php");?>
 	               
-	                <div  style=" height: 490px; margin-top: 50px; width: 100%; max-width: 900px; 
-  margin-left: auto;
-  margin-right: auto;
- 
- ">
 
-
-</head>
-
-<body bgcolor="gray">
-
-
-    <div style=" max-width: 680px; margin: 0 auto;" id="search">
-        <div style="background: rgba(0, 0, 0, 0.8);">
-                <div class="tab-content" style="height: 500px">
-                                  
-                                  
-
-
-                                    <div class="tab-pane active" id="tab1">
-                        <!-- <form  action="" method="post"  name="form"> -->
-                        	 <form action="search.php" method="post" name="form">
-
-                            <div class="input-group input-group-big" style="height:120px;">
-                                <label class="label">where:</label>
-                                <input class="input--style-1" type="search" name="search[keyword]" placeholder="City, region or specific hotel" required="required">
-                                <i class="zmdi zmdi-search input-group-symbol"></i>
-                            </div>
-                            <div class="row row-space" style="height:100px;">
-                                <div class="col-md-6">
-                                    <div class="input-group">
-                                        <label class="label">check-in:</label>
-                                        <input class="input--style-1" type="text" name="check-in" placeholder="mm/dd/yyyy" id="input-start">
-                                    </div>
-                                </div>
-                                <div class="col-md-6" style="height:60px;">
-                                    <div class="input-group">
-                                        <label class="label">check-out:</label>
-                                        <input class="input--style-1" type="text" name="check-out" placeholder="mm/dd/yyyy" id="input-end">
-                                    </div>
-                                </div>
-                          	
-                            <div class="row row-space" >
-                                <div class="col-md-8" >
-                                    <div class="input-group">
-                                        <label class="label">travellers:</label>
-                                        <div class="input-group-icon" id="js-select-special">
-                                            <input class="input--style-1 input--style-1-small" type="text" name="traveller" value="1 Adult, 0 Children, 1 Room" disabled="disabled" id="info">
-                                            <i class="zmdi zmdi-chevron-down input-icon"></i>
-                                        </div>
-                                        <div class="dropdown-select">
-                                            <ul class="list-room">
-                                                <li class="list-room__item">
-                                                    <span class="list-room__name">Room 1</span>
-                                                    <ul class="list-person">
-                                                        <li class="list-person__item">
-                                                            <span class="name">Adults</span>
-                                                            <div class="quantity quantity1">
-                                                                <span class="minus">-</span>
-                                                                <input class="inputQty" type="number" min="0" value="1">
-                                                                <span class="plus">+</span>
-                                                            </div>
-                                                        </li>
-                                                        <li class="list-person__item">
-                                                            <span class="name">Children</span>
-                                                            <div class="quantity quantity2">
-                                                                <span class="minus">-</span>
-                                                                <input class="inputQty" type="number" min="0" value="0">
-                                                                <span class="plus">+</span>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                            <div class="list-room__footer">
-                                                <a href="#" id="btn-add-room">Add room</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3" >
-                                    <button  style="outline: none;
-  background: blue;
-  border: none;
-height:70px;"class="btn-submit" type="submit" name='submit'>search</button>
-                                </div>
-                            </div>
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<!-- Jquery JS-->
-<script src="search/vendor/jquery/jquery.min.js"></script>
-<!-- Vendor JS-->
-<script src="search/vendor/select2/select2.min.js"></script>
-<script src="search/vendor/jquery-validate/jquery.validate.min.js"></script>
-<script src="search/vendor/bootstrap-wizard/bootstrap.min.js"></script>
-<script src="search/vendor/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
-<script src="search/vendor/datepicker/moment.min.js"></script>
-<script src="search/vendor/datepicker/daterangepicker.js"></script>
-
-<!-- Main JS-->
-<script src="search/js/global.js"></script>
-
-
-
-
-
-
-</div>
 	<section class="bottom-slider">
 		<div class="row">
 		<div class="course_demo1">
@@ -328,8 +212,219 @@ height:70px;"class="btn-submit" type="submit" name='submit'>search</button>
 						</div>
 					</section>
 					<!--//main-->
-					<?php include("footer.php");?>
-					<!---->
+					<footer>
+
+		<div class="container" style="margin-right: 0px;margin-left: 0px;">
+			<div class="row">
+				
+				<div class="col-md-8 footer-grid-agileits-w3ls text-left">
+
+
+    <div style=" max-width: 680px; margin: 0 auto;" id="search">
+        <div style="background: rgba(0, 0, 0, 0.8);">
+                <div class="tab-content" style="height: 500px">
+                                  
+                                  
+
+
+                                    <div class="tab-pane active" id="tab1">
+                        <!-- <form  action="" method="post"  name="form"> -->
+                        	 <form action="search.php" method="post" name="form">
+
+                            <div class="input-group input-group-big" style="height:120px;">
+                                <label class="label">where:</label>
+                                <input class="input--style-1" type="search" name="search[keyword]" placeholder="City, region or specific hotel" required="required">
+                                <i class="zmdi zmdi-search input-group-symbol"></i>
+                            </div>
+                            <div class="row row-space" style="height:100px;">
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <label class="label">check-in:</label>
+                                        <input class="input--style-1" type="text" name="check-in" placeholder="mm/dd/yyyy" id="input-start">
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="height:60px;">
+                                    <div class="input-group">
+                                        <label class="label">check-out:</label>
+                                        <input class="input--style-1" type="text" name="check-out" placeholder="mm/dd/yyyy" id="input-end">
+                                    </div>
+                                </div>
+                          	
+                            <div class="row row-space" >
+                                <div class="col-md-8" >
+                                    <div class="input-group">
+                                        <label class="label">travellers:</label>
+                                        <div class="input-group-icon" id="js-select-special">
+                                            <input class="input--style-1 input--style-1-small" type="text" name="traveller" value="1 Adult, 0 Children, 1 Room" disabled="disabled" id="info">
+                                            <i class="zmdi zmdi-chevron-down input-icon"></i>
+                                        </div>
+                                        <div class="dropdown-select">
+                                            <ul class="list-room">
+                                                <li class="list-room__item">
+                                                    <span class="list-room__name">Room 1</span>
+                                                    <ul class="list-person">
+                                                        <li class="list-person__item">
+                                                            <span class="name">Adults</span>
+                                                            <div class="quantity quantity1">
+                                                                <span class="minus">-</span>
+                                                                <input class="inputQty" type="number" min="0" value="1">
+                                                                <span class="plus">+</span>
+                                                            </div>
+                                                        </li>
+                                                        <li class="list-person__item">
+                                                            <span class="name">Children</span>
+                                                            <div class="quantity quantity2">
+                                                                <span class="minus">-</span>
+                                                                <input class="inputQty" type="number" min="0" value="0">
+                                                                <span class="plus">+</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                            <div class="list-room__footer">
+                                                <a href="#" id="btn-add-room">Add room</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3" >
+                                    <button  style="outline: none;
+  background: blue;
+  border: none;
+height:70px;"class="btn-submit" type="submit" name='submit'>search</button>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!-- Jquery JS-->
+<script src="search/vendor/jquery/jquery.min.js"></script>
+<!-- Vendor JS-->
+<script src="search/vendor/select2/select2.min.js"></script>
+<script src="search/vendor/jquery-validate/jquery.validate.min.js"></script>
+<script src="search/vendor/bootstrap-wizard/bootstrap.min.js"></script>
+<script src="search/vendor/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+<script src="search/vendor/datepicker/moment.min.js"></script>
+<script src="search/vendor/datepicker/daterangepicker.js"></script>
+
+<!-- Main JS-->
+<script src="search/js/global.js"></script>
+
+				<!-- subscribe -->
+
+
+				<div class="col-md-4 subscribe-main footer-grid-agileits-w3ls text-left">
+					<h2>Signup to our newsletter</h2>
+					<div class="subscribe-main text-left">
+						<style type="text/css">
+							
+							.subscribe-form input:placeholder{
+								color: white;
+							}
+						</style>
+							<div class="subscribe-form">
+
+									<form  method="post" class="subscribe_form" action=''>
+										<input style="background-color:white;font-size: 16px;border: none; height: 14px;" class="form-control"  type="text" placeholder="Your name" required="" name ='name'>
+										<br/>
+										<input style="background-color:white;font-size: 16px;border: none;height: 14px;"class="form-control" type="email" placeholder="Enter your email..." required="" name ='email'>
+										<button type="submit" class="btn btn-primary submit" name='save'>Submit</button>
+									</form>
+									<div class="clearfix"> </div>
+						   </div>
+						   
+
+						<p>We respect your privacy.No spam ever!</p>
+					</div>
+					<?php
+					require 'database/db_connect.php';
+				if(isset($_POST['save']))
+				{
+					$name =$_POST['name'];
+					$email = $_POST['email'];
+					$approval = "Not Allowed";
+					$sql = "INSERT INTO `newsletter`(`full_name`, `email`,`c_date`,`approval`) VALUES ('$name','$email',now(),'$approval')" ;
+					
+					
+					if(mysqli_query($con,$sql)){
+						echo 'Thank you for your support ! :)';
+					}
+				
+
+					
+				}
+				?>
+					<!-- //subscribe -->
+
+					<h3>About US</h3><mark style="color:white;font-size:20px">
+					<p><em><?php getshortdescription("titles"); ?></em></p></mark>
+					<div class="read">
+						<a href="about.php" class="btn btn-primary read-m">Read More</a>
+					</div>
+				</div>
+			</div>
+			<!-- footer -->
+			<div class="footer-cpy text-center">
+				<div class="footer-social">
+					<div class="copyrighttop">
+						<ul>
+							<li class="mx-3">
+								<a class="facebook" href="<?php getlinks("links","facebook");?>">
+									<i class="fab fa-facebook-f"></i>
+									<span>Facebook</span>
+								</a>
+							</li>
+							<li>
+								<a class="facebook" href="<?php getlinks("links","twitter");?>">
+									<i class="fab fa-twitter"></i>
+									<span>Twitter</span>
+								</a>
+							</li>
+							<li class="mx-3">
+								<a class="facebook" href="<?php getlinks("links","googleplus");?>">
+									<i class="fab fa-google-plus-g"></i>
+									<span>Google+</span>
+								</a>
+							</li>
+							<li>
+								<a class="facebook" href="<?php getlinks("links","pinterest");?>">
+									<i class="fab fa-pinterest-p"></i>
+									<span>Pinterest</span>
+								</a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+				<div class="w3layouts-agile-copyrightbottom">
+					<p> Homestay website © <?php $current=date("Y"); print_r($current);?> 
+					</p>
+					<fieldset><h4><strong>Language</strong></h4>
+						<div id="google_translate_element1"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element1');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</fieldset>
+
+				</div>
+			</div>
+			<!-- //footer -->
+		</div>
+	</footer>
 					<!-- js -->
 					<script src="js/jquery-2.2.3.min.js"></script>
 					<!-- //js -->

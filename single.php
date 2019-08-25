@@ -14,6 +14,43 @@ $feedback=mysqli_query($GLOBALS["___mysqli_ston"],$count) or die ( ((is_object($
 
 $roo=mysqli_fetch_assoc($feedback);
 ?>
+
+
+<!-- for star ratings-->
+	<?php	
+	include 'star/class/Rating.php';
+	$rating = new Rating();
+	$itemDetails = $rating->getItem($_GET['id']);
+
+	$itemRating = $rating->getItemRating($_GET['id']);	
+	$ratingNumber = 0;
+	$count = 0;
+	$fiveStarRating = 0;
+	$fourStarRating = 0;
+	$threeStarRating = 0;
+	$twoStarRating = 0;
+	$oneStarRating = 0;	
+	foreach($itemRating as $rate){
+		$ratingNumber+= $rate['ratingNumber'];
+		$count += 1;
+		if($rate['ratingNumber'] == 5) {
+			$fiveStarRating +=1;
+		} else if($rate['ratingNumber'] == 4) {
+			$fourStarRating +=1;
+		} else if($rate['ratingNumber'] == 3) {
+			$threeStarRating +=1;
+		} else if($rate['ratingNumber'] == 2) {
+			$twoStarRating +=1;
+		} else if($rate['ratingNumber'] == 1) {
+			$oneStarRating +=1;
+		}
+	}
+	$average = 0;
+	if($ratingNumber && $count) {
+		$average = $ratingNumber/$count;
+	}	
+	?>		
+	<!-- end star rating function-->
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -161,6 +198,19 @@ $roo=mysqli_fetch_assoc($feedback);
 	 												<a href="#">
 	 													<i class="far fa-eye fa-x2"></i> <?php echo $roo['count']; ?></a>
 	 												</li>
+	 												<li>	<?php
+				$averageRating = round($average, 0);
+				for ($i = 1; $i <= 5; $i++) {
+					$ratingClass = "btn-default btn-grey";
+					if($i <= $averageRating) {
+						$ratingClass = "btn-warning";
+					}
+					?>
+					<button type="button" class="btn btn-sm <?php echo $ratingClass; ?>" aria-label="Left Align">
+						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					</button>	
+				<?php } ?>		
+	 												</li>
 
 	 											</ul>
 	 										</div>
@@ -268,6 +318,7 @@ $('#comment_name').focus();
 	include 'star/class/Rating.php';
 	$rating = new Rating();
 	$itemDetails = $rating->getItem($_GET['id']);
+
 	foreach($itemDetails as $item){
 		$average = $rating->getRatingAverage($item["id"]);
 		?>	
@@ -283,35 +334,7 @@ $('#comment_name').focus();
 		</div>
 	<?php } ?>	
 
-	<?php	
-	$itemRating = $rating->getItemRating($_GET['id']);	
-	$ratingNumber = 0;
-	$count = 0;
-	$fiveStarRating = 0;
-	$fourStarRating = 0;
-	$threeStarRating = 0;
-	$twoStarRating = 0;
-	$oneStarRating = 0;	
-	foreach($itemRating as $rate){
-		$ratingNumber+= $rate['ratingNumber'];
-		$count += 1;
-		if($rate['ratingNumber'] == 5) {
-			$fiveStarRating +=1;
-		} else if($rate['ratingNumber'] == 4) {
-			$fourStarRating +=1;
-		} else if($rate['ratingNumber'] == 3) {
-			$threeStarRating +=1;
-		} else if($rate['ratingNumber'] == 2) {
-			$twoStarRating +=1;
-		} else if($rate['ratingNumber'] == 1) {
-			$oneStarRating +=1;
-		}
-	}
-	$average = 0;
-	if($ratingNumber && $count) {
-		$average = $ratingNumber/$count;
-	}	
-	?>		
+
 	<br>		
 	<div id="ratingDetails"> 		
 		<div class="row">			
@@ -329,7 +352,7 @@ $('#comment_name').focus();
 					<button type="button" class="btn btn-sm <?php echo $ratingClass; ?>" aria-label="Left Align">
 						<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 					</button>	
-				<?php } ?>				
+				<?php } ?>		
 			</div>
 			<div class="col-sm-4">
 				<?php

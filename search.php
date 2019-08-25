@@ -92,7 +92,7 @@ include("database/conn.php");//db config file
 	</div>
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item">
-			<a href="index.html">Home</a>
+			<a href="index.php">Home</a>
 		</li>
 		<li class="breadcrumb-item active">Search</li>
 	</ol>
@@ -207,7 +207,7 @@ include("database/conn.php");//db config file
                               }
                               ?>
                               
-                              <?php echo $per_page_html; ?>
+                              <?php //echo $per_page_html; ?>
 					</div>
 					<!--//left-->
 				</div>
@@ -222,7 +222,6 @@ include("database/conn.php");//db config file
 	<!-- js -->
 	<script src="js/jquery-2.2.3.min.js"></script>
 	<!-- //js -->
-	<!--/ start-smoth-scrolling -->
 	<script src="js/move-top.js"></script>
 	<script src="js/easing.js"></script>
 	<script>
