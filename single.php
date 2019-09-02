@@ -18,7 +18,7 @@ $roo=mysqli_fetch_assoc($feedback);
 
 <!-- for star ratings-->
 	<?php	
-	include 'star/class/Rating.php';
+	require_once 'star/class/Rating.php';
 	$rating = new Rating();
 	$itemDetails = $rating->getItem($_GET['id']);
 
@@ -315,7 +315,7 @@ $('#comment_name').focus();
 <link rel="stylesheet" href="star/css/style.css">
 <div class="container " style="width: 100%;">		
 	<?php
-	include 'star/class/Rating.php';
+	include_once 'star/class/Rating.php';
 	$rating = new Rating();
 	$itemDetails = $rating->getItem($_GET['id']);
 

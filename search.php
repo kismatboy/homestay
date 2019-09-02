@@ -138,7 +138,7 @@ include("database/conn.php");//db config file
     						foreach($result_ad as $row_ad) {
                                 ?>
 						<div class="col-lg-4 card">
-							<p> ads</p>
+							<p style="color: green;font-size: 15px;text-align: center;"> ad</p>
 							<a href="single.php?id=<?php echo $row_ad['id']; ?>">
 								<img src="homestay/admin/profile_pic/<?php echo $row_ad['photo']; ?>" class="card-img-top img-fluid" alt="homestay pictures" style="width: 480px;height: 300px">
 							</a>
@@ -161,7 +161,7 @@ include("database/conn.php");//db config file
 								<h5 class="card-title">
 									<a href="single.php?id=<?php echo $row_ad['id']; ?>"><?php echo $row_ad['title']; ?></a>
 								</h5>
-								<a href="single.php?id=<?php echo $row_ad['id']; ?>" class="btn btn-primary read-m">Read More</a>  <p>ads</p>
+								<a href="single.php?id=<?php echo $row_ad['id']; ?>" class="btn btn-primary read-m">Read More</a>  
 							</div>
 						</div>
 						<?php
