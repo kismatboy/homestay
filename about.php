@@ -27,9 +27,10 @@
 
 <body>
 	<!--Header-->
+	<div class="w3-top">
 	<?php include("header.php");?>
 	<!--//header-->
-		<div class="header_top" id="home">
+		<div class="header_top " id="home">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
    <button class="navbar-toggler navbar-toggler-right mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
    aria-expanded="false" aria-label="Toggle navigation">
@@ -37,28 +38,16 @@
  </button>
 
 
- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+ <div class="collapse navbar-collapse " id="navbarSupportedContent">
   <ul class="navbar-nav mr-auto">
    <li class="nav-item ">
     <a class="nav-link" href="index.php">Home
      <span class="sr-only">(current)</span>
    </a>
  </li>
- <li class="nav-item active">
+ <li class="nav-item active ">
   <a class="nav-link" href="about.php">About</a>
 </li>
-
-						<!-- 	<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-								    aria-expanded="false">
-									Home Stays
-								</a>
-								 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#"></a>
-									<?php //getcategoriesmenu("location");
-									?>
-								</div> 
-							</li> -->
 							<li class="nav-item">
 								<a class="nav-link" href="contact.php">Contact</a>
 							</li>
@@ -84,6 +73,8 @@
       </nav>
 
     </div>
+    </div>
+
 	<!--/banner-->
 	<div class="banner-inner">
 	</div>
@@ -100,7 +91,7 @@
 			<h3 class="tittle">About</h3>
 			<div class="row inner-sec">
 				<!--left-->
-				<div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
+				
 					<div class="blog-grid-top">
 
 						<div class="blog_info_left_grid">
@@ -113,52 +104,151 @@
 						</h3>
 						<p><?php getdetaileddescription("titles");?></p>
 					</div>
-				</div>
+
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
+.mySlides {display:none}
+.w3-tag, .fa {cursor:pointer}
+.w3-tag {height:15px;width:15px;padding:0;margin-top:6px}
+</style>
+<body>
+<!-- Content -->
+<div class="w3-content" style="max-width:1100px;margin-top:80px;margin-bottom:80px">
+  <!-- Grid  what we offer-->
+  <div class="w3-row w3-container">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">What We Offer</span>
+    </div>
+    <div class="w3-col l3 m6 w3-light-grey w3-container w3-padding-16">
+      <h3>Design</h3>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-grey w3-container w3-padding-16">
+      <h3>Branding</h3>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-dark-grey w3-container w3-padding-16">
+      <h3>Consultation</h3>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+
+    <div class="w3-col l3 m6 w3-black w3-container w3-padding-16">
+      <h3>Promises</h3>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="w3-row-padding" id="about">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Who We Are</span>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="/w3images/team1.jpg" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>Jane Doe</h3>
+          <p class="w3-opacity">CEO & Founder</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
+        <div class="w3-container">
+          <h3>Mike Ross</h3>
+          <p class="w3-opacity">Art Director</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <img src="/w3images/team3.jpg" alt="Jane" style="width:100%">
+        <div class="w3-container">
+          <h3>John Doe</h3>
+          <p class="w3-opacity">Designer</p>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+          <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="w3-center w3-padding-64" id="contact">
+    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
+  </div>
+
+  <form class="w3-container" action="/action_page.php" target="_blank">
+    <div class="w3-section">
+      <label>Name</label>
+      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" required>
+    </div>
+     <div class="w3-section">
+      <label>Subject</label>
+      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Subject" required>
+    </div>
+    <div class="w3-section">
+      <label>Email</label>
+      <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" required>
+    </div>
+   
+    <div class="w3-section">
+      <label>Message</label>
+      <textarea rows="5" class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" required></textarea>
+    </div>
+    <button type="submit" class="w3-button w3-block w3-black">Send</button>
+  </form>
+
+</div>
+
+<script>
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
+
+
 				<!--//left-->
-				<!--right-->
-				<aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
-					<div class="right-blog-info text-left">
-						<!-- <h4><strong>Location</strong></h4>
-						<ul class="list-group single">
-							 <?php
-							 // countcategories();?>
-						</ul> -->
-						<div class="tech-btm widget_social">
-							<h4>Stay Connected</h4>
-							<ul>
-
-								<li>
-									<a class="twitter" href="<?php getlinks("links","twitter");?>">
-										<i class="fab fa-twitter"></i>
-										<span class="count"></span> Twitter</a>
-									</li>
-									<li>
-										<a class="facebook" href="<?php getlinks("links","facebook");?>">
-											<i class="fab fa-facebook-f"></i>
-											<span class="count"></span> Facebook</a>
-										</li>
-										<li>
-											<a class="dribble" href="<?php getlinks("links","dribble");?>">
-												<i class="fab fa-dribbble"></i>
-
-												<span class="count"></span> Dribble</a>
-											</li>
-											<li>
-												<a class="pin" href="<?php getlinks("links","pinterest");?>">
-													<i class="fab fa-pinterest"></i>
-													<span class="count"></span> Pinterest</a>
-												</li>
-
-											</ul>
-										</div>
-										<div class="tech-btm">
-											<h4>Recent Homestay</h4>
-											<?php getolderposts("homestay_info");?>
-											<!--olderpostsendhere-->
-										</div>
-									</div>
-								</aside>
-								<!--//right-->
+				
 							</div>
 						</div>
 					</section>

@@ -255,7 +255,7 @@ $sqll="select * from user where username='$param_username';";
             mysqli_stmt_close($stmt);
           }
           else{
-            echo 'error... 1' . mysqli_error($con);
+            echo 'error... 2' . mysqli_error($con);
           }
 
         // Close statement
@@ -706,7 +706,7 @@ $sqll="select * from user where username='$param_username';";
           <br />
 
           <!-- <button type="submit">Login</button> -->
-          <input style="width: 100px; background-color: green;" type="submit" value="login" name="login" />
+          <input style="width: 100px;height: 50px;font-size: 25px; background-color: green;" type="submit" value="login" name="login" />
         </div>
 
         <div class="container" style="background-color:#f1f1f1;">

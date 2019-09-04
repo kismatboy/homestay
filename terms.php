@@ -1,6 +1,5 @@
 <?php require("libs/fetch_data.php");
-// blog =homestay_info
-// blog_cat=location
+
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -26,6 +25,8 @@
 	<link href="css/fontawesome-all.css" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
 	rel="stylesheet">
+	 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 
 </head>
 
@@ -39,6 +40,7 @@ background-color:grey;
 </style>
 <body>
 	<!--Header-->
+	<div class="w3-top">
 	<?php include("header.php");?> 
 	<div class="header_top" id="home">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -59,17 +61,6 @@ background-color:grey;
   <a class="nav-link" href="about.php">About</a>
 </li>
 
-						<!-- 	<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-								    aria-expanded="false">
-									Home Stays
-								</a>
-								 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#"></a>
-									<?php //getcategoriesmenu("location");
-									?>
-								</div> 
-							</li> -->
 							<li class="nav-item">
 								<a class="nav-link" href="contact.php">Contact</a>
 							</li>
@@ -80,7 +71,6 @@ background-color:grey;
 							<li class="nav-item active">
 								<a class="nav-link " href="terms.php">terms and conditions</a>
 							</li>
-
 						</ul>
 						
            <form action="search.php" method="post" class="form-inline my-2 my-lg-0 header-search" name="form" >
@@ -88,13 +78,11 @@ background-color:grey;
             <input class="form-control mr-sm-2" type="search" placeholder="Search here..." required="yes" type="text" name="search[keyword]">
             <button class="btn btn1 my-2 my-sm-0" type="submit" name="submit"><i class="fas fa-search"></i></button>
           </form>
-
-
-
         </div>
       </nav>
+      </div>
 
-    </div><div style="margin:50px 10px 10px 10px">
+    </div><div style="margin:140px 10px 10px 10px">
 <h1>
 	<center>Welcome to our homestay management system</center></h1>
 	<br><p>These terms and conditions outline the rules and regulations for the use of homestay's Website.</p> <br /> 

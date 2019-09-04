@@ -24,10 +24,13 @@
 	<link href="css/fontawesome-all.css" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
 	rel="stylesheet">
+	  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 </head>
 
 <body>
 	<!--Header-->
+	<div class="w3-top">
 	<?php include("header.php");?>
 	<!--//header-->
 		<div class="header_top" id="home">
@@ -49,17 +52,6 @@
   <a class="nav-link" href="about.php">About</a>
 </li>
 
-						<!-- 	<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-								    aria-expanded="false">
-									Home Stays
-								</a>
-								 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#"></a>
-									<?php //getcategoriesmenu("location");
-									?>
-								</div> 
-							</li> -->
 							<li class="nav-item active">
 								<a class="nav-link " href="contact.php">Contact</a>
 							</li>
@@ -85,6 +77,8 @@
       </nav>
 
     </div>
+      </div>
+
 	<!--/banner-->
 	<div class="banner-inner">
 	</div>

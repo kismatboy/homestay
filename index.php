@@ -29,10 +29,13 @@
 	rel="stylesheet">
   <link href="search/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
   <link href="search/css/romeo_main.css" rel="stylesheet" media="all">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 </head>
 
 <body bgcolor="gray">
+
+	<div   class="w3-top">
 	<?php include("header.php");?>
  <div class="header_top" id="home">
   <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-right:10px;">
@@ -52,18 +55,6 @@
  <li class="nav-item">
   <a class="nav-link" href="about.php">About</a>
 </li>
-
-						<!-- 	<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-								    aria-expanded="false">
-									Home Stays
-								</a>
-								 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#"></a>
-									<?php //getcategoriesmenu("location");
-									?>
-								</div> 
-							</li> -->
 							<li class="nav-item">
 								<a class="nav-link" href="contact.php">Contact</a>
 							</li>
@@ -89,6 +80,7 @@
       </nav>
 
     </div>
+</div>
 	<?php include("banner.php");?>
 	               
 
