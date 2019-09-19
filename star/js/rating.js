@@ -27,7 +27,7 @@ $(function() {
 	$('#ratingForm').on('submit', function(event){
 		event.preventDefault();
 		var formData = $(this).serialize();
-		alert('hello');
+		// alert('hello');
 		$.ajax({
 			// alert('hello');
 			type : 'POST',

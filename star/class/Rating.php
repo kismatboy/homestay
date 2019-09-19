@@ -76,9 +76,29 @@ class Rating{
 		}
 		return $average;	
 	}
-	public function saveRating($POST){		
-		$insertRating = "INSERT INTO ".$this->itemRatingTable." (itemId, username, ratingNumber, title, comments, created, modified) VALUES ('".$POST['itemId']."', '".$POST['username']."', '".$POST['rating']."', '".$POST['title']."', '".$POST["comment"]."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')";
-		mysqli_query($this->dbConnect, $insertRating);	
+	public function saveRating($POST){
+	$check=0;	
+	$sql="select * from ".$this->itemRatingTable.";";
+	$result=mysqli_query($this->dbConnect, $sql);
+	foreach ($result as $email ) {
+      	# code...
+			if ($_POST['email']==$email['email'] and $_POST['itemId']==$email['itemId']){
+				$check=1;
+			}
+		}
+
+		if ($check==0){
+		
+				$insertRating = "INSERT INTO ".$this->itemRatingTable." (email, itemId, username, ratingNumber, title, comments, created, modified) VALUES ('".$POST['email']."','".$POST['itemId']."', '".$POST['username']."', '".$POST['rating']."', '".$POST['title']."', '".$POST["comment"]."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')";
+		
+				mysqli_query($this->dbConnect, $insertRating);
+}
+
+
+		else{
+			echo "<script>alert('hello');</script>";
+
+		}
 	}
 }
 ?>

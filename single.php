@@ -512,21 +512,26 @@ $('#comment_name').focus();
 							<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
 						</button>
 						<input type="hidden" class="form-control" id="rating" name="rating" value="1">
+
 						<input type="hidden" class="form-control" id="itemId" name="itemId" value="<?php echo $_GET['id']; ?>">
 						<input type="hidden" name="action" value="saveRating">
 					</div>	
 					<div class="form-group">
+						<label for="usr">E-mail*</label>
+						<input type="email" class="form-control" id="rating" name="email" style="background:#f1f1f1; border: 2px solid #f1f1f2;" required>
+					</div>
+					<div class="form-group">
 						<label for="usr">Name*</label>
-						<input type="text" class="form-control" style="background-color:#fff; border: 2px solid #f1f1f2;" id="title" name="username" required>
+						<input type="text"  style="background:#f1f1f1; border: 2px solid #f1f1f2; margin: 0px 0 0px 0; margin: 0px 0px 0px 0px;" id="title" name="username" required>
 					</div>	
 					<div class="form-group">
 						<label for="usr">Title*</label>
-						<input type="text" class="form-control" id="title" name="title" required>
+						<input type="text" style="background:#f1f1f1; border: 2px solid #f1f1f2; margin: 0px 0 0px 0; margin: 0px 0px 0px 0px;" id="title" name="title" required>
 					</div>
 
 					<div class="form-group">
 						<label for="comment">Comment*</label>
-						<textarea class="form-control" rows="5" id="comment" name="comment" required></textarea>
+						<textarea class="form-control" rows="5" id="comment" name="comment" required style="background:#f1f1f1; border: 2px solid #f1f1f2;margin: 0px 0px 20px 0px;"></textarea>
 					</div>
 					<div class="form-group">
 						<button type="submit" class="btn btn-info" id="saveReview">Save Review</button> <button type="button" class="btn btn-info" id="cancelReview">Cancel</button>
@@ -536,29 +541,10 @@ $('#comment_name').focus();
 		</div>		
 	</div>
 
-<!-- 	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="loginmodal-container">
-				<h1>Login to rate this product</h1><br>
-				<div style="display:none;" id="loginError" class="alert alert-danger">Invalid username/Password</div>
-				<form method="post" id="loginForm" name="loginForm">
-					<input type="text" name="user" placeholder="Username" required>
-					<input type="password" name="pass" placeholder="Password" required>
-					<input type="hidden" name="action" value="userLogin">
-					<input type="submit" name="login" class="login loginmodal-submit" value="Login">					 
-				</form>
-				<div class="login-help">					
-					<p><b>User</b> : adam, rose, smith, merry <b>Password</b>: 123</p>
-				</div>
-			</div>
-		</div>
-	</div> -->
+
 </div>	
 
 <!-- end star review -->
-
-
-
 
 </div>
 </div>
