@@ -31,7 +31,7 @@
 	<?php include("header.php");?>
 	<!--//header-->
 		<div class="header_top " id="home">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-right:10px;">
    <button class="navbar-toggler navbar-toggler-right mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
    aria-expanded="false" aria-label="Toggle navigation">
    <span class="navbar-toggler-icon"></span>
@@ -152,10 +152,10 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
     <div class="w3-third w3-margin-bottom">
       <div class="w3-card-4">
-        <img src="/w3images/team1.jpg" alt="John" style="width:100%">
+        <img src="https://scontent.fktm5-1.fna.fbcdn.net/v/t1.0-1/p160x160/67089146_2099964710110052_4352773505649999872_n.jpg?_nc_cat=108&_nc_oc=AQkJ_Oqf4ZCqDuGdC6dgPwzCj1esXFlbBwS5F-NwjINQyDX_0jRrsnC95ZXsXO-r7cw&_nc_ht=scontent.fktm5-1.fna&oh=0fbf7b9db2b3aa79cd0a41b212ec9a48&oe=5E1480EC" alt="John" height="200px" style="width:100% ">
         <div class="w3-container">
-          <h3>Jane Doe</h3>
-          <p class="w3-opacity">CEO & Founder</p>
+          <h3>Sunil Sapkota</h3>
+          <p class="w3-opacity">Developer</p>
           <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
           <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
         </div>
@@ -164,10 +164,10 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
     <div class="w3-third w3-margin-bottom">
       <div class="w3-card-4">
-        <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
+        <img src="https://scontent.fktm5-1.fna.fbcdn.net/v/t1.0-1/p160x160/67938497_946864365664414_3198538870626975744_n.jpg?_nc_cat=108&_nc_oc=AQnuhmoDiUxodCbA1Kqv9RlrRLom_GC2LWlDG5QULoTw6GGpytmDxroG2pxEu8HRp5o&_nc_ht=scontent.fktm5-1.fna&oh=99fac75bab7072e58ba629f68d5c18cc&oe=5E09D044" alt="Mike" height="200px" style="width:100%">
         <div class="w3-container">
-          <h3>Mike Ross</h3>
-          <p class="w3-opacity">Art Director</p>
+          <h3>Susmita Bazracharya</h3>
+          <p class="w3-opacity">Like Brahmanandam </p>
           <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
           <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
         </div>
@@ -176,9 +176,9 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
 
     <div class="w3-third w3-margin-bottom">
       <div class="w3-card-4">
-        <img src="/w3images/team3.jpg" alt="Jane" style="width:100%">
+        <img src="https://scontent.fktm5-1.fna.fbcdn.net/v/t1.0-1/p160x160/65216421_1185176568317593_1254115486765940736_n.jpg?_nc_cat=101&_nc_oc=AQntZOEfcYjXWfoIaF19eHQ_Rmni855xNvA2etQVN0T9Uh8Jf4fXrl01SZei98TruOo&_nc_ht=scontent.fktm5-1.fna&oh=6898d2fac92b8db5920affcebdc9c90e&oe=5DFD821D" alt="Jane" height="200px" style="width:100%">
         <div class="w3-container">
-          <h3>John Doe</h3>
+          <h3>Susmita Thakali</h3>
           <p class="w3-opacity">Designer</p>
           <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
           <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>

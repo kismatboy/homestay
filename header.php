@@ -670,8 +670,10 @@ $sqll="select * from user where username='$param_username';";
    <a class="navbar-brand" href="index.php">
     <i class="fas fa-home"></i> HOMESTAY NEPAL</a>
   </div>
+  <div class="d-block d-md-none"><br/></div>
   <div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
    <span>Welcome Back!</span>
+    <div class="d-block d-lg-none"><br/></div>
    <span class="mx-lg-4 mx-md-2  mx-1">					
     <!-- <a href="homestay/admin/test/login.php"> -->
      <button  class="btn cancel" onclick="document.getElementById('id_login').style.display='block'" style="width:auto;"><i class="fas fa-lock"></i> <strong style="color: black;">Sign In</button></strong>
