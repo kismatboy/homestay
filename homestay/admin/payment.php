@@ -112,9 +112,7 @@ if(!isset($_SESSION["user"]))
 											<th>No of Room</th>
 											<th>Meal Type</th>
 											
-                                            <th>Room Rent</th>
-											<th>Bed Rent</th>
-											<th>Meals </th>
+                                            
 											<th>Gr.Total</th>
 											<th>Print</th>
                                             
@@ -123,7 +121,7 @@ if(!isset($_SESSION["user"]))
                                     <tbody>
                                         
 									<?php
-										include ('db.php');
+										include_once ('db.php');
                                         $user=$_SESSION['user'];
 										$sql="select * from payment where owner='$user'";
 										$re = mysqli_query($con,$sql);
@@ -142,14 +140,12 @@ if(!isset($_SESSION["user"]))
 													<td>".$row['cout']."</td>
 													<td>".$row['nroom']."</td>
 													<td>".$row['meal']."</td>
-													
 													<td>".$row['ttot']."</td>
-													<td>".$row['mepr']."</td>
-													<td>".$row['btot']."</td>
-													<td>".$row['fintot']."</td>
-													<td><!--<a href=print.php?pid=".$id ." <button class='btn btn-primary'> -->
+													<td>
+                                                    <a href=print.php?pid=".$id ." <button class='btn btn-primary' target='_black'>
 
-                                                    <a href=''> <button class='btn btn-primary'><i class='fa fa-print' ></i> Print</button></td>
+                                                    <button 
+                                                    ' class='btn btn-primary'><i class='fa fa-print' ></i> Print</button></td>
 													</tr>";
 											}
 											else
@@ -162,11 +158,8 @@ if(!isset($_SESSION["user"]))
 													<td>".$row['cout']."</td>
 													<td>".$row['nroom']."</td>
 													<td>".$row['meal']."</td>
-													
+												
 													<td>".$row['ttot']."</td>
-													<td>".$row['mepr']."</td>
-													<td>".$row['btot']."</td>
-													<td>".$row['fintot']."</td>
 													<td><a href=''> <button class='btn btn-primary'> <i class='fa fa-print' ></i> Print</button></td>
 													</tr>";
 											

@@ -2,8 +2,12 @@
 session_start();  
 if(!isset($_SESSION["user"]))
 {
- header("location:index.php");
+
+   header("location:index.php");
 }
+include_once ('db.php');
+include_once 'lib/fetch_data.php';
+$h_id=gethomestayid();
 ?> 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -158,12 +162,28 @@ if(!isset($_SESSION["user"]))
 							<?php
 							if(isset($_POST['log']))
 							{	
-								$log ="INSERT INTO `newsletterlog`(`title`, `subject`, `news`) VALUES ('$_POST[title]','$_POST[subject]','$_POST[news]')";
+                                $users=$_SESSION['user'];
+								$log ="INSERT INTO `newsletterlog`(`user`, `title`, `subject`, `news`) VALUES ('$users','$_POST[title]','$_POST[subject]','$_POST[news]')";
 								if(mysqli_query($con,$log))
 								{
-									echo '<script>alert("New Room Added") </script>' ;
+                                    // homestay/admin/messages.php
+
+                                    require_once '../../libs/Phpmailer/sendmail.php';
+                    $sql1="SELECT * FROM newsleter ";
+                    if ($result=mysqli_query($con,$sql1))
+                         {
+                         foreach ($result as $send_mails ) {
+
+                               sendmail($send_mails['email'],$send_mails['full_name'],$_POST['subject']. ' by ' . $_SESSION['user'],$_POST['title'] . '<br>'.$_POST['news']);
+                               }
+                         }
+
+                         
+                                   
+									echo '<script>alert("news letter sent") ;</script>' ;
 											
 								}
+
 								
 							}
 							

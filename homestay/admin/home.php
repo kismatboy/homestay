@@ -1,8 +1,9 @@
 ﻿<?php  
 session_start();  
+
 if(!isset($_SESSION["user"]))
 {
-   header("location:index.php");
+    header("location:index.php");
 }
 include ('db.php');
 include 'lib/fetch_data.php';
@@ -336,8 +337,8 @@ $h_id=gethomestayid();
                 <h3>".$mrow['FName']."</h3>
                 </div>
                 <div class='panel-footer back-footer-blue'>
-                <!--<a href=show.php?sid=".$fid .">-->
-                <a href=''><button  class='btn btn-primary btn' data-toggle='modal' data-target='#myModal'>
+                <a href=show.php?sid=$fid target='_blank'>
+                <button  class='btn btn-primary btn' data-toggle='modal'>
                 Show
                 </button></a>
                 ".$mrow['TRoom']."

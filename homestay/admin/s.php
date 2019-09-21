@@ -439,43 +439,7 @@ document.getElementById("defaultOpen").click();
               <tr>
                 <td>About </td>
                 <td >
-                  <text name="host_about" style="width:100%;height:100px; margin-left: 50px; align-content: right;">
-
-
-                  <!-- <textarea name="host_about"></textarea> -->
-
-                
-<!-- 
-      <script src="text_editor/ckeditor.js"></script>
-          <script type="text/javascript"> CKEDITOR.replace('host_about')</script> -->
-                  
-                    
-               <!--   
-
-                  <div class="adjoined-bottom" id="test">
-                    <div class="grid-container">
-                      <div class="grid-width-100">
-                        <div id="editor">
-                          <div id="1">
-                          <h1>your homestay details</h1>
-                        </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <script>
-                    initSample();
-                 
-                  </script>
-                  <div id="hiddenFormWrap">
-        <textarea type="hidden" name="divData" id="useDataField" ></textarea>
-    </div>
-                  -->
-
-                  
-
-                  
+                  <textarea name="host_about" style="width:100%;height:100px; margin-left: 50px; align-content: right;"></textarea>
                 </td>
               </tr>
 
@@ -490,71 +454,6 @@ document.getElementById("defaultOpen").click();
 
                      
         </div>
-   
-    
-       <!--  <?php
-   // if(isset($_POST['insert_h1'])){
-      // echo  "You saved:" . $_POST['divData'];
-    //}
-    ?> -->
-
-       
-
-
-<!-- 
-<br><br><br><br><br><br>
-<form>
-    <legend style="color:black"><b> USER'S INFORMATION</b></legend>
-    <table>
-        <tr>
-            <td>Title </td>
-            <td>
-                <select name="title">
-                    <option value="Mr">Mr</option>
-                    <option value="Mrs">Mrs</option>
-                    <option value="Miss">Miss</option>
-                    <option value="Dr">Dr</option>
-                    </select>
-            </td>
-        </tr>
-
-
-<tr>
-        <td>Name </td>
-        <td><input type="text" name="fname" placeholder="FIRST NAME"></td>
-    
-
-        <td><input type="text" name="lname" placeholder="LAST NAME"></td>
-    </tr> 
-    <tr>
-            <td>Email </td>
-            <td><input type="text" name="email" placeholder="eg:abc@gmail.com" ></td>
-        </tr>
- <tr>
-            <td>Password </td>
-            <td><input type="password" name="password" placeholder="enter password!"></td>
-        </tr>
- <tr>
-            <td>Nationality</td>
-            <td><select name="nationality">
-                <option value="Nepali">Nepali</option>
-                    <option value="Indian">Indian</option>
-                    <option value="Chinese">Chinese</option>
-                    <option value="Canadian">Canadian</option>
-            </select></td>
-        </tr>
- <tr>
-            <td>Phone No. </td>
-            <td><input type="number" name="phone_no" ></td>
-        </tr>
-
-<tr><td></td>
-<td  ><input type="submit" name="insert" id="insert" value="insert"></td>
-</tr>
-
-    </table>
-</form>
--->
 
 </div>
 </div>

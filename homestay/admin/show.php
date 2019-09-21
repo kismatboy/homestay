@@ -1,7 +1,30 @@
-<html>
+<?php  
+session_start();  
+
+if(!isset($_SESSION["user"]))
+{
+    header("location:index.php");
+}
+include_once ('db.php');
+require_once 'lib/fetch_data.php';
+
+$h_id=gethomestayid();
+?> <html>
 	<head>
 		<meta charset="utf-8">
-        <title><?php echo $_SESSION['user'] ?> |Administrator </title>
+		<?php
+		$p_id = $_GET['sid'];
+	
+	
+	
+	$sql ="select * from roombook where id = '$p_id' ";
+	$re1 = mysqli_query($con,$sql);
+	while($row1=mysqli_fetch_array($re1))
+	{
+	$name =$row1['Title'].' '.$row1['FName'].' '.$row1['LName'];
+	}
+	?>
+        <title><?php echo $name; ?> |Visitor </title>
 		
 		<style>
 		/* reset */
@@ -194,11 +217,12 @@ tr:hover .cut { opacity: 1; }
 		<header>
 			<h1>Information of Guest</h1>
 			<address >
-				<p>SUN RISE HOTEL,</p>
-				<p>New Kalmunani Road,<br>Battialoa,<br>Sri Lanka.</p>
-				<p>(+94) 65 222 44 55</p>
+
+				<p> <?php  gettitle($h_id); ?></p>
+				<p> <?php  getaddress($h_id); ?>,<br>Nepal.</p>
+				<p><?php  getphonenum($h_id); ?></p>
 			</address>
-			<span><img alt="" src="assets/img/sun.png"></span>
+			<span><img alt="" src="assets/img/homestay_logo.png" width="250px"></span>
 		</header>
 		<article>
 			<h1></h1>
@@ -268,7 +292,7 @@ tr:hover .cut { opacity: 1; }
 		<aside>
 			<h1><span >Contact us</span></h1>
 			<div >
-				<p align="center">Email :- info@sunrise.com || Web :- www.sunrise.com || Phone :- +94 65 222 44 55 </p>
+				<p align="center">Email :- info@homestaynepal.com || Web :- www.homestaynepal.com || Phone :- +9779806705494 </p>
 			</div>
 		</aside>
 	</body>

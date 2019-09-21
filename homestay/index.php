@@ -369,12 +369,30 @@ function showSlides(n) {
 									
 								     </ul>
 							</div>
+							<script type="text/javascript">
+								function no_room(){
+									alert( 'no room avilable');
+								
+								}
+							</script>
 							<div class="price-selet">	
 								<?php
-								 echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><h3><span>$';
-								 getprice($_REQUEST['id'],'deluxe Room');
-								 echo '</span> </h3> <br/>Book Now</a>';
-								 ?>
+								 $chk= checkPrice($_REQUEST['id'],'deluxe Room');
+								  if ($chk ==0){
+								echo '<a onclick="no_room()" ><h3><span>$';
+								getprice($_REQUEST['id'],'deluxe Room');
+								 		echo '</span> </h3> <br/>Book Now</p></a>';
+								 								 }
+								 	else
+								 	{
+								 		  echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><h3><span>$';
+								getprice($_REQUEST['id'],'deluxe Room');
+								 		echo '</span> </h3> <br/>Book Now</p></a>';
+								 	}
+								 	?>
+
+
+								
 							</div>
 						</div>
 					</div>
@@ -400,10 +418,20 @@ function showSlides(n) {
 							<div class="price-selet">
 
 								<?php
+						$chk= checkPrice($_REQUEST['id'],'single Room');
+						 if ($chk!=0){
 								 echo '<a href="homestay/admin/reservation.php?id='.$_REQUEST["id"].'" ><h3><span>$';
 								 getprice($_REQUEST['id'],'single Room');
 								 echo '</span> </h3> <br/>Book Now</a>';
-								 ?>
+								}
+								else
+								 	{
+								 		 echo '<a onclick="no_room()" ><h3><span>$';
+								 		  getprice($_REQUEST['id'],'single Room');
+								 echo '</span> </h3> <br/>Book Now</a>';
+								}
+								?>
+
 								 	
 								 </div>
 						</div>

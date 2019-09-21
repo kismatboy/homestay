@@ -57,6 +57,8 @@ function getphonenum($id){
 
 	mysqli_close($con);
 }
+
+
 function getemail($id){
 	require("database/db_connect.php");
 	$sql="SELECT owner_name FROM homestay_info where id = $id ";
@@ -240,6 +242,7 @@ function getprice($id,$type){
 		if ($rowcount==0) {
       		# code...
 			echo 'N/A';
+			return 1;
 		}
       	//if there are rows available display all the results
 		foreach ($result as $price) {
@@ -254,6 +257,23 @@ function getprice($id,$type){
 	mysqli_close($con);
 }
 
+function checkPrice($id,$type){
+	require("database/db_connect.php");
+	$sql="SELECT price FROM room where h_id='$id' and type='$type'";
+	if ($result=mysqli_query($con,$sql))
+	{
+		$rowcount=mysqli_num_rows($result);
+		if ($rowcount==0) {
+			return 0;
+		}else{
+			return 1;
+		}
+	}
+	else {mysqli_error($con);}
+
+	mysqli_close($con);
+
+}
 //to edit
 function getstarreview($id){
 	require("database/db_connect.php");

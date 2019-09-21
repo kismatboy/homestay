@@ -10,13 +10,13 @@
                 <a class="navbar-brand" href="home.php"><?php echo $_SESSION["user"];?> </a>
             </div>
 
-            <ul class="nav navbar-top-links navbar-right">
+            <ul class="nav navbar-top-links navbar-right" >
             
-                <li class="dropdown">
+                <li class="dropdown" >
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i><?php echo $_SESSION["user"];?>
                     </a>
-                    <ul class="dropdown-menu dropdown-user">
+                    <ul class="dropdown-menu dropdown-user" style="background-color: black">
                         <li><a href="s.php"><i class="fa fa-user fa-fw"></i> your Profile</a>
                         </li>
                         <li><a href="settings.php"><i class="fa fa-gear fa-fw"></i> Settings</a>

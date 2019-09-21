@@ -58,3 +58,56 @@ function insertpicture($uploading_FILES){
 }
 echo 'please upload image first';
 }
+function getaddress($id){
+  include('db.php');
+  $sql="SELECT address FROM homestay_info where id = $id ";
+  if ($result=mysqli_query($con,$sql))
+  {
+        //count number of rows in query result
+    $rowcount=mysqli_num_rows($result);
+        //if no rows returned show no news alert
+    if ($rowcount==0) {
+          # code...
+      echo 'No address found!!';
+    }
+        //if there are rows available display all the results
+    foreach ($result as $add ) {
+        # code...
+      echo ''.$add['address'].'';
+    }
+  }
+}
+  function gettitle($id){
+  include('db.php');
+  $sql="SELECT Title FROM homestay_info where id = $id ";
+  if ($result=mysqli_query($con,$sql))
+  {
+        //count number of rows in query result
+    $rowcount=mysqli_num_rows($result);
+        //if no rows returned show no news alert
+    if ($rowcount==0) {
+          # code...
+      echo 'No title found!!';
+    }
+        //if there are rows available display all the results
+    foreach ($result as $add ) {
+        # code...
+      echo ''.$add['Title'].'';
+    }
+  }
+
+  mysqli_close($con);
+}
+function getphonenum($id){
+  include('db.php');
+  $sql="SELECT * FROM user where homestay_id = $id";
+  if ($result=mysqli_query($con,$sql))
+  {
+    foreach ($result as $phone ) {
+
+      echo ''.$phone['phone'].'';
+            }
+          }
+
+  mysqli_close($con);
+}
