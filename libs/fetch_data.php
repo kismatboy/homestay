@@ -930,9 +930,9 @@ function getolderposts($table){
 
 	mysqli_close($con);
 }
-function getfour($table){
+function faq($table){
 	require("database/db_connect.php");
-	$sql="SELECT * FROM $table ORDER BY id DESC LIMIT 4";
+	$sql="SELECT * FROM $table ORDER BY id";
 	if ($result=mysqli_query($con,$sql))
 	{
       	//count number of rows in query result
@@ -940,25 +940,16 @@ function getfour($table){
       	//if no rows returned show no posts alert
 		if ($rowcount==0) {
       		# code...
-			echo 'No posts to fetch';
+			echo 'No FAQ';
 		}
       	//if there are rows available display all the results
 		echo '<ul id="demo1_thumbs" class="list-inline">';
-		foreach ($result as $thefour => $fourdata) {
+		foreach ($result as $faq ) {
       	# code...
 			echo '
 			<li>
-			<a href="homestay/admin/profile_pic/'.$fourdata['photo'].'">
-			<h4 style="height:40px;overflow:hidden;text-overflow:ellipsis; color:lime;">'.$fourdata['title'].'</h4>		
-			<img src="homestay/admin/profile_pic/'.$fourdata['photo'].'" alt="homestay images" data-desoslide-caption="<h3>Latest Post '.$fourdata['id'].'</h3>">
-			<div class="mid-text-info">
-			
-			<p>'.$fourdata['owner_name'].'</p>
-			<div class="sub-meta">
-			<span>
-			<i class="far fa-clock"></i> '.$fourdata['date'].'</span>
-			</div>
-			</div>
+			<a href="">
+			<h4 style="height:40px;overflow:hidden;text-overflow:ellipsis; color:lime;">'.$faq['question'].'</h4>		
 			</a>
 			</li>
 			';

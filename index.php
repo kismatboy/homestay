@@ -167,11 +167,13 @@
 					<!--/middle-->
 					<section class="middle-sec-agileinfo-w3ls">
 						<div class="container">
+								<div style="font-size: 50px;text-align: center;color: green;background-color: white;font-style: italic;">Frequently Asked questions!</div>
 							<div class="row inner-sec">
 								<div class="col-md-4 news-left">
 									
 										<!--get latest four-->
-										<?php getfour("homestay_info");?>
+									
+										<?php faq("faq");?>
 									
 								</div>
 								<div id="demo1_main_image" class="col-md-8  news-right"></div>
