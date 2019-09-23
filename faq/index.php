@@ -17,7 +17,7 @@ function faq(){
       	# code...
 			echo '
 			<li class="cd-faq__item">
-				<a class="cd-faq__trigger" href="#0"><span>'.$faq['question'].'</span></a>
+				<a class="cd-faq__trigger" href="#0"><span style="color: green;">'.$faq['question'].'</span></a>
 				<div class="cd-faq__content">
           <div class="text-component">
             <p>'.$faq['answer'].'</p>
@@ -40,9 +40,9 @@ function faq(){
   <title>FAQ | HomeStay Nepal</title>
 </head>
 <body>
-<header class="cd-header flex flex-column flex-center">
-  <div class="text-component text-center">
-    <h1>Frequently Asked Question </h1>
+<header class="cd-header flex flex-column flex-center" style="background-color: black;">
+  <div class="text-component text-center" >
+    <h1 style="color: green;font-style: italic;font-size: 65px; text-align: center;">Frequently Asked Question! </h1>
   </div>
 </header>
 

@@ -11,7 +11,7 @@
   // colors
   @include defineColorHSL(--cd-color-1, 213, 7%, 33%);   // Blue Dark
   @include defineColorHSL(--cd-color-2, 73, 46%, 55%);   // Green
-  @include defineColorHSL(--cd-color-3, 210, 14%, 49%);  // Blue Light
+  @include defineColorHSL(--cd-color-3, 73, 46%, 55%);  // Blue Light
   @include defineColorHSL(--cd-color-4, 0, 0%, 100%);    // White
 
   // font

@@ -163,7 +163,7 @@ function getfeatures($id){
 		} 
 		// if data need from features table
 		foreach ($result as $features ) {
-			echo '<p><i class="fa fa-check" aria-hidden="true"></i>'.$features["features"].'</p>';
+			echo '<p>'.$features["features"].'</p>';
 		}	
 	}
 	mysqli_close($con);
@@ -932,7 +932,7 @@ function getolderposts($table){
 }
 function faq($table){
 	require("database/db_connect.php");
-	$sql="SELECT * FROM $table ORDER BY id";
+	$sql="SELECT * FROM $table ORDER BY id LIMIT 5";
 	if ($result=mysqli_query($con,$sql))
 	{
       	//count number of rows in query result
