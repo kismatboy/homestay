@@ -1,6 +1,7 @@
 
 <?php  
 session_start();  
+// $_SESSION["user"]='ddd';
 if(!isset($_SESSION["user"]))
 {
  header("location:index.php");

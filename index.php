@@ -172,7 +172,6 @@
 								<div class="col-md-4 news-left">
 									
 										<!--get latest four-->
-									
 										<?php faq("faq");?>
 									
 								</div>

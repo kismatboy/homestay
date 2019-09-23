@@ -943,13 +943,13 @@ function faq($table){
 			echo 'No FAQ';
 		}
       	//if there are rows available display all the results
-		echo '<ul id="demo1_thumbs" class="list-inline">';
+		echo '<ul>';
 		foreach ($result as $faq ) {
       	# code...
 			echo '
 			<li>
-			<a href="">
-			<h4 style="height:40px;overflow:hidden;text-overflow:ellipsis; color:lime;">'.$faq['question'].'</h4>		
+			<a href="faq/index.php">
+			<h4 style="height:40px; color:lime;">'.$faq['question'].'</h4>		
 			</a>
 			</li>
 			';
