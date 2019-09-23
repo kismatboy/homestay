@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2019 at 02:48 PM
+-- Generation Time: Sep 23, 2019 at 08:29 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -89,7 +89,8 @@ INSERT INTO `comment` (`comment_id`, `parent_comment_id`, `homestay_id`, `commen
 (37, 36, 2, 'check reply of ghandruk homestay 2', 'test', '2019-08-18 12:45:23'),
 (38, 0, 1, 'wefsw', 'erfws', '2019-08-18 12:49:56'),
 (39, 0, 1, 'new comment', 'romeo', '2019-08-19 11:07:40'),
-(40, 0, 1, 'ttt666777', 'dfrfv', '2019-08-19 17:08:14');
+(40, 0, 1, 'ttt666777', 'dfrfv', '2019-08-19 17:08:14'),
+(41, 0, 10, 'what is the cost of 2 rooms for 1 nights and 2 day', 'sunil', '2019-08-23 15:07:36');
 
 -- --------------------------------------------------------
 
@@ -130,6 +131,28 @@ INSERT INTO `family` (`id`, `name`, `relation`, `about`, `social link`, `pic`, `
 (1, 'suresh sapkota', 'father', 'my name is suresh sapkota. and im running    this home stay for 5 years now', 'facebook.com', 'suresh.jpg', 1),
 (2, 'dhana sapkota', 'mother', 'my name is dhana sapkota. and im running    this home stay for 5 years by now. thank you.!', 'facebook.com', 'dhana.jpg', 1),
 (3, 'sunil sapkota', 'son', 'hello there my name is sunil sapkota thank you.', 'facebook.com', 'sunil.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faq`
+--
+
+CREATE TABLE `faq` (
+  `id` int(11) NOT NULL,
+  `question` text NOT NULL,
+  `answer` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`id`, `question`, `answer`) VALUES
+(5, 'How to register new homestay?\r\n', '	Go to home page\r\n	>	Click on REGISTER button\r\n	>	Enter your details\r\n	>	Enter homestay information\r\n	>	Click on SUBMIT button'),
+(6, 'How to manage language?\r\n', '>	Go to home page\r\n>	Scroll down to the bottom\r\n>	Click on the select language\r\n>	Choose your desired language'),
+(7, 'How to register new homestay?\r\n', '	Go to home page\r\n	>	Click on REGISTER button\r\n	>	Enter your details\r\n	>	Enter homestay information\r\n	>	Click on SUBMIT button'),
+(8, 'How to manage language?\r\n', '>	Go to home page\r\n>	Scroll down to the bottom\r\n>	Click on the select language\r\n>	Choose your desired language');
 
 -- --------------------------------------------------------
 
@@ -210,7 +233,12 @@ INSERT INTO `gallery` (`id`, `homestay_id`, `pic_name`) VALUES
 (34, 8, 'facebook error.JPG'),
 (35, 9, 'lomanthang.jpg'),
 (36, 9, 'Gauri-Gai.jpg'),
-(37, 9, 'ghale-gaun-trek-1.jpg');
+(37, 9, 'ghale-gaun-trek-1.jpg'),
+(38, 10, '777.jpg'),
+(39, 10, '43006820_10215597274897887_7464817782249488384_n.jpg'),
+(40, 10, 'Capture.JPG'),
+(45, 11, 'test3.jpg'),
+(47, 12, 'images1 (5).jpg');
 
 -- --------------------------------------------------------
 
@@ -249,7 +277,10 @@ INSERT INTO `homestay_info` (`id`, `title`, `tags`, `owner_name`, `icon`, `conte
 (6, 'Ghale Gaun', 'Live the Life and enjoy the moment.', '', '', 'Ghale gaun trekking is newly open trekking trail in Annapurna region. Ghale gaun trekking offers superb breathtaking view of majestic western Himalayas including Machhapuchhare (6693m) Annapurna (8091m), Annapurna II (7939m) Annapurna IV (7525m), Lamjung Himal, Bouddha Himal ((6974m), Himalchuli (6747m) and many smaller peaks. Ghalegaun, situated at the foot of Lamjung Himal in north central Nepal, is an exotic pristine village endowed with an unparallel scenic grandeur and a home to world famous Gurkha soldiers- the Gurungs. \r\nGhale Gaun is not only to explore local life of Nepali people, it is also offering a superb breathtaking views of the mountain including Annapurna I, Annapurna II, Himalchuli, Mahhapuchhare, Annapurna IV, Bouddha Himal etc. Villagers were welcoming with warm greetings by wearing their traditional customs to the tourist. Local food, handicraft, Gurung Museum, Gurung Culture, spectacular mountains view ', '30278600_1524856225.jpg', '', 'publish', '2019-07-21 05:32:55', '7', '', '', '', ''),
 (7, 'pokhara homestay', 'Please stay clean, please try to leave t', 'sunil99', '', 'Please stay clean, please try to leave the room in the same condition as you take. Please smoke outside and away from the room. Inform us in advance when you are not having meal, if you go out (bars, restaurant, visit someone) let us know, where you will plan to go and in case of emergency we will know where we can find you, (:- Thank you. Smoking is not allowed.\r\n', 'Homestay-Eco-Resort-Chitwan-Nepal.jpg', 'Please stay clean, please try to leave the room in the same condition as you take. Please smoke outside and away from the room. Inform us in advance when you are not having meal, if you go out (bars, restaurant, visit someone) let us know, where you will plan to go and in case of emergency we will know where we can find you, (:- Thank you. Smoking is not allowed.', 'publish', '2019-07-27 14:53:47', 'Pokhara', 'Please stay clean, please try to leave the room in the same condition as you take. Please smoke outside and away from the room. Inform us in advance when you are not having meal, if you go out (bars, restaurant, visit someone) let us know, where you will plan to go and in case of emergency we will know where we can find you, (:- Thank you. Smoking is not allowed.\r\n', 'Please stay clean, please try to leave the room in the same condition as you take. Please smoke outside and away from the room. Inform us in advance when you are not having meal, if you go out (bars, restaurant, visit someone) let us know, where you will plan to go and in case of emergency we will know where we can find you, (:- Thank you. Smoking is not allowed.\r\n', 'Please stay clean, please try to leave the room in the same condition as you take. Please smoke outside and away from the room. Inform us in advance when you are not having meal, if you go out (bars, restaurant, visit someone) let us know, where you will plan to go and in case of emergency we will know where we can find you, (:- Thank you. Smoking is not allowed.\r\n', ''),
 (8, 'loply homestay', 'testing tagline update', 'admin999', '', 'the details about homestay . every thing you need to know about us.', 'text1.jpg', 'test iframe', 'publish', '2019-08-07 17:01:05', 'Kathmandu', 'meal plans and details', 'youtube video link posting and sharing', 'the rules updating', ''),
-(9, 'loply homestay099', 'this is the tag line', 'romeo099', '', 'It takes 30 minutesï¿½ walk from Jomsom. The name of this village originates from Tibetan word Thin (lit. base or root). It is the oldest village in Panch Gaun (lit. five villages) region. Historically, Thini was an important village in the valley where famous king Thang Mig Chen used to rule over. As such every village had to pay tribute to Thini (either produce or labour). The village still has Kot Ghar (arsenal) where artilleries are preserved. It is also a gateway to Tilicho Lake, which is about two days walk. Other attractions include Thini Bonpo Gompa,', 'SH9co.jpg', 'https://goo.gl/maps/1PLB6KT37Va1mfPNA', 'publish', '2019-08-12 12:54:36', 'Pokhara', 'It takes 30 minutesï¿½ walk from Jomsom. The name of this village originates from Tibetan word Thin (lit. base or root). It is the oldest village in Panch Gaun (lit. five villages) region. Historically, Thini was an important village in the valley where famous king Thang Mig Chen used to rule over. As such every village had to pay tribute to Thini (either produce or labour). The village still has Kot Ghar (arsenal) where artilleries are preserved. It is also a gateway to Tilicho Lake, which is about two days walk. Other attractions include Thini Bonpo Gompa,', 'It takes 30 minutesï¿½ walk from Jomsom. The name of this village originates from Tibetan word Thin (lit. base or root). It is the oldest village in Panch Gaun (lit. five villages) region. Historically, Thini was an important village in the valley where famous king Thang Mig Chen used to rule over. As such every village had to pay tribute to Thini (either produce or labour). The village still has Kot Ghar (arsenal) where artilleries are preserved. It is also a gateway to Tilicho Lake, which is about two days walk. Other attractions include Thini Bonpo Gompa,', 'It takes 30 minutesï¿½ walk from Jomsom. The name of this village originates from Tibetan word Thin (lit. base or root). It is the oldest village in Panch Gaun (lit. five villages) region. Historically, Thini was an important village in the valley where famous king Thang Mig Chen used to rule over. As such every village had to pay tribute to Thini (either produce or labour). The village still has Kot Ghar (arsenal) where artilleries are preserved. It is also a gateway to Tilicho Lake, which is about two days walk. Other attractions include Thini Bonpo Gompa,', 'It takes 30 minutesï¿½ walk from Jomsom. The name of this village originates from Tibetan word Thin (lit. base or root). It is the oldest village in Panch Gaun (lit. five villages) region. Historically, Thini was an important village in the valley where famous king Thang Mig Chen used to rule over. As such every village had to pay tribute to Thini (either produce or labour). The village still has Kot Ghar (arsenal) where artilleries are preserved. It is also a gateway to Tilicho Lake, which is about two days walk. Other attractions include Thini Bonpo Gompa,');
+(9, 'loply homestay099', 'this is the tag line', 'romeo099', '', 'It takes 30 minutesï¿½ walk from Jomsom. The name of this village originates from Tibetan word Thin (lit. base or root). It is the oldest village in Panch Gaun (lit. five villages) region. Historically, Thini was an important village in the valley where famous king Thang Mig Chen used to rule over. As such every village had to pay tribute to Thini (either produce or labour). The village still has Kot Ghar (arsenal) where artilleries are preserved. It is also a gateway to Tilicho Lake, which is about two days walk. Other attractions include Thini Bonpo Gompa,', 'SH9co.jpg', 'https://goo.gl/maps/1PLB6KT37Va1mfPNA', 'publish', '2019-08-12 12:54:36', 'Pokhara', 'It takes 30 minutesï¿½ walk from Jomsom. The name of this village originates from Tibetan word Thin (lit. base or root). It is the oldest village in Panch Gaun (lit. five villages) region. Historically, Thini was an important village in the valley where famous king Thang Mig Chen used to rule over. As such every village had to pay tribute to Thini (either produce or labour). The village still has Kot Ghar (arsenal) where artilleries are preserved. It is also a gateway to Tilicho Lake, which is about two days walk. Other attractions include Thini Bonpo Gompa,', 'It takes 30 minutesï¿½ walk from Jomsom. The name of this village originates from Tibetan word Thin (lit. base or root). It is the oldest village in Panch Gaun (lit. five villages) region. Historically, Thini was an important village in the valley where famous king Thang Mig Chen used to rule over. As such every village had to pay tribute to Thini (either produce or labour). The village still has Kot Ghar (arsenal) where artilleries are preserved. It is also a gateway to Tilicho Lake, which is about two days walk. Other attractions include Thini Bonpo Gompa,', 'It takes 30 minutesï¿½ walk from Jomsom. The name of this village originates from Tibetan word Thin (lit. base or root). It is the oldest village in Panch Gaun (lit. five villages) region. Historically, Thini was an important village in the valley where famous king Thang Mig Chen used to rule over. As such every village had to pay tribute to Thini (either produce or labour). The village still has Kot Ghar (arsenal) where artilleries are preserved. It is also a gateway to Tilicho Lake, which is about two days walk. Other attractions include Thini Bonpo Gompa,', 'It takes 30 minutesï¿½ walk from Jomsom. The name of this village originates from Tibetan word Thin (lit. base or root). It is the oldest village in Panch Gaun (lit. five villages) region. Historically, Thini was an important village in the valley where famous king Thang Mig Chen used to rule over. As such every village had to pay tribute to Thini (either produce or labour). The village still has Kot Ghar (arsenal) where artilleries are preserved. It is also a gateway to Tilicho Lake, which is about two days walk. Other attractions include Thini Bonpo Gompa,'),
+(10, 'lovebirds pokhara', 'lovebirds pokhara, best homestay in pokh', 'homestay999', '', 'this is the best homestay in pokhara ', '62463908_685836435210847_2151528038314016768_n.jpg', 'https://goo.gl/maps/1PLB6KT37Va1mfPNA', 'publish', '2019-08-23 14:42:04', 'Pokhara', 'you will get 2 full meal per day for free', 'https://youtu.be/pMKA9HxXyyA', 'this is the rules of homestay', 'this is the features of homestay'),
+(11, 'vsfse', 'dfvsevsedv', 'homestay9999', '', 'vdevdsedv', 'banner2.jpg', 'd', 'publish', '2019-08-23 16:47:21', 'Pokhara', 'dfvdvdf', 'lg oihoihgo87oihoiuhiu', 'onkinohih iugiu giuy gug', 'oioin'),
+(12, 'loply homestay', 'loply homestay', 'sajilochat321', '', 'loply homestay', 'images.jpg', '', 'publish', '2019-09-20 06:00:41', 'Pokhara', 'loply homestay', 'loply homestay', 'loply homestay', 'loply homestay');
 
 -- --------------------------------------------------------
 
@@ -285,6 +316,7 @@ CREATE TABLE `item_rating` (
   `ratingId` int(11) NOT NULL,
   `itemId` int(11) NOT NULL,
   `userId` int(11) NOT NULL,
+  `email` varchar(65) COLLATE utf8_unicode_ci NOT NULL,
   `username` varchar(65) COLLATE utf8_unicode_ci NOT NULL,
   `avatar` varchar(65) COLLATE utf8_unicode_ci NOT NULL,
   `ratingNumber` int(11) NOT NULL,
@@ -299,14 +331,22 @@ CREATE TABLE `item_rating` (
 -- Dumping data for table `item_rating`
 --
 
-INSERT INTO `item_rating` (`ratingId`, `itemId`, `userId`, `username`, `avatar`, `ratingNumber`, `title`, `comments`, `created`, `modified`, `status`) VALUES
-(52, 1, 0, 'admin', '', 3, 'stats', 'rgergege', '2019-08-19 16:49:53', '2019-08-19 16:49:53', 1),
-(53, 1, 0, 'admin', '', 1, 'smriti in Parbat star 2075 ', 'wefwefwe', '2019-08-19 16:55:31', '2019-08-19 16:55:31', 1),
-(54, 1, 0, 'root', '', 1, 'toor', 'efvwev', '2019-08-19 16:58:28', '2019-08-19 16:58:28', 1),
-(55, 1, 0, 'sunil', '', 5, 'lksajdflk', 'eeee', '2019-08-20 07:14:39', '2019-08-20 07:14:39', 1),
-(56, 1, 0, 'sunil sapkota', '', 4, 'very good ', 'i stay in this homestay for 3 weeks and i have good experience in this homestay.  :)', '2019-08-20 07:24:06', '2019-08-20 07:24:06', 1),
-(57, 9, 0, 'sunil sapkota', '', 5, 'very good homestay', 'test', '2019-08-20 07:46:47', '2019-08-20 07:46:47', 1),
-(58, 1, 0, 'krivanepal@gmail.com', '', 5, 'smriti in Parbat star 2075 ', 'very good home stay', '2019-08-21 11:12:06', '2019-08-21 11:12:06', 1);
+INSERT INTO `item_rating` (`ratingId`, `itemId`, `userId`, `email`, `username`, `avatar`, `ratingNumber`, `title`, `comments`, `created`, `modified`, `status`) VALUES
+(52, 1, 0, '', 'admin', '', 3, 'stats', 'rgergege', '2019-08-19 16:49:53', '2019-08-19 16:49:53', 1),
+(53, 1, 0, '', 'admin', '', 1, 'smriti in Parbat star 2075 ', 'wefwefwe', '2019-08-19 16:55:31', '2019-08-19 16:55:31', 1),
+(54, 1, 0, '', 'root', '', 1, 'toor', 'efvwev', '2019-08-19 16:58:28', '2019-08-19 16:58:28', 1),
+(55, 1, 0, '', 'sunil', '', 5, 'lksajdflk', 'eeee', '2019-08-20 07:14:39', '2019-08-20 07:14:39', 1),
+(56, 1, 0, '', 'sunil sapkota', '', 4, 'very good ', 'i stay in this homestay for 3 weeks and i have good experience in this homestay.  :)', '2019-08-20 07:24:06', '2019-08-20 07:24:06', 1),
+(57, 9, 0, '', 'sunil sapkota', '', 5, 'very good homestay', 'test', '2019-08-20 07:46:47', '2019-08-20 07:46:47', 1),
+(58, 1, 0, '', 'krivanepal@gmail.com', '', 5, 'smriti in Parbat star 2075 ', 'very good home stay', '2019-08-21 11:12:06', '2019-08-21 11:12:06', 1),
+(59, 10, 0, '', 'sunil', '', 5, 'nice homestay', 'it is a nice homestay', '2019-08-23 17:08:06', '2019-08-23 17:08:06', 1),
+(60, 2, 0, '', 'sunil', '', 5, 'stats', 'good', '2019-08-25 12:02:13', '2019-08-25 12:02:13', 1),
+(61, 2, 0, '', 'admin', '', 5, 'lksajdflk', 'derydrfu', '2019-08-25 12:03:39', '2019-08-25 12:03:39', 1),
+(62, 4, 0, '', 'sunil', '', 4, 'smriti in Parbat star 2075 ', 'testing ratings .', '2019-09-02 05:38:26', '2019-09-02 05:38:26', 1),
+(63, 1, 0, '', 'sunil', '', 1, 'smriti in Parbat star 2075 ', 'wsrgegww', '2019-09-19 16:11:54', '2019-09-19 16:11:54', 1),
+(64, 1, 0, 'sajilochat@gmail.com', 'admin', '', 1, 'smriti in Parbat star 2075 ', 'smriti in Parbat star 2075 smriti in Parbat star 2075 smriti in Parbat star 2075 smriti in Parbat star 2075 ', '2019-09-19 17:08:46', '2019-09-19 17:08:46', 1),
+(65, 1, 0, 'sajilochat@gmail.com', 'admin', '', 1, 'smriti in Parbat star 2075 ', 'smriti in Parbat star 2075 smriti in Parbat star 2075 smriti in Parbat star 2075 ', '2019-09-19 17:23:16', '2019-09-19 17:23:16', 1),
+(66, 1, 0, 'sajilochat111@gmail.com', 'sunil', '', 1, 'lksajdflk', 'VVVVitemIditemIditemId', '2019-09-19 18:22:05', '2019-09-19 18:22:05', 1);
 
 -- --------------------------------------------------------
 
@@ -427,9 +467,37 @@ CREATE TABLE `newsletter` (
 
 INSERT INTO `newsletter` (`id`, `full_name`, `email`, `c_date`, `approval`, `user_name`) VALUES
 (1, 'sunil sapkota', 'sajilochat@gmail.com', '2019-07-13', 'Allowed', 'sunil99'),
-(4, 'sunil sapkota', 'sajilochat@gmail.com', '2019-07-19', 'Not Allowed', 'sunil99'),
-(5, 'sunil sapkota', 'sunilsapkota9@gmail.com', '2019-07-25', 'Not Allowed', 'sunil99'),
-(6, 'sunil sapkota', 'demo@gmail.com', '2019-08-05', 'Allowed', '');
+(5, 'sunil sapkota', 'sunilsapkota9@gmail.com', '2019-07-25', 'Allowed', 'sunil99'),
+(6, 'sunil sapkota', 'demo@gmail.com', '2019-08-05', 'Not Allowed', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `newsletterlog`
+--
+
+CREATE TABLE `newsletterlog` (
+  `id` int(11) NOT NULL,
+  `user` varchar(65) NOT NULL,
+  `title` text NOT NULL,
+  `subject` text NOT NULL,
+  `news` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `newsletterlog`
+--
+
+INSERT INTO `newsletterlog` (`id`, `user`, `title`, `subject`, `news`) VALUES
+(1, 'sajilochat321', 'best hosting provider', 'Starting your digital lifestyle', 'newsletterlognewsletterlognewsletterlognewsletterlognewsletterlog'),
+(2, 'sajilochat321', 'this is title', 'this is subject', 'this is the main news about ourselves'),
+(3, 'sajilochat321', 'this is title', 'this is subject', 'this is the main news about ourselves'),
+(4, 'sajilochat321', 'this is title', 'this is subject', 'this is the main news about ourselves'),
+(5, 'sajilochat321', 'this is title', 'this is subject', 'this is the main news about ourselves'),
+(6, 'sajilochat321', 'this is title', 'this is subject', 'this is the main news about ourselves'),
+(7, 'sajilochat321', 'welcome message', 'testing mail server', 'this is the test 2'),
+(8, 'sajilochat321', 'welcome message', 'testing mail server', 'this is test 3 for checking mail server'),
+(9, 'sajilochat321', 'welcome message', 'testing mail server', 'this is test 3 for checking mail server');
 
 -- --------------------------------------------------------
 
@@ -478,17 +546,19 @@ INSERT INTO `page_hits` (`page`, `count`) VALUES
 ('Newest homestay nepal2', 1),
 ('Newest homestay nepal5', 8),
 ('', 5),
-('Ghale Gaun', 15),
+('Ghale Gaun', 16),
 ('Sikles', 9),
-('Ghandruk', 19),
-('Mustang(Thini)', 457),
-('Dhampus', 3),
-('Kaskikot Village', 4),
+('Ghandruk', 23),
+('Mustang(Thini)', 501),
+('Dhampus', 9),
+('Kaskikot Village', 5),
 ('sunil sapkota', 25),
-('pokhara homestay', 2),
+('pokhara homestay', 5),
 ('admin999', 5),
-('loply homestay099', 105),
-('loply homestay', 1);
+('loply homestay099', 109),
+('loply homestay', 22),
+('lovebirds pokhara', 3),
+('vsfse', 6);
 
 -- --------------------------------------------------------
 
@@ -520,7 +590,8 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`id`, `title`, `fname`, `lname`, `troom`, `tbed`, `nroom`, `cin`, `cout`, `ttot`, `fintot`, `mepr`, `meal`, `btot`, `noofdays`, `owner`) VALUES
-(11, 'Miss.', 'sunil', 'sapkota', 'Deluxe Room', 'Double', 3, '2019-08-16', '2019-08-31', 9900.00, 10098.00, 132.00, 'Breakfast', 66.00, 15, 'admin999');
+(11, 'Miss.', 'sunil', 'sapkota', 'Deluxe Room', 'Double', 3, '2019-08-16', '2019-08-31', 9900.00, 10098.00, 132.00, 'Breakfast', 66.00, 15, 'admin999'),
+(13, 'Mr.', 'sunil', 'sapkota', 'Deluxe Room', 'Double', 2, '2019-09-16', '2019-09-19', 1320.00, 1359.60, 26.40, 'Breakfast', 13.20, 3, 'sajilochat321');
 
 -- --------------------------------------------------------
 
@@ -549,14 +620,17 @@ INSERT INTO `room` (`id`, `type`, `bedding`, `place`, `price`, `no_of_room`, `cu
 (42, 'Deluxe Room', 'Triple', 'NotFree', 678, 3, 3, 1, 'sunil99'),
 (43, 'Single Room', 'Double', 'NotFree', 879, 5, 10, 1, 'sunil99'),
 (44, 'Deluxe Room', 'Quad', 'Free', 9878, 7, NULL, 1, 'sunil99'),
-(45, 'Deluxe Room', 'Double', 'NotFree', 900, 6, 11, 1, 'sunil99'),
+(45, 'Deluxe Room', 'Double', 'Free', 900, 6, 0, 1, 'sunil99'),
 (46, 'Single Room', 'Single', 'Free', 234, 1, NULL, 7, 'sunil99'),
 (47, 'Single Room', 'Triple', 'Free', 23, 3, NULL, 7, 'sunil99'),
 (49, 'Single Room', 'Quad', 'Free', 900, 3, NULL, 7, 'sunil99'),
 (51, 'Single Room', 'Double', 'NotFree', 900, 3, 10, 8, 'admin999'),
 (52, 'Deluxe Room', 'Single', 'Free', 500, 1, NULL, 0, 'admin9999'),
 (53, 'Deluxe Room', 'Single', 'Free', 900, 4, NULL, 9, 'romeo099'),
-(54, 'Single Room', 'Double', 'Free', 490, 3, NULL, 9, 'romeo099');
+(54, 'Single Room', 'Double', 'Free', 490, 3, NULL, 9, 'romeo099'),
+(55, 'Single Room', 'Single', 'Free', 550, 4, NULL, 10, 'homestay999'),
+(56, 'Deluxe Room', 'Single', 'Free', 990, 2, NULL, 10, 'homestay999'),
+(57, 'Single Room', 'Single', 'Free', 550, 7, NULL, 12, 'sajilochat321');
 
 -- --------------------------------------------------------
 
@@ -696,7 +770,10 @@ INSERT INTO `user` (`id`, `full_name`, `email`, `username`, `password`, `phone`,
 (22, 'sunil sapkota', 'sajilochDEat@gmail.com', 'sunilerfeDD', '$2y$10$6H9DzTJkslQ7y50llB3.6.cEc.ty7RCWi70szo3AHHWUC.ewFcAHC', 0, '', '', 0, '', '2019-08-04 17:29:54'),
 (23, 'sunil sapkota', 'sajilocddddhat@gmail.com', 'admindddd', '$2y$10$WBH1mRPG/s1Gk5vV5eznyuAuGxHZc1A5P8mi2MeOAjB3XxIkxdwF2', 0, '', '', 0, '', '2019-08-04 17:34:23'),
 (24, 'sunil sapkota99', 'sajilochat@gmail.com', 'admin999', '$2y$10$OZXz8BvEj7dQL.b.QFiMQeZ6XFSRVM75LoX7z7pCJIrUodZ85jiIi', 987654321, 'hello its me admin 999 updating profile test 2', 'wtfffff.JPG', 8, '', '2019-08-07 17:01:05'),
-(25, 'sunil sapkota', 'sajilochat@gmail.com', 'romeo099', '$2y$10$7PtkskqnexCngz5hSSNFCecMljeLBDKUI2EnizYhAMyRRboIHwtRi', 9806705494, 'hello its me admin 999 updating profile ', 'DtA4e5AXgAAJJlf.jpg', 9, '', '2019-08-12 12:54:35');
+(25, 'sunil sapkota', 'sajilochat@gmail.com', 'romeo099', '$2y$10$7PtkskqnexCngz5hSSNFCecMljeLBDKUI2EnizYhAMyRRboIHwtRi', 9806705494, 'hello its me admin 999 updating profile ', 'DtA4e5AXgAAJJlf.jpg', 9, '', '2019-08-12 12:54:35'),
+(26, 'sunil sapkota', 'sajilochat@gmail.com', 'homestay999', '$2y$10$G52yKtpt7lQsLEdXRhpzxumHDxEZbzkEWAnuJGGoKhysNuQyDT1iG', 9806705494, 'hello this is some text from homestay owner', '43006820_10215597274897887_7464817782249488384_n.jpg', 10, '', '2019-08-23 14:42:04'),
+(27, 'sunil sapkota', 'sajilochat@gmail.com', 'homestay9999', '$2y$10$SU1oF3f8qTWwiPPOtqOmXud4sf8wO2gGdX6O1zsuJ19InR1eEi.Yi', 0, '', '', 0, '', '2019-08-23 16:47:21'),
+(28, 'sunil sapkota', 'sajilochat@gmail.com', 'sajilochat321', '$2y$10$X6OsX0IDKbIqLvCJP5VnCePArxke7BepIKGtQuQO2T8vWt6URVb0G', 9806705499, 'khfks f9eifnjdvhieauhfiuwaefkea uifken kdsuhiudhviea', 'images 4).jpg', 12, '', '2019-09-20 06:00:40');
 
 -- --------------------------------------------------------
 
@@ -1142,7 +1219,100 @@ INSERT INTO `visitor_info` (`id`, `ip_address`, `user_agent`) VALUES
 (780, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
 (781, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
 (782, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
-(783, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT');
+(783, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(784, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(785, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(786, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(787, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(788, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(789, '192.168.2.100', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4) AppleWebKit/537.36'),
+(790, '192.168.2.100', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4) AppleWebKit/537.36'),
+(791, '192.168.2.100', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4) AppleWebKit/537.36'),
+(792, '192.168.2.100', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4) AppleWebKit/537.36'),
+(793, '192.168.2.100', 'Mozilla/5.0 (Linux; Android 7.0; Redmi Note 4) AppleWebKit/537.36'),
+(794, '127.0.0.1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKi'),
+(795, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(796, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(797, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(798, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(799, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(800, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(801, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(802, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(803, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(804, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(805, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(806, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(807, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(808, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(809, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(810, '127.0.0.1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKi'),
+(811, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(812, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(813, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(814, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(815, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(816, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(817, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(818, '::1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKi'),
+(819, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(820, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(821, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(822, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(823, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(824, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(825, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(826, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(827, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(828, '127.0.0.1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKi'),
+(829, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(830, '127.0.0.1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKi'),
+(831, '127.0.0.1', 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKi'),
+(832, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(833, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(834, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(835, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(836, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(837, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(838, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(839, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(840, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(841, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(842, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(843, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(844, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(845, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(846, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(847, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(848, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(849, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(850, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(851, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(852, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(853, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(854, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(855, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(856, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(857, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(858, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(859, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(860, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(861, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(862, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(863, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(864, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(865, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(866, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(867, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(868, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(869, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(870, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(871, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(872, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(873, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(874, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(875, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT'),
+(876, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHT');
 
 --
 -- Indexes for dumped tables
@@ -1170,6 +1340,12 @@ ALTER TABLE `contact`
 -- Indexes for table `family`
 --
 ALTER TABLE `family`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `faq`
+--
+ALTER TABLE `faq`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1241,6 +1417,12 @@ ALTER TABLE `newsletter`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `newsletterlog`
+--
+ALTER TABLE `newsletterlog`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `owner_info`
 --
 ALTER TABLE `owner_info`
@@ -1296,7 +1478,7 @@ ALTER TABLE `allowed`
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `comment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT for table `contact`
 --
@@ -1307,6 +1489,11 @@ ALTER TABLE `contact`
 --
 ALTER TABLE `family`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `featured_homestay`
 --
@@ -1321,12 +1508,12 @@ ALTER TABLE `features`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `homestay_info`
 --
 ALTER TABLE `homestay_info`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `item`
 --
@@ -1336,7 +1523,7 @@ ALTER TABLE `item`
 -- AUTO_INCREMENT for table `item_rating`
 --
 ALTER TABLE `item_rating`
-  MODIFY `ratingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `ratingId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 --
 -- AUTO_INCREMENT for table `item_users`
 --
@@ -1363,6 +1550,11 @@ ALTER TABLE `location`
 ALTER TABLE `newsletter`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
+-- AUTO_INCREMENT for table `newsletterlog`
+--
+ALTER TABLE `newsletterlog`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
 -- AUTO_INCREMENT for table `owner_info`
 --
 ALTER TABLE `owner_info`
@@ -1371,7 +1563,7 @@ ALTER TABLE `owner_info`
 -- AUTO_INCREMENT for table `room`
 --
 ALTER TABLE `room`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 --
 -- AUTO_INCREMENT for table `roombook`
 --
@@ -1391,12 +1583,12 @@ ALTER TABLE `titles`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 --
 -- AUTO_INCREMENT for table `visitor_info`
 --
 ALTER TABLE `visitor_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=784;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=877;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
